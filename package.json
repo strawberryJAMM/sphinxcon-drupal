@@ -1,0 +1,44 @@
+{
+  "name": "sphinxcon",
+  "version": "1.0.0",
+  "description": "TRMN 2018 SphinxCon Drupal Theme",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/strawberryJAMM/sphinxcon-drupal.git"
+  },
+  "author": {
+    "name": "Jenni Merrifield",
+    "email": "co@hmscallisto.org",
+    "url": "http://jamm.com/"
+  },
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/strawberryJAMM/sphinxcon-drupal/issues"
+  },
+  "homepage": "https://github.com/strawberryJAMM/sphinxcon-drupal#readme",
+  "engines": {
+    "node": ">=6.11.2",
+    "npm": ">=5.5.1"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 5% in US"
+  ],
+  "dependencies": {
+    "grunt": "^1.0.1"
+  },
+  "devDependencies": {
+    "cssnano-preset-default": "^4.0.0-rc.2",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-compass": "^1.1.1",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^3.1.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-postcss": "^0.9.0",
+    "postcss-cssnext": "^3.0.2"
+  }
+}

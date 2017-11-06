@@ -1,0 +1,24 @@
+// JSON Document
+{
+  "name": "sphinxcon",
+  "version": "1.0.0",
+  "description": "TRMN SphinxCon WordPress Theme",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/strawberryJAMM/sphinxcon.git"
+  },
+  "author": "Jenni A. Merrifield",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/strawberryJAMM/sphinxcon/issues"
+  },
+  "homepage": "https://github.com/strawberryJAMM/sphinxcon#readme",
+  "browserslist": [
+    "last 2 versions",
+    "> 5% in US"
+  ],
+}
