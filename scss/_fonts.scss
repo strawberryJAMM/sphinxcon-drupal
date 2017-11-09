@@ -1,0 +1,291 @@
+/* CSS Document */
+
+@at-root {
+  // Import the fonts
+  
+  //
+  //## Body Font - Decalotype
+  //
+  //### Regular
+  @font-face {
+    font-family: '#{$body-font-name}';
+    src: url('#{$body-font-path}decalotype-regular-webfont.woff2') format('woff2'),
+         url('#{$body-font-path}decalotype-regular-webfont.woff') format('woff'),
+         url('#{$body-font-path}decalotype-regular-webfont.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  //
+  //### Italic
+  @font-face {
+    font-family: '#{$body-font-name}';
+    src: url('#{$body-font-path}decalotype-italic-webfont.woff2') format('woff2'),
+         url('#{$body-font-path}decalotype-italic-webfont.woff') format('woff'),
+         url('#{$body-font-path}decalotype-italic-webfont.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  //
+  //### Bold
+  @font-face {
+    font-family: '#{$body-font-name}';
+    src: url('#{$body-font-path}decalotype-bold-webfont.woff2') format('woff2'),
+         url('#{$body-font-path}decalotype-bold-webfont.woff') format('woff'),
+         url('#{$body-font-path}decalotype-bold-webfont.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  //
+  //### Bold Italic
+  @font-face {
+    font-family: '#{$body-font-name}';
+    src: url('#{$body-font-path}decalotype-bolditalic-webfont.woff2') format('woff2'),
+         url('#{$body-font-path}decalotype-bolditalic-webfont.woff') format('woff'),
+         url('#{$body-font-path}decalotype-bolditalic-webfont.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+  }
+
+  //
+  //### Light
+  @font-face {
+    font-family: '#{$body-font-name}';
+    src: url('#{$body-font-path}decalotype-light-webfont.woff2') format('woff2'),
+         url('#{$body-font-path}decalotype-light-webfont.woff') format('woff'),
+         url('#{$body-font-path}decalotype-light-webfont.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  //
+  //### Light Italic
+  @font-face {
+    font-family: '#{$body-font-name}';
+    src: url('#{$body-font-path}decalotype-lightitalic-webfont.woff2') format('woff2'),
+         url('#{$body-font-path}decalotype-lightitalic-webfont.woff') format('woff'),
+         url('#{$body-font-path}decalotype-lightitalic-webfont.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  //
+  //### Medium
+  @font-face {
+    font-family: '#{$body-font-name}';
+    src: url('#{$body-font-path}decalotype-medium-webfont.woff2') format('woff2'),
+         url('#{$body-font-path}decalotype-medium-webfont.woff') format('woff'),
+         url('#{$body-font-path}decalotype-medium-webfont.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  //
+  //### Medium Italic
+  @font-face {
+    font-family: '#{$body-font-name}';
+    src: url('#{$body-font-path}decalotype-mediumitalic-webfont.woff2') format('woff2'),
+         url('#{$body-font-path}decalotype-mediumitalic-webfont.woff') format('woff'),
+         url('#{$body-font-path}decalotype-mediumitalic-webfont.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+  }
+
+  //
+  //### Semi-Bold
+  @font-face {
+    font-family: '#{$body-font-name}';
+    src: url('#{$body-font-path}decalotype-semibold-webfont.woff2') format('woff2'),
+         url('#{$body-font-path}decalotype-semibold-webfont.woff') format('woff'),
+         url('#{$body-font-path}decalotype-semibold-webfont.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  //
+  //### Semi-Bold Italic
+  @font-face {
+    font-family: '#{$body-font-name}';
+    src: url('#{$body-font-path}decalotype-semibolditalic-webfont.woff2') format('woff2'),
+         url('#{$body-font-path}decalotype-semibolditalic-webfont.woff') format('woff'),
+         url('#{$body-font-path}decalotype-semibolditalic-webfont.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+  }
+
+  //
+  //### Extra-Bold
+  @font-face {
+    font-family: '#{$body-font-name}';
+    src: url('#{$body-font-path}decalotype-extrabold-webfont.woff2') format('woff2'),
+         url('#{$body-font-path}decalotype-extrabold-webfont.woff') format('woff'),
+         url('#{$body-font-path}decalotype-extrabold-webfont.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+  }
+
+  //
+  //### Extra-Bold Italic
+  @font-face {
+    font-family: '#{$body-font-name}';
+    src: url('#{$body-font-path}decalotype-extrabolditalic-webfont.woff2') format('woff2'),
+         url('#{$body-font-path}decalotype-extrabolditalic-webfont.woff') format('woff'),
+         url('#{$body-font-path}decalotype-extrabolditalic-webfont.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
+  }
+
+  //
+  //### Black
+  @font-face {
+    font-family: '#{$headings-font-name}';
+    src: url('#{$headings-font-path}decalotype-black-webfont.woff2') format('woff2'),
+         url('#{$headings-font-path}decalotype-black-webfont.woff') format('woff'),
+         url('#{$headings-font-path}decalotype-black-webfont.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  //
+  //### Black Italic
+  @font-face {
+    font-family: '#{$headings-font-name}';
+    src: url('#{$headings-font-path}decalotype-blackitalic-webfont.woff2') format('woff2'),
+         url('#{$headings-font-path}decalotype-blackitalic-webfont.woff') format('woff'),
+         url('#{$headings-font-path}decalotype-blackitalic-webfont.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+  }
+  
+  //
+  //## Headings Font - Incised 901
+  //
+  //### Regular
+  @font-face {
+    font-family: '#{$headings-font-name}';
+    src: url('#{$headings-font-path}incised_901_roman-webfont.woff2') format('woff2'),
+         url('#{$headings-font-path}incised_901_roman-webfont.woff') format('woff'),
+         url('#{$headings-font-path}incised_901_roman-webfont.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  //
+  //### Italic
+  @font-face {
+    font-family: '#{$headings-font-name}';
+    src: url('#{$headings-font-path}incised_901_italic_bt-webfont.woff2') format('woff2'),
+         url('#{$headings-font-path}incised_901_italic_bt-webfont.woff') format('woff'),
+         url('#{$headings-font-path}incised_901_italic_bt-webfont.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  //
+  //### Bold
+  @font-face {
+    font-family: '#{$headings-font-name}';
+    src: url('#{$headings-font-path}incised_901_bold-webfont.woff2') format('woff2'),
+         url('#{$headings-font-path}incised_901_bold-webfont.woff') format('woff'),
+         url('#{$headings-font-path}incised_901_bold-webfont.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  //
+  //### Light
+  @font-face {
+    font-family: '#{$headings-font-name}';
+    src: url('#{$headings-font-path}incised_901_light_bt-webfont.woff2') format('woff2'),
+         url('#{$headings-font-path}incised_901_light_bt-webfont.woff') format('woff'),
+         url('#{$headings-font-path}incised_901_light_bt-webfont.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  //
+  //### Black
+  @font-face {
+    font-family: '#{$headings-font-name}';
+    src: url('#{$headings-font-path}incised_901_black_bt-webfont.woff2') format('woff2'),
+         url('#{$headings-font-path}incised_901_black_bt-webfont.woff') format('woff'),
+         url('#{$headings-font-path}incised_901_black_bt-webfont.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  //
+  //## Narrow Bold Headings Font - Incised 901 BT Bold Condensed
+  //
+  //### Regular
+  @font-face {
+    font-family: '#{$headings-font-boldnarrow}';
+    src: url('#{$headings-font-path}incised_901_bold_condensed-webfont.woff2') format('woff2'),
+         url('#{$headings-font-path}incised_901_bold_condensed-webfont.woff') format('woff'),
+         url('#{$headings-font-path}incised_901_bold_condensed-webfont.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  //
+  //## Section Title Font - Incised 901 Compact
+  //
+  //### Regular
+  @font-face {
+    font-family: '#{$section-font-name}';
+    src: url('#{$section-font-path}incised_901_compact-webfont.woff2') format('woff2'),
+         url('#{$section-font-path}incised_901_compact-webfont.woff') format('woff'),
+         url('#{$section-font-path}incised_901_compact-webfont.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  //
+  //## TRMN Organizational Font - Incised 901 Nord
+  //
+  //### Regular
+  @font-face {
+    font-family: '#{$trmn-org-font-name}';
+    src: url('#{$trmn-org-font-path}incised_901_nord_bt-webfont.woff2') format('woff2'),
+         url('#{$trmn-org-font-path}incised_901_nord_bt-webfont.woff') format('woff'),
+         url('#{$trmn-org-font-path}incised_901_nord_bt-webfont.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  //
+  //### Italic
+  @font-face {
+    font-family: '#{$trmn-org-font-name}';
+    src: url('#{$trmn-org-font-path}incised_901_nord_italic_bt-webfont.woff2') format('woff2'),
+         url('#{$trmn-org-font-path}incised_901_nord_italic_bt-webfont.woff') format('woff'),
+         url('#{$trmn-org-font-path}incised_901_nord_italic_bt-webfont.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  //
+  //### Bold (use regular, to avoid browser adding false bolding)
+  @font-face {
+    font-family: '#{$trmn-org-font-name}';
+    src: url('#{$trmn-org-font-path}incised_901_nord_bt-webfont.woff2') format('woff2'),
+         url('#{$trmn-org-font-path}incised_901_nord_bt-webfont.woff') format('woff'),
+         url('#{$trmn-org-font-path}incised_901_nord_bt-webfont.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  //
+  //### Bold Italic (use italic, to avoid browser adding false bolding)
+  @font-face {
+    font-family: '#{$trmn-org-font-name}';
+    src: url('#{$trmn-org-font-path}incised_901_nord_italic_bt-webfont.woff2') format('woff2'),
+         url('#{$trmn-org-font-path}incised_901_nord_italic_bt-webfont.woff') format('woff'),
+         url('#{$trmn-org-font-path}incised_901_nord_italic_bt-webfont.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+  }
+
+}

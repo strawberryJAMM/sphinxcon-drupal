@@ -1,0 +1,58 @@
+/* theme.css
+
+  THEME RULES define colours, images, and typography
+
+ */
+
+//== NAVIGATION
+//
+// Set the font family, weigh, size, etc. for navigation items
+.navbar-nav {
+  > li > a {
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
+    font-size:   $font-size-large;
+    line-height: $line-height-base;
+    text-transform: uppercase;
+  }
+}
+
+//
+// Default navbar toggle colours
+.navbar-default {
+ .navbar-toggle {
+   .icon-bar {
+     &:hover,
+     &:focus {
+       background-color: $navbar-default-toggle-hover-color;
+     }
+   }
+   .glyphicon {
+      color: $navbar-default-toggle-icon-color;
+      &:hover,
+      &:focus {
+        color: $navbar-default-toggle-hover-color;
+      }
+    }
+  }
+}
+
+//
+// Inverse navbar toggle colours
+.navbar-inverse {
+  .navbar-toggle {
+   .icon-bar {
+     &:hover,
+     &:focus {
+       background-color: $navbar-inverse-toggle-hover-color;
+     }
+   }
+    .glyphicon {
+      color: $navbar-inverse-toggle-icon-color;
+      &:hover,
+      &:focus {
+        color: $navbar-inverse-toggle-hover-color;
+      }
+    }
+  }
+}
