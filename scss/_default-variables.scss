@@ -17,15 +17,18 @@ $icon-font-path: '../bootstrap/assets/fonts/bootstrap/';
 
 //
 // ## Set directories and names for TRMN standard web fonts.
-$body-font-path:          '../fonts/decalotype/';
-$body-font-name:          'Decalotype';
-$headings-font-path:      '../fonts/incised_901/';
-$headings-font-name:      'Incised 901 BT';
-$headings-font-boldnarrow: 'Incised 901 BT Bold Condensed';
-$section-font-path:       $headings-font-path;
-$section-font-name:       'Incised 901 BT Compact'; 
-$trmn-org-font-path:      $headings-font-path;
-$trmn-org-font-name:      'Incised 901 BT Nord';
+$trmn-base-font-path:          '../fonts/decalotype/';
+$trmn-base-font-name:          'Decalotype';
+
+$trmn-headings-font-path:      '../fonts/incised_901/';
+$trmn-headings-font-name:      'Incised 901 BT';
+$trmn-headings-font-boldnarrow: 'Incised 901 BT Bold Condensed';
+
+$trmn-sections-font-path:       $trmn-headings-font-path;
+$trmn-sections-font-name:       'Incised 901 BT Compact'; 
+
+$trmn-organization-font-path:      $trmn-headings-font-path;
+$trmn-organization-font-name:      'Incised 901 BT Nord';
 
 //
 // ## Brand (Logo) Image maximum width
@@ -60,17 +63,19 @@ $text-color:            $white;
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-$font-family-trmn-body:               "#{$body-font-name}", Arial, "Helvetica Neue", Helvetica, sans-serif;
-$font-family-trmn-headings:           "#{$headings-font-name}", Verdana, Arial, "Helvetica Neue", Helvetica, sans-serif;
-$font-family-trmn-headings-narrow:    "#{$headings-font-boldnarrow}", Haettenschweiler, "Arial Narrow Bold", "Verdana Bold", Verdana, Arial, "Helvetica Neue", Helvetica, sans-serif;
-$font-family-trmn-section:            "#{$section-font-name}", Impact, "Verdana Bold", Verdana, Arial, "Helvetica Neue", Helvetica, sans-serif;
-$font-family-trmn-org:                "#{$trmn-org-font-name}", "Arial Black", Impact, "Verdana Bold", Verdana, sans-serif;
+$trmn-base-font-family:            "#{$trmn-base-font-name}", Arial, "Helvetica Neue", Helvetica, sans-serif;
+$trmn-headings-font-family:        "#{$trmn-headings-font-name}", Verdana, Arial, "Helvetica Neue", Helvetica, sans-serif;
+$trmn-headings-font-family-narrow: "#{$trmn-headings-font-boldnarrow}", Haettenschweiler, "Arial Narrow Bold", "Verdana Bold", Verdana, Arial, "Helvetica Neue", Helvetica, sans-serif;
+$trmn-sections-font-family:        "#{$trmn-sections-font-name}", Impact, "Verdana Bold", Verdana, Arial, "Helvetica Neue", Helvetica, sans-serif;
+$trmn-organization-font-family:    "#{$trmn-organization-font-name}", "Arial Black", Impact, "Verdana Bold", Verdana, sans-serif;
 
-$font-family-base:        $font-family-trmn-body;
+// override the base and headings font details.
+$font-family-base:        $trmn-base-font-family;
 
-$headings-font-family:    $font-family-trmn-headings;
+$headings-font-family:    $trmn-headings-font-family;
 $headings-font-weight:    900;
 $headings-color:          $sphinxcon-green;
+
 
 //== Navbar
 //
