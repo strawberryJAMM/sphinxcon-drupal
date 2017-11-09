@@ -8,25 +8,35 @@
 
 //
 //== Navigation Bar
+.navbar {
+  height: $navbar-height;
+  
+  @media (min-width: $screen-sm-min) {
+    height: $navbar-height-sm;
+  }
+
+  @media (min-width: $screen-md-min) {
+    height: $navbar-height-md;
+  }
+}
+
+// pad the top of the body to match the height of the navbar
+// so that the top of the page shows below the fixed navigation bar
+body {
+  padding-top: $navbar-height;
+  
+  @media (min-width: $screen-sm-min) {
+    padding-top: $navbar-height-sm;
+  }
+
+  @media (min-width: $screen-md-min) {
+    padding-top: $navbar-height-md;
+  }
+}
 
 .navbar-header {
   @media (min-width: $grid-float-breakpoint) {
     float: none;
-  }
-}
-
-.navbar-collapse {
-  @media (min-width: $grid-float-breakpoint) {
-    width: inherit; 
-
-    // Undo the collapse side padding for navbars with containers to ensure
-    // alignment of right-aligned contents.
-    .navbar-fixed-top &,
-    .navbar-static-top &,
-    .navbar-fixed-bottom & {
-      padding-left: 0;
-      padding-right: 0;
-    }
   }
 }
 
@@ -36,7 +46,7 @@
     max-height: $navbar-collapse-max-height;
 
     @media (max-device-width: $screen-xs-min) and (orientation: landscape) {
-      max-height: 200px;
+      max-height: $navbar-collapse-max-height;
     }
   }
 }
@@ -53,22 +63,43 @@
   }
 }
 
-// Define navbar logo image
+// Define navbar-logo image 
 .navbar-logo {
   > img {
-    max-width: $brand-image-max-width;
-    @include center-block();
+    height: $logo-image-height;
+
+    // horizontally center the logo image when menu is not collapsed
+    @media (min-width: $grid-float-breakpoint) {
+      @include center-block();
+    }
+    
+    // Set the height on small screens
+    @media (min-width: $screen-sm-min) {
+      height: $logo-image-height-sm;
+    }
+
+    // Set the height on medium and larger screens
+    @media (min-width: $screen-md-min) {
+      height: $logo-image-height-md;
+    }
   }
 }
 
-// Override float position of the Toggle button to be on the left instead of the right
+// Override Toggle button styles
 .navbar-toggle {
+  //  float to the left instead of the right
   float: left;
   margin-left: $navbar-padding-horizontal;
   margin-right: 0;
+  
+  // Eliminate extra padding and borders
   padding: 0;
+  border: 0;
 
-  // Menu
+  // reset the margins to vertically center it
+  @include sc-navbar-vertical-align($navbar-collapse-height, 20px);
+  
+  // Set up font size to use a glyphicon for the menu trigger
   .glyphicon {
     font-size: 20px;
   }

@@ -1,6 +1,10 @@
 // Sphinxcon Theme-Specific Styles
 // Organized according to SMACSS methodology
 
+// Custom Mixins
+@import 'sphinxcon/mixins';
+
+// Styles
 @import 'sphinxcon/base';
 @import 'sphinxcon/layout';
 @import 'sphinxcon/theme';

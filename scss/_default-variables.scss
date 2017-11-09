@@ -17,24 +17,25 @@ $icon-font-path: '../bootstrap/assets/fonts/bootstrap/';
 
 //
 // ## Set directories and names for TRMN standard web fonts.
-$trmn-base-font-path:          '../fonts/decalotype/';
-$trmn-base-font-name:          'Decalotype';
+$trmn-base-font-path:            '../fonts/decalotype/';
+$trmn-base-font-name:            'Decalotype';
 
-$trmn-headings-font-path:      '../fonts/incised_901/';
-$trmn-headings-font-name:      'Incised 901 BT';
-$trmn-headings-font-boldnarrow: 'Incised 901 BT Bold Condensed';
+$trmn-headings-font-path:        '../fonts/incised_901/';
+$trmn-headings-font-name:        'Incised 901 BT';
+$trmn-headings-font-boldnarrow:  'Incised 901 BT Bold Condensed';
 
-$trmn-sections-font-path:       $trmn-headings-font-path;
-$trmn-sections-font-name:       'Incised 901 BT Compact'; 
+$trmn-sections-font-path:        $trmn-headings-font-path;
+$trmn-sections-font-name:        'Incised 901 BT Compact'; 
 
-$trmn-organization-font-path:      $trmn-headings-font-path;
-$trmn-organization-font-name:      'Incised 901 BT Nord';
+$trmn-organization-font-path:    $trmn-headings-font-path;
+$trmn-organization-font-name:    'Incised 901 BT Nord';
 
 //
-// ## Brand (Logo) Image maximum width
-$brand-image-max-width:    1000px;
-  
-  
+// ## Fixed Header Logo heights
+$logo-image-height:          50px;
+$logo-image-height-sm:       85px;
+$logo-image-height-md:       110px;
+
 //
 //## SphinxCon Theme Specific Colours
 $sphinxcon-orange:     #faaf40;
@@ -61,7 +62,7 @@ $text-color:            $white;
 
 //== Typography
 //
-//## Font, line-height, and color for body text, headings, and more.
+//## body text, headings, and more.
 
 $trmn-base-font-family:            "#{$trmn-base-font-name}", Arial, "Helvetica Neue", Helvetica, sans-serif;
 $trmn-headings-font-family:        "#{$trmn-headings-font-name}", Verdana, Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -76,19 +77,36 @@ $headings-font-family:    $trmn-headings-font-family;
 $headings-font-weight:    900;
 $headings-color:          $sphinxcon-green;
 
+//
+// ## Base, Small and Large font-sizes
+// Same as default bootstrap values but included so variables are available for use lower down
+$font-size-base:          14px;
+$font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
+
 
 //== Navbar
 //
-//##
+// ## Navigation font size and line heights
+$nav-font-size-base:         $font-size-large; // ~18px
+$nav-line-height-base:       1.388888889; // 25/18 
+$nav-line-height-computed:   floor(($nav-font-size-base * $nav-line-height-base)); // ~25px
 
-// Basics of a navbar
-//$navbar-height:                    50px !default;
-//$navbar-margin-bottom:             $line-height-computed !default;
-//$navbar-border-radius:             $border-radius-base !default;
-//$navbar-padding-horizontal:        floor(($grid-gutter-width / 2)) !default;
-//$navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2) !default;
-//$navbar-collapse-max-height:       340px !default;
+//
+// ## Navbar height related valures
+$navbar-padding-vertical:    10px;
+$navbar-collapse-height:     $nav-line-height-computed + (2 * $navbar-padding-vertical);
+$navbar-collapse-max-height: $navbar-collapse-height * 2; // (in case menu has to wrap for some reason)
 
+//
+// ## Set specific menu heights based on screen size
+// Thes will also be used for body top padding
+$navbar-height:              $logo-image-height + $navbar-collapse-height;
+$navbar-height-sm:           $logo-image-height-sm + $navbar-collapse-height;
+$navbar-height-md:           $logo-image-height-md + $navbar-collapse-height;
+
+//
+// Navbar default colors
 $navbar-default-color:             $sphinxcon-orange;
 $navbar-default-bg:                $sphinxcon-brown;
 $navbar-default-border:            darken($navbar-default-bg, 10%);
