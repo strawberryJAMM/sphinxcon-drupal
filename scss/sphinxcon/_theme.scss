@@ -7,10 +7,6 @@
 //== NAVIGATION
 //
 // Set the font family, weigh, size, etc. for navigation items
-.navbar-toggle {
-  
-}
-
 .navbar-nav {
   > li > a {
     font-family: $headings-font-family;
@@ -60,3 +56,28 @@
     }
   }
 }
+
+//== BACKGROUND
+//
+.bg-picketwood {
+  // the "picketwood" tree image
+  background-image: url(../images/SequioaRedwoodTreeBark.jpg);
+
+  // give it a 100% height so it will fill the screen
+  height: 100%;
+  
+  // Attach, Scale and resizey
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  // position so that the top sits right at the bottom of the current navbar.
+  background-position: center $navbar-height;
+  @media (min-width: $screen-sm-min) {
+    background-position: center $navbar-height-sm;
+  }
+  @media (min-width: $screen-md-min) {
+    background-position: center $navbar-height-md;
+  }
+}
+

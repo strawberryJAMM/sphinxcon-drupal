@@ -20,20 +20,6 @@
   }
 }
 
-// pad the top of the body to match the height of the navbar
-// so that the top of the page shows below the fixed navigation bar
-body {
-  padding-top: $navbar-height;
-  
-  @media (min-width: $screen-sm-min) {
-    padding-top: $navbar-height-sm;
-  }
-
-  @media (min-width: $screen-md-min) {
-    padding-top: $navbar-height-md;
-  }
-}
-
 .navbar-header {
   @media (min-width: $grid-float-breakpoint) {
     float: none;

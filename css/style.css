@@ -6480,6 +6480,19 @@ p:last-child,
   selectors, pseudo-class selectors, child selectors or sibling selectors. 
 
  */
+html,
+body {
+  height: 100%; }
+
+body {
+  padding-top: 95px; }
+  @media (min-width: 768px) {
+    body {
+      padding-top: 130px; } }
+  @media (min-width: 992px) {
+    body {
+      padding-top: 155px; } }
+
 /* layout.css
 
   LAYOUT RULES divide the page into major sections such as Header, Footer, 
@@ -6495,15 +6508,6 @@ p:last-child,
   @media (min-width: 992px) {
     .navbar {
       height: 155px; } }
-
-body {
-  padding-top: 95px; }
-  @media (min-width: 768px) {
-    body {
-      padding-top: 130px; } }
-  @media (min-width: 992px) {
-    body {
-      padding-top: 155px; } }
 
 @media (min-width: 768px) {
   .navbar-header {
@@ -6584,5 +6588,19 @@ body {
   color: #1d0702; }
   .navbar-inverse .navbar-toggle .glyphicon:hover, .navbar-inverse .navbar-toggle .glyphicon:focus {
     color: #651807; }
+
+.bg-picketwood {
+  background-image: url(../images/SequioaRedwoodTreeBark.jpg);
+  height: 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 95px; }
+  @media (min-width: 768px) {
+    .bg-picketwood {
+      background-position: center 130px; } }
+  @media (min-width: 992px) {
+    .bg-picketwood {
+      background-position: center 155px; } }
 
 /*# sourceMappingURL=style.css.map */

@@ -7,3 +7,23 @@
 
  */
 
+// Set the height of HTML and BODY tags to 100% to allow for full screen background
+html,
+body {
+  height: 100%;
+}
+
+// pad the top of the body to match the height of the fixed navbar
+// so that the top of the content is visible when first shown
+body {
+  padding-top: $navbar-height;
+  
+  @media (min-width: $screen-sm-min) {
+    padding-top: $navbar-height-sm;
+  }
+
+  @media (min-width: $screen-md-min) {
+    padding-top: $navbar-height-md;
+  }
+}
+
