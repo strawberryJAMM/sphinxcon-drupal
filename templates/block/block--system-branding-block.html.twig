@@ -15,15 +15,11 @@
  * @ingroup templates
  */
 #}
-{% 
-  set logo_alt = site_name ?: 'Home'|t 
-  set logo_title = logo_alt ~ site_slogan ? ' - ' ~ site_slogan : '' 
-%}
 {% block content %}
   {% if site_logo %}
     <div class="navbar-logo">
-      <a class="logo navbar-btn" href="{{ path('<front>') }}" title="{{ logo_title }}" rel="home">
-        <img src="{{ site_logo }}" alt="{{ logo_alt }}" />
+      <a class="logo navbar-btn" href="{{ path('<front>') }}" title="{{ site_name ?: 'Home'|t }}" rel="home">
+        <img src="{{ site_logo }}" alt="{{ site_name ?: 'Home'|t }}" />
       </a>
     </div>
   {% endif %}
