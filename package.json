@@ -1,6 +1,6 @@
 {
   "name": "sphinxcon",
-  "version": "1.0.0",
+  "version": "8.x-0.2",
   "description": "TRMN 2018 SphinxCon Drupal Theme",
   "main": "index.html",
   "scripts": {
@@ -38,6 +38,7 @@
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-uglify": "^3.1.0",
     "grunt-contrib-watch": "^1.0.0",
+    "grunt-git-archive": "0.0.3",
     "grunt-postcss": "^0.9.0",
     "postcss-cssnext": "^3.0.2"
   }

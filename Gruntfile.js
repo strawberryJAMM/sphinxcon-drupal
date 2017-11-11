@@ -84,7 +84,26 @@ module.exports = function(grunt) {
         ],
       },
     },
+
+    // Create archive for theme upload
+    'git-archive': {
+      archive: {
+        options: {                 
+          format: 'tar.gz',
+          prefix: 'sphinxcon/',
+          output: 'sphinxcon_drupal-<%= pkg.version %>.tar.gz',
+          'worktree-attributes': true,
+          extra: 6,
+          'tree-ish': '@',
+        },
+        files: {
+          'css/style.css' : 'scss/style.scss',
+        },
+      },
+    },
+     
   });
+
   
   // Load the plugins that provide the specified tasks
   
@@ -99,6 +118,9 @@ module.exports = function(grunt) {
  
   // "postcss" task.
   grunt.loadNpmTasks('grunt-postcss');
+  
+  // "git-archive" task.
+  grunt.loadNpmTasks('grunt-git-archive');
   
   // register tasks
   grunt.registerTask('default', ['watch']);

@@ -1,0 +1,7 @@
+*.tar.gz export-ignore
+*.tar export-ignore
+*.zip export-ignore
+.sass-cache/ export-ignore
+_notes/ export-ignore
+/node_modules/ export-ignore
+/templates/bootstrap/ export-ignore
