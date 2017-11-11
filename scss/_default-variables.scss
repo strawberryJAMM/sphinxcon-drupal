@@ -31,10 +31,19 @@ $trmn-organization-font-path:    $trmn-headings-font-path;
 $trmn-organization-font-name:    'Incised 901 BT Nord';
 
 //
-// ## Fixed Header Logo heights
+// ## Base Header Logo width and height
+$logo-image-base-width:          810px;
+$logo-image-base-height:         92px;
+$logo-image-w-over-h-aspect-ratio:    $logo-image-base-width / $logo-image-base-height;
+
+//
+// ## Fixed Header Logo heights and calculated widths
 $logo-image-height:          50px;
+$logo-image-width:           $logo-image-height * $logo-image-w-over-h-aspect-ratio;
 $logo-image-height-sm:       85px;
+$logo-image-width-sm:        $logo-image-height-sm * $logo-image-w-over-h-aspect-ratio;
 $logo-image-height-md:       110px;
+$logo-image-width-md:        $logo-image-height-md * $logo-image-w-over-h-aspect-ratio;
 
 //
 //## SphinxCon Theme Specific Colours
@@ -101,7 +110,7 @@ $navbar-collapse-max-height: $navbar-collapse-height * 2; // (in case menu has t
 //
 // ## Set specific menu heights based on screen size
 // Thes will also be used for body top padding
-$navbar-height:              $logo-image-height + $navbar-collapse-height;
+$navbar-height:              $logo-image-height;
 $navbar-height-sm:           $logo-image-height-sm + $navbar-collapse-height;
 $navbar-height-md:           $logo-image-height-md + $navbar-collapse-height;
 

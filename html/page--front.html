@@ -2,9 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- The above 2 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>SphinxCon 2018 Front Page Design</title>
 
     <!-- STYLES (includes bootstrap) -->
@@ -19,25 +18,29 @@
     <![endif]-->
   </head>
   <body class="bg-picketwood">
-    <header class="navbar navbar-default navbar-fixed-top">
-      <div class="navbar-header">
-        <div class="navbar-logo">
-          <img src="../logo.svg" alt="SphinxCon" role="img">
-        </div>
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+    <header class="navbar navbar-default navbar-fixed-top" id="navbar" role="banner">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
-          <span class="glyphicon glyphicon-menu-hamburger"></span>
-        </button>
-      </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <nav class="collapse navbar-collapse" id="navbar-collapse">
-        <ul class="nav navbar-nav navbar-center">
-          <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
-          <li><a href="#">Guests</a></li>
-          <li><a href="#">Program</a></li>
-          <li><a href="#">Venue</a></li>
-        </ul>
-      </nav><!-- /.navbar-collapse -->
+            <span class="glyphicon glyphicon-menu-hamburger"></span>
+          </button>
+          <a class="logo navbar-btn" href="#" title="Home" rel="home">
+            <img src="../logo.svg" alt="Home">
+          </a>
+        </div> <!-- /.navbar-header -->
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+          <nav role="navigation">
+            <ul class="nav navbar-nav navbar-center">
+              <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+              <li><a href="#">Guests</a></li>
+              <li><a href="#">Program</a></li>
+              <li><a href="#">Venue</a></li>
+            </ul>
+          </nav>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
     </header>
     <main>
       <section class="container">

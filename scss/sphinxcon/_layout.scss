@@ -21,6 +21,12 @@
 }
 
 .navbar-header {
+  // don't let the header content wrap if the viewport is too small to hold it
+  // Hide the excess so that the user can't slide the view sideways
+  white-space: nowrap;
+  overflow: hidden;
+  
+  // When the navigation is not collapsed, don't float it
   @media (min-width: $grid-float-breakpoint) {
     float: none;
   }
@@ -49,31 +55,38 @@
   }
 }
 
-// Define navbar-logo image 
-.navbar-logo {
-  > img {
-    height: $logo-image-height;
+//
+// Override Logo Navbar Button layout defaults
+.navbar .navbar-btn.logo,
+.navbar .navbar-btn.logo > img {
+  margin:   0;
+  padding:  0;
 
-    // horizontally center the logo image when menu is not collapsed
-    @media (min-width: $grid-float-breakpoint) {
-      @include center-block();
-    }
-    
-    // Set the height on small screens
-    @media (min-width: $screen-sm-min) {
-      height: $logo-image-height-sm;
-    }
+  height: $logo-image-height;
+  width: $logo-image-width;
 
-    // Set the height on medium and larger screens
-    @media (min-width: $screen-md-min) {
-      height: $logo-image-height-md;
-    }
+  // horizontally center the logo image when menu is not collapsed
+  @media (min-width: $grid-float-breakpoint) {
+    @include center-block();
+  }
+
+  // Set the height on small screens
+  @media (min-width: $screen-sm-min) {
+    height: $logo-image-height-sm;
+    width: $logo-image-width-sm;
+  }
+
+  // Set the height on medium and larger screens
+  @media (min-width: $screen-md-min) {
+    height: $logo-image-height-md;
+    width: $logo-image-width-md;
   }
 }
 
+
 // Override Toggle button styles
 .navbar-toggle {
-  //  float to the left instead of the right
+  // Change to float left and adjust left-right margins
   float: left;
   margin-left: $navbar-padding-horizontal;
   margin-right: 0;
@@ -83,7 +96,7 @@
   border: 0;
 
   // reset the margins to vertically center it
-  @include sc-navbar-vertical-align($navbar-collapse-height, 20px);
+  @include sc-navbar-vertical-align($navbar-height, 20px);
   
   // Set up font size to use a glyphicon for the menu trigger
   .glyphicon {
@@ -103,3 +116,5 @@
     }
   }
 }
+
+
