@@ -73,10 +73,10 @@
 
   // position so that the top sits right at the bottom of the current navbar.
   background-position: center $navbar-height;
-  @media (min-width: $screen-sm-min) {
+  @media #{$tablet} {
     background-position: center $navbar-height-sm;
   }
-  @media (min-width: $screen-md-min) {
+  @media #{$normal} {
     background-position: center $navbar-height-md;
   }
 }

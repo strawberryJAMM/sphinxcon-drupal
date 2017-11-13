@@ -7,15 +7,73 @@
  */
 
 //
+//== <body> margins and padding
+// Override to better support a fixed navbar with a fixed drupal toolbar
+body {
+  &.navbar-is-static-top {
+    margin-top: 0;
+  }
+  &.navbar-is-fixed-top {
+    margin-top: 0;
+    padding-top: $navbar-height;
+    &.toolbar-fixed {
+      padding-top: $navbar-height + $toolbar-fixed-default-height;
+      &.toolbar-horizontal.toolbar-tray-open {
+        padding-top: $navbar-height + $toolbar-fixed-hrz-open-height;
+      }
+    }
+    
+    @media #{$tablet} {
+      margin-top: 0;
+      padding-top: $navbar-height-sm;
+      &.toolbar-fixed {
+        padding-top: $navbar-height-sm + $toolbar-fixed-default-height;
+        &.toolbar-horizontal.toolbar-tray-open {
+          padding-top: $navbar-height-sm + $toolbar-fixed-hrz-open-height;
+        }
+      }
+    }
+
+    @media #{$normal} {
+      margin-top: 0;
+      padding-top: $navbar-height-md;
+      &.toolbar-fixed {
+        padding-top: $navbar-height-md + $toolbar-fixed-default-height;
+        &.toolbar-horizontal.toolbar-tray-open {
+          padding-top: $navbar-height-md + $toolbar-fixed-hrz-open-height;
+        }
+      }
+    }
+  }
+
+  &.navbar-is-fixed-bottom {
+    padding-bottom: $navbar-height;
+
+    @media #{$tablet} {
+      padding-bottom: $navbar-height-sm;
+    }
+
+    @media #{$normal} {
+      padding-bottom: $navbar-height-md;
+    }
+  }
+
+  @media #{$tablet} {
+    margin-top: 0;
+  }
+}
+
+//
 //== Navigation Bar
 .navbar {
   height: $navbar-height;
+  margin-bottom: 0px;
   
-  @media (min-width: $screen-sm-min) {
+  @media #{$tablet} {
     height: $navbar-height-sm;
   }
 
-  @media (min-width: $screen-md-min) {
+  @media #{$normal} {
     height: $navbar-height-md;
   }
 }
@@ -27,7 +85,7 @@
   overflow: hidden;
   
   // When the navigation is not collapsed, don't float it
-  @media (min-width: $grid-float-breakpoint) {
+  @media #{$grid-breakpoint} {
     float: none;
   }
 }
@@ -47,7 +105,7 @@
 .container-fluid {
   > .navbar-header,
   > .navbar-collapse {
-    @media (min-width: $grid-float-breakpoint) {
+    @media #{$grid-breakpoint} {
       float: none;
       margin-right: -$navbar-padding-horizontal;
       margin-left:  -$navbar-padding-horizontal;
@@ -66,23 +124,22 @@
   width: $logo-image-width;
 
   // horizontally center the logo image when menu is not collapsed
-  @media (min-width: $grid-float-breakpoint) {
+  @media #{$grid-breakpoint} {
     @include center-block();
   }
 
   // Set the height on small screens
-  @media (min-width: $screen-sm-min) {
+  @media #{$tablet} {
     height: $logo-image-height-sm;
     width: $logo-image-width-sm;
   }
 
   // Set the height on medium and larger screens
-  @media (min-width: $screen-md-min) {
+  @media #{$normal} {
     height: $logo-image-height-md;
     width: $logo-image-width-md;
   }
 }
-
 
 // Override Toggle button styles
 .navbar-toggle {
@@ -106,7 +163,7 @@
 
 // Define navbar centering
 .navbar-center {
-  @media (min-width: $grid-float-breakpoint) {
+  @media #{$grid-breakpoint} {
     float: none;
     text-align: center;
 

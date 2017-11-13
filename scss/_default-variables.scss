@@ -12,11 +12,17 @@
 
 //== Theme Specific Variables
 //
-// ## Set the proper directory for the Bootstrap Glyphicon font.
+//## Adjustments for Drupal Toolbar positioning
+$toolbar-fixed-default-height: 39px;
+$toolbar-fixed-hrz-open-height: 79px;
+
+
+//
+//## Set the proper directory for the Bootstrap Glyphicon font.
 $icon-font-path: '../bootstrap/assets/fonts/bootstrap/';
 
 //
-// ## Set directories and names for TRMN standard web fonts.
+//## Set directories and names for TRMN standard web fonts.
 $trmn-base-font-path:            '../fonts/decalotype/';
 $trmn-base-font-name:            'Decalotype';
 
@@ -31,13 +37,13 @@ $trmn-organization-font-path:    $trmn-headings-font-path;
 $trmn-organization-font-name:    'Incised 901 BT Nord';
 
 //
-// ## Base Header Logo width and height
+//## Base Header Logo width and height
 $logo-image-base-width:          810px;
 $logo-image-base-height:         92px;
 $logo-image-w-over-h-aspect-ratio:    $logo-image-base-width / $logo-image-base-height;
 
 //
-// ## Fixed Header Logo heights and calculated widths
+//## Fixed Header Logo heights and calculated widths
 $logo-image-height:          50px;
 $logo-image-width:           $logo-image-height * $logo-image-w-over-h-aspect-ratio;
 $logo-image-height-sm:       85px;
@@ -47,8 +53,10 @@ $logo-image-width-md:        $logo-image-height-md * $logo-image-w-over-h-aspect
 
 //
 //## SphinxCon Theme Specific Colours
+$sphinxcon-brown:      #1d0702; // #1f0e0b; // #1d0702;
+$sphinxcon-ltbrown:    #8c3c26; // #6c3127;
+$sphinxcon-redorange:  #cc2802; // #ac4e3d;
 $sphinxcon-orange:     #faaf40;
-$sphinxcon-brown:      #1d0702;
 $sphinxcon-green:      #7bbe47;
 $white:                #fff;
 
@@ -118,19 +126,19 @@ $navbar-height-md:           $logo-image-height-md + $navbar-collapse-height;
 // Navbar default colors
 $navbar-default-color:             $sphinxcon-orange;
 $navbar-default-bg:                $sphinxcon-brown;
-$navbar-default-border:            darken($navbar-default-bg, 10%);
+$navbar-default-border:            $sphinxcon-ltbrown; // darken($navbar-default-bg, 10%);
 
 // Navbar links
 $navbar-default-link-color:                $sphinxcon-orange;
-$navbar-default-link-hover-color:          darken($navbar-default-link-color, 15%);
+$navbar-default-link-hover-color:          $sphinxcon-redorange; // darken($navbar-default-link-color, 15%);
 $navbar-default-link-hover-bg:             transparent;
-$navbar-default-link-active-color:         $navbar-default-link-hover-color;
-$navbar-default-link-active-bg:            darken($navbar-default-bg, 10%);
-$navbar-default-link-disabled-color:       #ccc;
+$navbar-default-link-active-color:         $navbar-default-link-color;
+$navbar-default-link-active-bg:            $navbar-default-link-hover-color; //darken($navbar-default-bg, 10%);
+$navbar-default-link-disabled-color:       lighten($navbar-default-link-color, 40%); // #ccc;
 $navbar-default-link-disabled-bg:          transparent;
 
 // Navbar toggle
-$navbar-default-toggle-hover-color:        darken($sphinxcon-orange, 15%);
+$navbar-default-toggle-hover-color:        $sphinxcon-redorange; // darken($sphinxcon-orange, 15%);
 $navbar-default-toggle-hover-bg:           transparent;
 $navbar-default-toggle-icon-color:         $sphinxcon-orange;
 $navbar-default-toggle-icon-bar-bg:        $sphinxcon-orange;
@@ -140,20 +148,20 @@ $navbar-default-toggle-border-color:       transparent;
 //=== Inverted navbar
 // Reset inverted navbar basics
 $navbar-inverse-color:                      $sphinxcon-brown;
-$navbar-inverse-bg:                         $sphinxcon-orange;
-$navbar-inverse-border:                     darken($navbar-inverse-bg, 10%);
+$navbar-inverse-bg:                         $sphinxcon-redorange;
+$navbar-inverse-border:                     $sphinxcon-orange; // darken($navbar-inverse-bg, 10%);
 
 // Inverted navbar links
 $navbar-inverse-link-color:                 $sphinxcon-brown;
-$navbar-inverse-link-hover-color:           lighten($navbar-inverse-link-color, 15%);
-$navbar-inverse-link-hover-bg:              transparent !default;
+$navbar-inverse-link-hover-color:           $sphinxcon-ltbrown; // lighten($navbar-inverse-link-color, 15%);
+$navbar-inverse-link-hover-bg:              transparent;
 $navbar-inverse-link-active-color:          $navbar-inverse-link-hover-color;
-$navbar-inverse-link-active-bg:             darken($navbar-inverse-bg, 6.5%);
-$navbar-inverse-link-disabled-color:        #444;
+$navbar-inverse-link-active-bg:             $navbar-inverse-link-hover-color; // darken($navbar-inverse-bg, 6.5%);
+$navbar-inverse-link-disabled-color:        lighten($navbar-inverse-link-color, 40%); // #444;
 $navbar-inverse-link-disabled-bg:           transparent;
 
 // Inverted navbar toggle
-$navbar-inverse-toggle-hover-color:         lighten($sphinxcon-brown, 15%);
+$navbar-inverse-toggle-hover-color:         $sphinxcon-ltbrown; // lighten($sphinxcon-brown, 15%);
 $navbar-inverse-toggle-hover-bg:            transparent;
 $navbar-inverse-toggle-icon-color:          $sphinxcon-brown;
 $navbar-inverse-toggle-icon-bar-bg:         $sphinxcon-brown;

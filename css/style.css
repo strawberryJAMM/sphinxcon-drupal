@@ -4082,7 +4082,7 @@ tbody.collapse.in {
       margin-right: 0; } }
 .navbar-default {
   background-color: #1d0702;
-  border-color: black; }
+  border-color: #8c3c26; }
   .navbar-default .navbar-brand {
     color: #faaf40; }
     .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
@@ -4093,13 +4093,13 @@ tbody.collapse.in {
   .navbar-default .navbar-nav > li > a {
     color: #faaf40; }
     .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-      color: #e78d06;
+      color: #cc2802;
       background-color: transparent; }
   .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-    color: #e78d06;
-    background-color: black; }
+    color: #faaf40;
+    background-color: #cc2802; }
   .navbar-default .navbar-nav > .disabled > a, .navbar-default .navbar-nav > .disabled > a:hover, .navbar-default .navbar-nav > .disabled > a:focus {
-    color: #ccc;
+    color: white;
     background-color: transparent; }
   .navbar-default .navbar-toggle {
     border-color: transparent; }
@@ -4109,36 +4109,36 @@ tbody.collapse.in {
       background-color: #faaf40; }
   .navbar-default .navbar-collapse,
   .navbar-default .navbar-form {
-    border-color: black; }
+    border-color: #8c3c26; }
   .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-    background-color: black;
-    color: #e78d06; }
+    background-color: #cc2802;
+    color: #faaf40; }
   @media (max-width: 767px) {
     .navbar-default .navbar-nav .open .dropdown-menu > li > a {
       color: #faaf40; }
       .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-        color: #e78d06;
+        color: #cc2802;
         background-color: transparent; }
     .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-      color: #e78d06;
-      background-color: black; }
+      color: #faaf40;
+      background-color: #cc2802; }
     .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {
-      color: #ccc;
+      color: white;
       background-color: transparent; } }
   .navbar-default .navbar-link {
     color: #faaf40; }
     .navbar-default .navbar-link:hover {
-      color: #e78d06; }
+      color: #cc2802; }
   .navbar-default .btn-link {
     color: #faaf40; }
     .navbar-default .btn-link:hover, .navbar-default .btn-link:focus {
-      color: #e78d06; }
+      color: #cc2802; }
     .navbar-default .btn-link[disabled]:hover, .navbar-default .btn-link[disabled]:focus, fieldset[disabled] .navbar-default .btn-link:hover, fieldset[disabled] .navbar-default .btn-link:focus {
-      color: #ccc; }
+      color: white; }
 
 .navbar-inverse {
-  background-color: #faaf40;
-  border-color: #f99a0e; }
+  background-color: #cc2802;
+  border-color: #faaf40; }
   .navbar-inverse .navbar-brand {
     color: #1d0702; }
     .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
@@ -4149,13 +4149,13 @@ tbody.collapse.in {
   .navbar-inverse .navbar-nav > li > a {
     color: #1d0702; }
     .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
-      color: #651807;
+      color: #8c3c26;
       background-color: transparent; }
   .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
-    color: #651807;
-    background-color: #f9a120; }
+    color: #8c3c26;
+    background-color: #8c3c26; }
   .navbar-inverse .navbar-nav > .disabled > a, .navbar-inverse .navbar-nav > .disabled > a:hover, .navbar-inverse .navbar-nav > .disabled > a:focus {
-    color: #444;
+    color: #dc350f;
     background-color: transparent; }
   .navbar-inverse .navbar-toggle {
     border-color: transparent; }
@@ -4165,36 +4165,36 @@ tbody.collapse.in {
       background-color: #1d0702; }
   .navbar-inverse .navbar-collapse,
   .navbar-inverse .navbar-form {
-    border-color: #f9a01d; }
+    border-color: #a92102; }
   .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
-    background-color: #f9a120;
-    color: #651807; }
+    background-color: #8c3c26;
+    color: #8c3c26; }
   @media (max-width: 767px) {
     .navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header {
-      border-color: #f99a0e; }
+      border-color: #faaf40; }
     .navbar-inverse .navbar-nav .open .dropdown-menu .divider {
-      background-color: #f99a0e; }
+      background-color: #faaf40; }
     .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
       color: #1d0702; }
       .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
-        color: #651807;
+        color: #8c3c26;
         background-color: transparent; }
     .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus {
-      color: #651807;
-      background-color: #f9a120; }
+      color: #8c3c26;
+      background-color: #8c3c26; }
     .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:focus {
-      color: #444;
+      color: #dc350f;
       background-color: transparent; } }
   .navbar-inverse .navbar-link {
     color: #1d0702; }
     .navbar-inverse .navbar-link:hover {
-      color: #651807; }
+      color: #8c3c26; }
   .navbar-inverse .btn-link {
     color: #1d0702; }
     .navbar-inverse .btn-link:hover, .navbar-inverse .btn-link:focus {
-      color: #651807; }
+      color: #8c3c26; }
     .navbar-inverse .btn-link[disabled]:hover, .navbar-inverse .btn-link[disabled]:focus, fieldset[disabled] .navbar-inverse .btn-link:hover, fieldset[disabled] .navbar-inverse .btn-link:focus {
-      color: #444; }
+      color: #dc350f; }
 
 .breadcrumb {
   padding: 8px 15px;
@@ -6484,14 +6484,42 @@ html,
 body {
   height: 100%; }
 
-body {
+body.navbar-is-static-top {
+  margin-top: 0; }
+body.navbar-is-fixed-top {
+  margin-top: 0;
   padding-top: 50px; }
-  @media (min-width: 768px) {
-    body {
-      padding-top: 130px; } }
-  @media (min-width: 992px) {
-    body {
-      padding-top: 155px; } }
+  body.navbar-is-fixed-top.toolbar-fixed {
+    padding-top: 89px; }
+    body.navbar-is-fixed-top.toolbar-fixed.toolbar-horizontal.toolbar-tray-open {
+      padding-top: 129px; }
+  @media screen and (min-width: 768px) {
+    body.navbar-is-fixed-top {
+      margin-top: 0;
+      padding-top: 130px; }
+      body.navbar-is-fixed-top.toolbar-fixed {
+        padding-top: 169px; }
+        body.navbar-is-fixed-top.toolbar-fixed.toolbar-horizontal.toolbar-tray-open {
+          padding-top: 209px; } }
+  @media screen and (min-width: 992px) {
+    body.navbar-is-fixed-top {
+      margin-top: 0;
+      padding-top: 155px; }
+      body.navbar-is-fixed-top.toolbar-fixed {
+        padding-top: 194px; }
+        body.navbar-is-fixed-top.toolbar-fixed.toolbar-horizontal.toolbar-tray-open {
+          padding-top: 234px; } }
+body.navbar-is-fixed-bottom {
+  padding-bottom: 50px; }
+  @media screen and (min-width: 768px) {
+    body.navbar-is-fixed-bottom {
+      padding-bottom: 130px; } }
+  @media screen and (min-width: 992px) {
+    body.navbar-is-fixed-bottom {
+      padding-bottom: 155px; } }
+@media screen and (min-width: 768px) {
+  body {
+    margin-top: 0; } }
 
 /* layout.css
 
@@ -6500,19 +6528,57 @@ body {
   widths, heights, alignment, margins, padding
 
  */
+body.navbar-is-static-top {
+  margin-top: 0; }
+body.navbar-is-fixed-top {
+  margin-top: 0;
+  padding-top: 50px; }
+  body.navbar-is-fixed-top.toolbar-fixed {
+    padding-top: 89px; }
+    body.navbar-is-fixed-top.toolbar-fixed.toolbar-horizontal.toolbar-tray-open {
+      padding-top: 129px; }
+  @media screen and (min-width: 768px) {
+    body.navbar-is-fixed-top {
+      margin-top: 0;
+      padding-top: 130px; }
+      body.navbar-is-fixed-top.toolbar-fixed {
+        padding-top: 169px; }
+        body.navbar-is-fixed-top.toolbar-fixed.toolbar-horizontal.toolbar-tray-open {
+          padding-top: 209px; } }
+  @media screen and (min-width: 992px) {
+    body.navbar-is-fixed-top {
+      margin-top: 0;
+      padding-top: 155px; }
+      body.navbar-is-fixed-top.toolbar-fixed {
+        padding-top: 194px; }
+        body.navbar-is-fixed-top.toolbar-fixed.toolbar-horizontal.toolbar-tray-open {
+          padding-top: 234px; } }
+body.navbar-is-fixed-bottom {
+  padding-bottom: 50px; }
+  @media screen and (min-width: 768px) {
+    body.navbar-is-fixed-bottom {
+      padding-bottom: 130px; } }
+  @media screen and (min-width: 992px) {
+    body.navbar-is-fixed-bottom {
+      padding-bottom: 155px; } }
+@media screen and (min-width: 768px) {
+  body {
+    margin-top: 0; } }
+
 .navbar {
-  height: 50px; }
-  @media (min-width: 768px) {
+  height: 50px;
+  margin-bottom: 0px; }
+  @media screen and (min-width: 768px) {
     .navbar {
       height: 130px; } }
-  @media (min-width: 992px) {
+  @media screen and (min-width: 992px) {
     .navbar {
       height: 155px; } }
 
 .navbar-header {
   white-space: nowrap;
   overflow: hidden; }
-  @media (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     .navbar-header {
       float: none; } }
 
@@ -6524,7 +6590,7 @@ body {
     .navbar-fixed-bottom .navbar-collapse {
       max-height: 90px; } }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .container > .navbar-header,
   .container > .navbar-collapse,
   .container-fluid > .navbar-header,
@@ -6539,18 +6605,18 @@ body {
   padding: 0;
   height: 50px;
   width: 440.2173913043px; }
-  @media (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     .navbar .navbar-btn.logo,
     .navbar .navbar-btn.logo > img {
       display: block;
       margin-left: auto;
       margin-right: auto; } }
-  @media (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     .navbar .navbar-btn.logo,
     .navbar .navbar-btn.logo > img {
       height: 85px;
       width: 748.3695652174px; } }
-  @media (min-width: 992px) {
+  @media screen and (min-width: 992px) {
     .navbar .navbar-btn.logo,
     .navbar .navbar-btn.logo > img {
       height: 110px;
@@ -6567,7 +6633,7 @@ body {
   .navbar-toggle .glyphicon {
     font-size: 20px; }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .navbar-center {
     float: none;
     text-align: center; }
@@ -6588,18 +6654,18 @@ body {
   text-transform: uppercase; }
 
 .navbar-default .navbar-toggle .icon-bar:hover, .navbar-default .navbar-toggle .icon-bar:focus {
-  background-color: #e78d06; }
+  background-color: #cc2802; }
 .navbar-default .navbar-toggle .glyphicon {
   color: #faaf40; }
   .navbar-default .navbar-toggle .glyphicon:hover, .navbar-default .navbar-toggle .glyphicon:focus {
-    color: #e78d06; }
+    color: #cc2802; }
 
 .navbar-inverse .navbar-toggle .icon-bar:hover, .navbar-inverse .navbar-toggle .icon-bar:focus {
-  background-color: #651807; }
+  background-color: #8c3c26; }
 .navbar-inverse .navbar-toggle .glyphicon {
   color: #1d0702; }
   .navbar-inverse .navbar-toggle .glyphicon:hover, .navbar-inverse .navbar-toggle .glyphicon:focus {
-    color: #651807; }
+    color: #8c3c26; }
 
 .bg-picketwood {
   background-image: url(../images/SequioaRedwoodTreeBark.jpg);
@@ -6608,10 +6674,10 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center 50px; }
-  @media (min-width: 768px) {
+  @media screen and (min-width: 768px) {
     .bg-picketwood {
       background-position: center 130px; } }
-  @media (min-width: 992px) {
+  @media screen and (min-width: 992px) {
     .bg-picketwood {
       background-position: center 155px; } }
 
