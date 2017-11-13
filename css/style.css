@@ -6484,43 +6484,6 @@ html,
 body {
   height: 100%; }
 
-body.navbar-is-static-top {
-  margin-top: 0; }
-body.navbar-is-fixed-top {
-  margin-top: 0;
-  padding-top: 50px; }
-  body.navbar-is-fixed-top.toolbar-fixed {
-    padding-top: 89px; }
-    body.navbar-is-fixed-top.toolbar-fixed.toolbar-horizontal.toolbar-tray-open {
-      padding-top: 129px; }
-  @media screen and (min-width: 768px) {
-    body.navbar-is-fixed-top {
-      margin-top: 0;
-      padding-top: 130px; }
-      body.navbar-is-fixed-top.toolbar-fixed {
-        padding-top: 169px; }
-        body.navbar-is-fixed-top.toolbar-fixed.toolbar-horizontal.toolbar-tray-open {
-          padding-top: 209px; } }
-  @media screen and (min-width: 992px) {
-    body.navbar-is-fixed-top {
-      margin-top: 0;
-      padding-top: 155px; }
-      body.navbar-is-fixed-top.toolbar-fixed {
-        padding-top: 194px; }
-        body.navbar-is-fixed-top.toolbar-fixed.toolbar-horizontal.toolbar-tray-open {
-          padding-top: 234px; } }
-body.navbar-is-fixed-bottom {
-  padding-bottom: 50px; }
-  @media screen and (min-width: 768px) {
-    body.navbar-is-fixed-bottom {
-      padding-bottom: 130px; } }
-  @media screen and (min-width: 992px) {
-    body.navbar-is-fixed-bottom {
-      padding-bottom: 155px; } }
-@media screen and (min-width: 768px) {
-  body {
-    margin-top: 0; } }
-
 /* layout.css
 
   LAYOUT RULES divide the page into major sections such as Header, Footer, 
@@ -6532,27 +6495,27 @@ body.navbar-is-static-top {
   margin-top: 0; }
 body.navbar-is-fixed-top {
   margin-top: 0;
-  padding-top: 50px; }
+  padding-top: 50px !important; }
   body.navbar-is-fixed-top.toolbar-fixed {
-    padding-top: 89px; }
+    padding-top: 89px !important; }
     body.navbar-is-fixed-top.toolbar-fixed.toolbar-horizontal.toolbar-tray-open {
-      padding-top: 129px; }
+      padding-top: 129px !important; }
   @media screen and (min-width: 768px) {
     body.navbar-is-fixed-top {
       margin-top: 0;
-      padding-top: 130px; }
+      padding-top: 130px !important; }
       body.navbar-is-fixed-top.toolbar-fixed {
-        padding-top: 169px; }
+        padding-top: 169px !important; }
         body.navbar-is-fixed-top.toolbar-fixed.toolbar-horizontal.toolbar-tray-open {
-          padding-top: 209px; } }
+          padding-top: 209px !important; } }
   @media screen and (min-width: 992px) {
     body.navbar-is-fixed-top {
       margin-top: 0;
-      padding-top: 155px; }
+      padding-top: 155px !important; }
       body.navbar-is-fixed-top.toolbar-fixed {
-        padding-top: 194px; }
+        padding-top: 194px !important; }
         body.navbar-is-fixed-top.toolbar-fixed.toolbar-horizontal.toolbar-tray-open {
-          padding-top: 234px; } }
+          padding-top: 234px !important; } }
 body.navbar-is-fixed-bottom {
   padding-bottom: 50px; }
   @media screen and (min-width: 768px) {

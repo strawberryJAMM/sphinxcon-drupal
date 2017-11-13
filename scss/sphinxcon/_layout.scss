@@ -15,32 +15,32 @@ body {
   }
   &.navbar-is-fixed-top {
     margin-top: 0;
-    padding-top: $navbar-height;
+    padding-top: $navbar-height !important;
     &.toolbar-fixed {
-      padding-top: $navbar-height + $toolbar-fixed-default-height;
+      padding-top: $navbar-height + $toolbar-fixed-default-height !important;
       &.toolbar-horizontal.toolbar-tray-open {
-        padding-top: $navbar-height + $toolbar-fixed-hrz-open-height;
+        padding-top: $navbar-height + $toolbar-fixed-hrz-open-height !important;
       }
     }
     
     @media #{$tablet} {
       margin-top: 0;
-      padding-top: $navbar-height-sm;
+      padding-top: $navbar-height-sm !important;
       &.toolbar-fixed {
-        padding-top: $navbar-height-sm + $toolbar-fixed-default-height;
+        padding-top: $navbar-height-sm + $toolbar-fixed-default-height !important;
         &.toolbar-horizontal.toolbar-tray-open {
-          padding-top: $navbar-height-sm + $toolbar-fixed-hrz-open-height;
+          padding-top: $navbar-height-sm + $toolbar-fixed-hrz-open-height !important;
         }
       }
     }
 
     @media #{$normal} {
       margin-top: 0;
-      padding-top: $navbar-height-md;
+      padding-top: $navbar-height-md !important;
       &.toolbar-fixed {
-        padding-top: $navbar-height-md + $toolbar-fixed-default-height;
+        padding-top: $navbar-height-md + $toolbar-fixed-default-height !important;
         &.toolbar-horizontal.toolbar-tray-open {
-          padding-top: $navbar-height-md + $toolbar-fixed-hrz-open-height;
+          padding-top: $navbar-height-md + $toolbar-fixed-hrz-open-height !important;
         }
       }
     }
