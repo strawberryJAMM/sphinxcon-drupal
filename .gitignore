@@ -2,7 +2,9 @@
 *.tar
 *.zip
 .sass-cache/
-*.css.map
 _notes/
 /node_modules/
-/templates/bootstrap/
+templates/bootstrap/
+templates/bootstrap/**
+font-awesome/
+font-awesome.*
