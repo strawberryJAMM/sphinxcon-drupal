@@ -7,11 +7,20 @@ module.exports = function(grunt) {
     
     // Watch the stylesheets created from the project SASS files so PostCSS processing is automatic
     watch: {
-      sass:{
+      'sass-dist':{
         files: ['scss/**/*.scss', 'bootstrap/assets/stylesheets/**/*.scss'],
-        tasks: ['sass', 'postcss'],
+        tasks: ['sass:dist', 'postcss:dist'],
         options: {
           event: ['added','changed'],
+        },
+      },
+      'sass-dev':{
+        files: ['scss/**/*.scss', 'bootstrap/assets/stylesheets/**/*.scss', '!scss/font-awesome/**/*.scss'],
+        tasks: ['sass:dev', 'postcss:dev'],
+        options: {
+          event: ['added','changed'],
+          spawn: false,
+          interrupt: true,
         },
       },
       js:{
@@ -23,18 +32,48 @@ module.exports = function(grunt) {
       },
     },
     
+    // Concurrent Watch Tasks
+    concurrent: {
+      options: {
+        logConcurrentOutput: true,
+      },
+      dist: {
+        tasks: ["watch:sass-dist", "watch:js"],
+      },
+      dev: {
+        tasks: ["watch:sass-dev", "watch:js"],
+      }
+    },
+    
     // Compile SASS files to CSS
     sass: {
       dist: {
         options: {                 
-          style: 'nested',
+          style: 'compressed',
+        },
+        files: {
+          'css/style.css' : 'scss/style.scss',
+          'css/font-awesome.css' : 'scss/font-awesome/font-awesome.scss',
+        },
+      },
+      dev: {
+        options: {                 
+          style: 'expanded',
         },
         files: {
           'css/style.css' : 'scss/style.scss',
         },
       },
+      'font-awesome': {
+        options: {                 
+          style: 'compressed',
+        },
+        files: {
+          'css/font-awesome.css' : 'scss/font-awesome/font-awesome.scss',
+        },
+      },
     },
-     
+    
     // Minify JS files
     uglify:{
       options: {
@@ -49,7 +88,7 @@ module.exports = function(grunt) {
         sourceMap: true,          // Generate source map file
       },
       
-      dist:{
+      target:{
         files: {
           'js/main.min.js' : ['js/*.js','!js/main.min.js']
         },
@@ -83,6 +122,30 @@ module.exports = function(grunt) {
           },
         ],
       },
+      dev: {
+        files: [
+          {
+            expand: true,      // enable dynamic expansion
+            cwd: 'css/',       // Src matches are relative to this path
+            src: 'style.css',  // style.css file
+            dest: 'css/',      // Destination path prefix
+            ext: '.min.css',   // Destination file paths will have this extension
+            extDot: 'first',   // Extensions in filenames begin after the first dot
+          },
+        ],
+      },
+      'font-awesome': {
+        files: [
+          {
+            expand: true,      // enable dynamic expansion
+            cwd: 'css/',       // Src matches are relative to this path
+            src: 'font-awesome.css', // font-awesome.css file
+            dest: 'css/',      // Destination path prefix
+            ext: '.min.css',   // Destination file paths will have this extension
+            extDot: 'first',   // Extensions in filenames begin after the first dot
+          },
+        ],
+      },
     },
 
     // Create archive for theme upload
@@ -110,6 +173,9 @@ module.exports = function(grunt) {
   // "watch" task.
   grunt.loadNpmTasks('grunt-contrib-watch');
   
+  // "concurrent" task.
+  grunt.loadNpmTasks('grunt-concurrent');
+  
   // "sass" task.
   grunt.loadNpmTasks('grunt-contrib-sass');
  
@@ -123,6 +189,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-git-archive');
   
   // register tasks
-  grunt.registerTask('default', ['watch']);
-  grunt.registerTask('post', ['uglify', 'postcss']);
+  grunt.registerTask('default', ['concurrent:dev']);
+  grunt.registerTask('dist', ['concurrent:dist']);
+  grunt.registerTask('post-dist', ['uglify:target', 'postcss:dist']);
+  grunt.registerTask('post-dev', ['uglify:target', 'postcss:dev']);
+  grunt.registerTask('font-awesome', ['sass:font-awesome', 'postcss:font-awesome']);
+  grunt.registerTask('archive', ['git-archive'])
 };

@@ -1,6 +1,5 @@
 {
   "name": "sphinxcon",
-  "version": "8.x-0.2",
   "description": "TRMN 2018 SphinxCon Drupal Theme",
   "main": "index.html",
   "scripts": {
@@ -34,6 +33,7 @@
   "devDependencies": {
     "cssnano-preset-default": "^4.0.0-rc.2",
     "grunt-cli": "^1.2.0",
+    "grunt-concurrent": "^2.3.1",
     "grunt-contrib-compass": "^1.1.1",
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-uglify": "^3.1.0",
