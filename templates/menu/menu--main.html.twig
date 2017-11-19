@@ -39,15 +39,15 @@
           item.in_active_trail ? 'active',
         ]
       %}
+      <li{{ item.attributes.addClass(item_classes) }}>
       {% if menu_level == 0 and item.is_expanded %}
-        <li{{ item.attributes.addClass(item_classes) }}>
-        <a href="{{ item.url }}" class="dropdown-toggle" data-target="#" data-toggle="dropdown">{{ item.title }} <span class="caret"></span></a>
+        {% set btn_id = item.attributes.id ~ '-btn'|clean_id %}
+        <a href="{{ item.url }}" class="dropdown-toggle" data-target="#" id="btn_id" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ item.title }} <span class="caret"></span></a>
       {% else %}
-        <li{{ item.attributes.addClass(item_classes) }}>
         {{ link(item.title, item.url) }}
       {% endif %}
       {% if item.below %}
-        {{ menus.menu_links(item.below, attributes.removeClass('nav', 'navbar-nav', 'navbar-center'), menu_level + 1) }}
+        {{ menus.menu_links(item.below, attributes.removeClass('nav', 'navbar-nav', 'navbar-center').addAttribute('aria-labelledby', btn_id), menu_level + 1) }}
       {% endif %}
       </li>
     {% endfor %}
