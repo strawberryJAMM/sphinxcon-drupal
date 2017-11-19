@@ -8,15 +8,23 @@ description: 'Theme for TRMN''s 2018 SphinxCon event. Based on the Drupal 8 Boot
 package: 'TRMN'
 
 regions:
+  # navigation and location regions
   navigation: 'Navigation'
   navigation_collapsible: 'Navigation (Collapsible)'
   header: 'Top Bar'
-  highlighted: 'Highlighted'
-  help: 'Help'
-  content: 'Content'
-  sidebar_first: 'Primary'
-  sidebar_second: 'Secondary'
-  footer: 'Footer'
+  # featured item regions
+  featured: 'Featured'                          # For content that should be displayed prominently (featured guests, carousel, etc)
+  # Content regions
+  highlighted: 'Highlighted'                    # For status messages.
+  help: 'Help'                                  # For help text, usually only used by Admin pages
+  content: 'Content'                            # For main node content
+  sidebar: 'Sidebar'                            # For use on pages that are not <front>
+  footer_top: 'Top Footer'                      # For footer content at the top 
+  footer_middle_left: 'Left Middle Footer'      # For footer content in the middle on the left
+  footer_middle_center: 'Center Middle Footer'  # For footer content in the middle in the center
+  footer_middle_right: 'Right Middle Footer'    # For footer content in the middle on the right
+  footer_bottom: 'Bottom Footer'                # For footer content at the bottom
+  # Required hidden regions
   page_top: 'Page top'
   page_bottom: 'Page bottom'
 

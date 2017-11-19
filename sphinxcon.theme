@@ -5,3 +5,9 @@
  *
  * Place your custom PHP code in this file.
  */
+
+function sphinxcon_theme_suggestions_block_alter(&$suggestions, $variables) {
+  foreach ($suggestions as &$suggestion) {
+    $suggestion = str_replace('sphinxcon_', 'bootstrap_', $suggestion);
+  }
+}
