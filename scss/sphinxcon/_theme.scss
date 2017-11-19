@@ -4,60 +4,7 @@
 
  */
 
-//== NAVIGATION
-//
-// Set the font family, weigh, size, etc. for navigation items
-.navbar-nav {
-  > li > a {
-    font-family: $headings-font-family;
-    font-weight: $headings-font-weight;
-    font-size:   $nav-font-size-base;
-    line-height: $nav-line-height-computed;
-    text-transform: uppercase;
-  }
-}
-
-//
-// Default navbar toggle colours
-.navbar-default {
- .navbar-toggle {
-   .icon-bar {
-     &:hover,
-     &:focus {
-       background-color: $navbar-default-toggle-hover-color;
-     }
-   }
-   .glyphicon {
-      color: $navbar-default-toggle-icon-color;
-      &:hover,
-      &:focus {
-        color: $navbar-default-toggle-hover-color;
-      }
-    }
-  }
-}
-
-//
-// Inverse navbar toggle colours
-.navbar-inverse {
-  .navbar-toggle {
-   .icon-bar {
-     &:hover,
-     &:focus {
-       background-color: $navbar-inverse-toggle-hover-color;
-     }
-   }
-    .glyphicon {
-      color: $navbar-inverse-toggle-icon-color;
-      &:hover,
-      &:focus {
-        color: $navbar-inverse-toggle-hover-color;
-      }
-    }
-  }
-}
-
-//== BACKGROUND
+//== BACKGROUND Image
 //
 .bg-picketwood {
   // the "picketwood" tree image
@@ -80,4 +27,101 @@
     background-position: center $navbar-height-md;
   }
 }
+
+//== Main NAVIGATION
+//
+// ## Font & Text settings
+.navbar-header .navbar-nav,
+.navbar-collapse .navbar-nav {
+  > li > a {
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
+    font-size:   $nav-font-size-base;
+    line-height: $nav-line-height-computed;
+    text-transform: uppercase;
+  }
+}
+
+//
+// ## Default navbar colours
+.navbar-default {
+  .navbar-header,
+  .navbar-collapse {
+    background-color: $navbar-default-bg;
+  }
+  
+  .navbar-toggle {
+    .icon-bar {
+      background-color: $navbar-default-toggle-icon-bar-bg;
+      &:hover,
+      &:focus {
+        background-color: $navbar-default-toggle-hover-color;
+      }
+    }
+
+    // If toggle uses an icon instead of div-bars
+    .glyphicon,
+    .fa {
+      color: $navbar-default-toggle-icon-color;
+      &:hover,
+      &:focus {
+        color: $navbar-default-toggle-hover-color;
+      }
+    }
+  }
+    
+  .navbar-collapse,
+  .navbar-form {
+    border-color: $navbar-default-border;
+  }
+}
+
+//
+// ## Inverse navbar colours
+.navbar-inverse {
+  .navbar-header,
+  .navbar-collapse {
+    background-color: $navbar-inverse-bg;
+  }
+
+  .navbar-toggle {
+    .icon-bar {
+      background-color: $navbar-inverse-toggle-icon-bar-bg;
+      &:hover,
+      &:focus {
+        background-color: $navbar-inverse-toggle-hover-color;
+      }
+    }
+
+    // If toggle uses an icon instead of div-bars
+    .glyphicon,
+    .fa {
+      color: $navbar-inverse-toggle-icon-color;
+      &:hover,
+      &:focus {
+        color: $navbar-inverse-toggle-hover-color;
+      }
+    }
+  }
+
+  .navbar-collapse,
+  .navbar-form {
+    border-color: $navbar-inverse-border;
+  }
+}
+
+//== Background of footer content section (where most information is placed)
+//
+.footer {
+  background-color: $body-bg;
+  border: $footer-border-width solid $sphinxcon-redorange;
+  border-bottom-width: 0;
+  border-radius: 6px 6px 0 0;
+ 
+  // Not sure why this is needed, since the bottom border width is 0px 
+  // but without it, a small gap appears  between the bottom of the footer 
+  // and the bottom of the page when scrolled as far as possible
+  margin-bottom: -$footer-border-width; 
+}
+
 

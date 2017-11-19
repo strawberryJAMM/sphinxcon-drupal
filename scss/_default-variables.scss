@@ -53,9 +53,10 @@ $logo-image-width-md:        $logo-image-height-md * $logo-image-w-over-h-aspect
 
 //
 //## SphinxCon Theme Specific Colours
-$sphinxcon-brown:      #1d0702; // #1f0e0b; // #1d0702;
-$sphinxcon-ltbrown:    #8c3c26; // #6c3127;
-$sphinxcon-redorange:  #cc2802; // #ac4e3d;
+$sphinxcon-brown:      #1d0702;
+$sphinxcon-mdbrown:    #3C2621;
+$sphinxcon-ltbrown:    #8c3c26; 
+$sphinxcon-redorange:  #a7280c; //#cc2802; 
 $sphinxcon-orange:     #faaf40;
 $sphinxcon-green:      #7bbe47;
 $white:                #fff;
@@ -64,23 +65,22 @@ $white:                #fff;
 //== Colors
 //
 //## Sphinxcon brand colors 
-$brand-primary:        $sphinxcon-orange;
-$brand-secondary:      $sphinxcon-green;
+$brand-primary:        $sphinxcon-green;
+$brand-secondary:      $sphinxcon-orange;
 
 
 //== Scaffolding
 //
 //## Overridden settings for some of the most global styles.
-
 //** Background color for `<body>`.
-$body-bg:               $sphinxcon-brown;
+$body-bg:               $sphinxcon-mdbrown;
 //** Global text color on `<body>`.
 $text-color:            $white;
+
 
 //== Typography
 //
 //## body text, headings, and more.
-
 $trmn-base-font-family:            "#{$trmn-base-font-name}", Arial, "Helvetica Neue", Helvetica, sans-serif;
 $trmn-headings-font-family:        "#{$trmn-headings-font-name}", Verdana, Arial, "Helvetica Neue", Helvetica, sans-serif;
 $trmn-headings-font-family-narrow: "#{$trmn-headings-font-boldnarrow}", Haettenschweiler, "Arial Narrow Bold", "Verdana Bold", Verdana, Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -92,7 +92,7 @@ $font-family-base:        $trmn-base-font-family;
 
 $headings-font-family:    $trmn-headings-font-family;
 $headings-font-weight:    900;
-$headings-color:          $sphinxcon-green;
+$headings-color:          $brand-secondary;
 
 //
 // ## Base, Small and Large font-sizes
@@ -110,62 +110,72 @@ $nav-line-height-base:       1.388888889; // 25/18
 $nav-line-height-computed:   floor(($nav-font-size-base * $nav-line-height-base)); // ~25px
 
 //
-// ## Navbar height related valures
+// ## Navbar height related values
 $navbar-padding-vertical:    10px;
 $navbar-collapse-height:     $nav-line-height-computed + (2 * $navbar-padding-vertical);
-$navbar-collapse-max-height: $navbar-collapse-height * 2; // (in case menu has to wrap for some reason)
+$navbar-margin-bottom:       20px; // gap to show background through
+//$navbar-collapse-max-height: 340px; // for vertical menu
 
 //
 // ## Set specific menu heights based on screen size
-// Thes will also be used for body top padding
+// These will also be used for body top and bottom padding when navbar is fixed
 $navbar-height:              $logo-image-height;
 $navbar-height-sm:           $logo-image-height-sm + $navbar-collapse-height;
 $navbar-height-md:           $logo-image-height-md + $navbar-collapse-height;
+$navbar-border-width:        2px;
+//
+// ## Set a minimum width for collapsed menus 
+$navbar-collapse-min-width:        200px;
 
 //
 // Navbar default colors
 $navbar-default-color:             $sphinxcon-orange;
-$navbar-default-bg:                $sphinxcon-brown;
-$navbar-default-border:            $sphinxcon-ltbrown; // darken($navbar-default-bg, 10%);
+$navbar-default-bg:                $sphinxcon-mdbrown;
+$navbar-default-border:            $sphinxcon-redorange; 
 
 // Navbar links
 $navbar-default-link-color:                $sphinxcon-orange;
-$navbar-default-link-hover-color:          $sphinxcon-redorange; // darken($navbar-default-link-color, 15%);
+$navbar-default-link-hover-color:          $navbar-default-border;
 $navbar-default-link-hover-bg:             transparent;
 $navbar-default-link-active-color:         $navbar-default-link-color;
-$navbar-default-link-active-bg:            $navbar-default-link-hover-color; //darken($navbar-default-bg, 10%);
-$navbar-default-link-disabled-color:       lighten($navbar-default-link-color, 40%); // #ccc;
+$navbar-default-link-active-bg:            $navbar-default-link-hover-color; 
+$navbar-default-link-disabled-color:       #76605b;
 $navbar-default-link-disabled-bg:          transparent;
 
 // Navbar toggle
-$navbar-default-toggle-hover-color:        $sphinxcon-redorange; // darken($sphinxcon-orange, 15%);
+$navbar-default-toggle-hover-color:        $navbar-default-link-hover-color; 
 $navbar-default-toggle-hover-bg:           transparent;
-$navbar-default-toggle-icon-color:         $sphinxcon-orange;
-$navbar-default-toggle-icon-bar-bg:        $sphinxcon-orange;
+$navbar-default-toggle-icon-bar-bg:        $navbar-default-link-color;
+$navbar-default-toggle-icon-color:         $navbar-default-toggle-icon-bar-bg;
 $navbar-default-toggle-border-color:       transparent;
 
 
 //=== Inverted navbar
 // Reset inverted navbar basics
 $navbar-inverse-color:                      $sphinxcon-brown;
-$navbar-inverse-bg:                         $sphinxcon-redorange;
-$navbar-inverse-border:                     $sphinxcon-orange; // darken($navbar-inverse-bg, 10%);
+$navbar-inverse-bg:                         $sphinxcon-ltbrown;
+$navbar-inverse-border:                     $sphinxcon-orange; 
 
 // Inverted navbar links
 $navbar-inverse-link-color:                 $sphinxcon-brown;
-$navbar-inverse-link-hover-color:           $sphinxcon-ltbrown; // lighten($navbar-inverse-link-color, 15%);
+$navbar-inverse-link-hover-color:           $navbar-inverse-border;
 $navbar-inverse-link-hover-bg:              transparent;
-$navbar-inverse-link-active-color:          $navbar-inverse-link-hover-color;
-$navbar-inverse-link-active-bg:             $navbar-inverse-link-hover-color; // darken($navbar-inverse-bg, 6.5%);
-$navbar-inverse-link-disabled-color:        lighten($navbar-inverse-link-color, 40%); // #444;
+$navbar-inverse-link-active-color:          $sphinxcon-redorange;
+$navbar-inverse-link-active-bg:             $navbar-inverse-link-hover-color; 
+$navbar-inverse-link-disabled-color:        #70200a;
 $navbar-inverse-link-disabled-bg:           transparent;
 
 // Inverted navbar toggle
-$navbar-inverse-toggle-hover-color:         $sphinxcon-ltbrown; // lighten($sphinxcon-brown, 15%);
+$navbar-inverse-toggle-hover-color:         $navbar-inverse-link-hover-color;
 $navbar-inverse-toggle-hover-bg:            transparent;
-$navbar-inverse-toggle-icon-color:          $sphinxcon-brown;
-$navbar-inverse-toggle-icon-bar-bg:         $sphinxcon-brown;
+$navbar-inverse-toggle-icon-bar-bg:         $navbar-inverse-link-color;
+$navbar-inverse-toggle-icon-color:          $navbar-inverse-toggle-icon-bar-bg;
 $navbar-inverse-toggle-border-color:        transparent;
 
 
-
+//== Footer
+//
+// ## Set specific menu heights based on screen size
+// These will also be used for body top and bottom padding when navbar is fixed
+$footer-height:              200px;
+$footer-border-width:        2px;

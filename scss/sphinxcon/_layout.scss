@@ -13,48 +13,59 @@ body {
   &.navbar-is-static-top {
     margin-top: 0;
   }
+
+  /*
+   * NOTE: I hate, hate, HATE, having to use "!important" 
+   * HOWEVER, the fixed-top toolbar in drupal forces the body content to account for the height of the toolbar 
+   * by applying a style directly on the <body> tag, thereby overriding the changes below.
+   * 
+   * This also explains why the original bootstrap theme design uses MARGIN instead of PADDING to move content
+   * around, despite the fact that margin allows the viewer to scroll the screen even when there isn't enough 
+   * actual content to fill it.
+   * 
+   */
   &.navbar-is-fixed-top {
     margin-top: 0;
-    padding-top: $navbar-height !important;
+    padding-top: $navbar-height + $navbar-border-width + $navbar-margin-bottom !important;
     &.toolbar-fixed {
-      padding-top: $navbar-height + $toolbar-fixed-default-height !important;
+      padding-top: $navbar-height + $navbar-border-width + $toolbar-fixed-default-height + $navbar-margin-bottom !important;
       &.toolbar-horizontal.toolbar-tray-open {
-        padding-top: $navbar-height + $toolbar-fixed-hrz-open-height !important;
+        padding-top: $navbar-height + $navbar-border-width + $toolbar-fixed-hrz-open-height + $navbar-margin-bottom !important;
       }
     }
     
     @media #{$tablet} {
       margin-top: 0;
-      padding-top: $navbar-height-sm !important;
+      padding-top: $navbar-height-sm + $navbar-border-width + $navbar-margin-bottom !important;
       &.toolbar-fixed {
-        padding-top: $navbar-height-sm + $toolbar-fixed-default-height !important;
+        padding-top: $navbar-height-sm + $navbar-border-width + $toolbar-fixed-default-height + $navbar-margin-bottom !important;
         &.toolbar-horizontal.toolbar-tray-open {
-          padding-top: $navbar-height-sm + $toolbar-fixed-hrz-open-height !important;
+          padding-top: $navbar-height-sm + $navbar-border-width + $toolbar-fixed-hrz-open-height + $navbar-margin-bottom !important;
         }
       }
     }
 
     @media #{$normal} {
       margin-top: 0;
-      padding-top: $navbar-height-md !important;
+      padding-top: $navbar-height-md + $navbar-border-width + $navbar-margin-bottom !important;
       &.toolbar-fixed {
-        padding-top: $navbar-height-md + $toolbar-fixed-default-height !important;
+        padding-top: $navbar-height-md + $navbar-border-width + $toolbar-fixed-default-height + $navbar-margin-bottom !important;
         &.toolbar-horizontal.toolbar-tray-open {
-          padding-top: $navbar-height-md + $toolbar-fixed-hrz-open-height !important;
+          padding-top: $navbar-height-md + $navbar-border-width + $toolbar-fixed-hrz-open-height + $navbar-margin-bottom !important;
         }
       }
     }
   }
 
   &.navbar-is-fixed-bottom {
-    padding-bottom: $navbar-height;
+    padding-bottom: $navbar-height + $navbar-border-width;
 
     @media #{$tablet} {
-      padding-bottom: $navbar-height-sm;
+      padding-bottom: $navbar-height-sm + $navbar-border-width;
     }
 
     @media #{$normal} {
-      padding-bottom: $navbar-height-md;
+      padding-bottom: $navbar-height-md + $navbar-border-width;
     }
   }
 
@@ -66,15 +77,14 @@ body {
 //
 //== Navigation Bar
 .navbar {
-  height: $navbar-height;
-  margin-bottom: 0px;
+  height: $navbar-height + $navbar-border-width;
   
   @media #{$tablet} {
-    height: $navbar-height-sm;
+    height: $navbar-height-sm + $navbar-border-width;
   }
 
   @media #{$normal} {
-    height: $navbar-height-md;
+    height: $navbar-height-md + $navbar-border-width;
   }
 }
 
@@ -101,6 +111,15 @@ body {
   }
 }
 
+.navbar-fixed-top,
+.navbar-static-top {
+  border-width: 0 0 $navbar-border-width;
+}
+
+.navbar-fixed-bottom {
+  border-width: $navbar-border-width 0 0;
+}
+
 .container,
 .container-fluid {
   > .navbar-header,
@@ -110,6 +129,29 @@ body {
       margin-right: -$navbar-padding-horizontal;
       margin-left:  -$navbar-padding-horizontal;
     }
+  }
+}
+
+//
+// Collapsed Navigation
+.navbar-collapse {
+  // set border width on right and bottom
+  border-width: 0 $navbar-border-width $navbar-border-width 0;
+  border-style: solid;
+  box-shadow: inset 0 1px 0 rgba(0,0,0,.1);
+  
+  // Set collapsible navigation to a minimum width or fit to content within available space
+  width: fit-content;
+  min-width: $navbar-collapse-min-width;
+  
+  @media #{$grid-breakpoint} {
+    // clear all borders when above grid breakpoint
+    border: 0px;
+    box-shadow: none;
+    
+    // reset width and min-width above the grid breakpoint
+    width: auto;
+    min-width: unset;
   }
 }
 
@@ -156,8 +198,9 @@ body {
   @include sc-navbar-vertical-align($navbar-height, 20px);
   
   // Set up font size to use a glyphicon for the menu trigger
-  .glyphicon {
-    font-size: 20px;
+  .glyphicon,
+  .fa {
+    font-size: $font-size-large; // 20px;
   }
 }
 
@@ -172,6 +215,12 @@ body {
       display: inline-block;
     }
   }
+}
+
+
+.main-container {
+  padding-top:     $grid-gutter-width/2;
+  padding-bottom:  $grid-gutter-width + $footer-height;
 }
 
 
