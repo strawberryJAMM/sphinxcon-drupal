@@ -1,7 +1,7 @@
 core: 8.x
 type: theme
 base theme: bootstrap
-version: 8.x-0.2
+version: 8.x-0.3
 
 name: 'SphinxCon'
 description: 'Theme for TRMN''s 2018 SphinxCon event. Based on the Drupal 8 Bootstrap theme.'
