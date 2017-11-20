@@ -49,23 +49,22 @@
   <!-- /.container --> 
 </header>
 <main class="main-container container js-quickedit-main-content" role="main">
-  <div class="row">
-    <div id="top-bar" class="top-bar col-sm-12" role="heading">
+  <div class="top-bar row" role="heading">
+    <div class="col-sm-12">
       <div class="region region-header">
-        <section id="block-dateandlocationinfo" class="block block-block-content block-block-contentfd2bb62f-fb14-4eae-b7cb-dbbf1277dfdc clearfix">
+        <section id="block-dateandlocationinfo" class="date-location block block-block-content block-block-contentfd2bb62f-fb14-4eae-b7cb-dbbf1277dfdc clearfix">
           <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item">
             <h2 class="date-location"><span class="sr-only">SphinxCon 2018<br></span>November 2-4, 2018<br>Atlanta, GA</h2>
           </div>
         </section>          
       </div>
     </div>
-    <!-- /.top-bar --> 
+    <!-- /.col-* --> 
   </div>
-  <!-- /.row -->
-  <div class="row">
-    <section id="featured" class="featured col-sm-12" role="complementary">
-      <div class="bg-blurred" role="none">
-      </div>
+  <!-- /.top-bar.row -->
+  <section class="featured row" role="complementary">
+    <div class="col-sm-12">
+      <div class="bg-blurred" role="none"></div>
       <div class="region region-featured">
         <section id="block-featured" class="block block-block-content clearfix">
           <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item">  
@@ -98,24 +97,22 @@
                   <p><a href="#">V. I. Pearson</a></p>
                 </div>
               </div>
+            </div>
           </div>
-        </div>
         </section>
       </div>
-    </section>
-    <!-- /.featured --> 
-  </div>
-  <!-- /.row -->
-  <div class="row">
-    <section class="content col-sm-12">
-      <div class="highlighted">
+    </div>
+    <!-- /.col-* --> 
+  </section>
+  <!-- /.featured.row -->
+  <div class="row main-content-wrapper" role="none">
+    <section class="main-content col-sm-12">
+      <div class="highlighted" role="none">
         <div class="region region-highlighted">
-          <div class="block-region">Highlighted. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dignissim tristique purus.</div>
+          <div class="block-region">
+            <p>The Honor Harrington themed Military Science Fiction Convention comes to Atlanta!</p>
+          </div>
         </div>
-      </div>
-      <div class="alert alert-info messages info region region-help">
-        <span class="icon glyphicon glyphicon-question-sign" aria-hidden="true"></span>
-        <div class="block-region">Help with something on this page</div>
       </div>
       <a id="main-content"></a>
       <div class="region region-content">
@@ -133,40 +130,43 @@
   <!-- /.row --> 
 </main>
 <footer class="footer container" role="contentinfo">
-  <div class="row">
-    <div class="col-sm-12" id="footer-top">
+  <div class="footer-top row" role="none">
+    <div class="col-sm-12">
       <div class="region region-footer-top">
         <div class="block-region">Top Footer</div>
       </div>
     </div>
-    <!-- /#footer-top -->
-    <div class="col-sm-4" id="footer-middle-left">
+  </div>
+  <!-- /.footer-top.row -->
+  <div class="footer-middle row" role="none">
+    <div class="col-sm-4 footer-left">
       <div class="region region-footer-middle-left">
         <div class="block-region">Left Middle Footer</div>
       </div>
     </div>
-    <!-- /#footer-middle-left -->
-    <div class="col-sm-4" id="footer-middle-center">
+    <!-- /.footer-left -->
+    <div class="col-sm-4 footer-center">
       <div class="region region-footer-middle-center">
         <div class="block-region">Center Middle Footer</div>
       </div>
     </div>
-    <!-- /#footer-middle-center -->
-    <div class="col-sm-4" id="footer-middle-right">
+    <!-- /.footer-center -->
+    <div class="col-sm-4 footer-right">
       <div class="region region-footer-middle-right">
         <div class="block-region">Right Middle Footer</div>
       </div>
     </div>
-    <!-- /#footer-middle-right -->
-    <div class="col-sm-12" id="footer-bottom">
+    <!-- /.footer-right -->
+  </div>
+  <!-- /.footer-middle.row -->
+  <div class="footer-bottom row" role="none">
+    <div class="col-sm-12">
       <div class="region region-footer-bottom">
         <div class="block-region">Bottom Footer</div>
       </div>
     </div>
-    <!-- /#footer-bottom --> 
   </div>
-  <!-- /.row --> 
-  <!--</div>--> <!-- /.container --> 
+  <!-- /.footer-bottom.row --> 
 </footer>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 

@@ -62,10 +62,10 @@
 {% block sidebar %}{% endblock %}
 
 {# Update the Content Section block layout #}
-{% block content-section %}
+{% block maincontent %}
 
   {# Set content classes so section will be full width #}
-  {% set content_classes = [ 'content', 'col-sm-12' ] %}
+  {% set content_classes = [ 'main-content', 'col-sm-12' ] %}
   
   <section{{ content_attributes.addClass(content_classes) }}>
 

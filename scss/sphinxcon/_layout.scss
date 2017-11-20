@@ -6,9 +6,47 @@
 
  */
 
+//== Footer at bottom of (or below) the visible view screen
 //
-//== <body> margins and padding
-// Override to better support a fixed navbar with a fixed drupal toolbar
+// Set up main container so footer will be pushed down when there's not enough content to do it naturally
+main.main-container {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto;
+  margin-bottom: -($footer-height);
+  padding-top:     0;
+  padding-bottom:  $footer-height;
+}
+//
+// Define the footer hight and set it's top margin to the negative of that same amount so that it 
+footer.footer {
+  height: $footer-height;
+  margin-top: 0px;
+}
+
+//== Vertical spacing between sections
+//
+// Set consistent margins on the bottom of the main section blocks.
+.top-bar,
+.featured,
+.sidebar,
+.main-content-wrapper {
+  margin-bottom: $grid-gutter-width/2;
+}
+
+//== Vertical padding inside sections
+//
+// Set padding at the top and bottom of the section blocks to match the padding on the outside ediges
+.featured,
+.main-content-wrapper {
+  padding-top:     $grid-gutter-width/2;
+  padding-bottom:  $grid-gutter-width/2;
+}
+
+//== Navbar Layout
+//
+// Improved support for a fixed navbar and the fixed drupal toolbar
 body {
   &.navbar-is-static-top {
     margin-top: 0;
@@ -57,6 +95,8 @@ body {
     }
   }
 
+  // THIS IS BROKEN because of the "pushed to bottom of view" footer styling.
+  // *** TO DO *** change so fixed bottom navbar will actually work
   &.navbar-is-fixed-bottom {
     padding-bottom: $navbar-height + $navbar-border-width;
 
@@ -75,7 +115,7 @@ body {
 }
 
 //
-//== Navigation Bar
+//## Navigation Bar
 .navbar {
   height: $navbar-height + $navbar-border-width;
   
@@ -94,7 +134,7 @@ body {
   white-space: nowrap;
   overflow: hidden;
   
-  // When the navigation is not collapsed, don't float it
+  // When the navigation is not collapsed, don't float the navbar-header it
   @media #{$grid-breakpoint} {
     float: none;
   }
@@ -217,15 +257,3 @@ body {
   }
 }
 
-
-.main-container {
-  padding-top:     $grid-gutter-width/2;
-  padding-bottom:  $grid-gutter-width + $footer-height;
-}
-
-.featured {
-  margin-top:      $grid-gutter-width/2;
-  margin-bottom:   $grid-gutter-width/2;
-  padding-top:     $grid-gutter-width/2;
-  padding-bottom:  $grid-gutter-width/2;
-}

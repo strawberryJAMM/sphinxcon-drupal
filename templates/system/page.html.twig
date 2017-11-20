@@ -100,31 +100,29 @@
   <main class="main-container {{ container }} js-quickedit-main-content" role="main">
     {# Header (breadcrumbs, status, page title, tabs, admin actions) #}
     {% if page.header %}
-      <div class="row">
+      <div class="row top-bar" role="heading">
       {% block header %}
-        <div id="top-bar" class="top-bar " role="heading">
-          {{ page.header }}
-        </div> <!-- /.top-bar -->
+        {{ page.header }}
       {% endblock %}
-      </div> <!-- /.row -->
+      </div> <!-- /.row.top-bar -->
     {% endif %}
 
     {# Featured #}
     {% if page.featured %}
-      <div class="row">
+      <section class="row featured" role="complementary">
       {% block featured %}
-        <section id="featured" class="featured col-sm-12" role="complementary">
+        <div class="col-sm-12">
           <div class="bg-blurred" role="none"></div>
           {{ page.featured }}
-        </section>
+        </div>
       {% endblock %}
-      </div> <!-- /.row -->
+      </section> <!-- /.row.featured -->
     {% endif %}
       
-    <div class="row">
+    <div class="main-content-wrapper row" role="none">
       {%
         set content_classes = [
-          'content',
+          'main-content',
           page.sidebar ? 'col-sm-9',
           page.sidebar is empty ? 'col-sm-12',
         ]
@@ -137,9 +135,9 @@
           </aside>
         {% endblock %}
       {% endif %}
-      
+
       {# Content Section #}
-      {% block content-section %}
+      {% block maincontent %}
         <section{{ content_attributes.addClass(content_classes) }}>
 
           {# Highlighted #}
@@ -163,70 +161,74 @@
           {% endblock %}
         </section>
       {% endblock %}
-
-    </div> <!-- /.row -->
+    </div> <!-- /.main-content-wrapper.row -->
   </main>
 {% endblock %}
 
 {% if page.footer_top or page.footer_middle_left or page.footer_middle_center or page.footer_middle_right or page.footer_bottom %}
   {% block footer %}
     <footer class="footer {{ container }}" role="contentinfo">
-      <!--<div class="{{ container }}">-->
-        <div class="row">
+      <div class="footer-top row" role="none">
         {# Footer Top #}
         {% if page.footer_top %}
-          <div class="col-sm-12" id="footer-top">
+          <div class="col-sm-12">
             {{ page.footer_top }}
-          </div> <!-- /#footer-top -->
+          </div>
         {% endif %}
+      </div> <!-- /.footer-top.row --?
 
+      <div class="footer-middle row" role="none">
         {# Footer Middle #}
         {%
-          set footer_middle_left_classes = [
+          set footer_left_classes = [
+            'footer-left',
             page.footer_middle_center and page.footer_middle_right ? 'col-sm-4',
             (page.footer_middle_center is empty and page.footer_middle_right) or (page.footer_middle_center and page.footer_middle_right is empty) ? 'col-sm-6',
             page.footer_middle_center is empty and page.footer_middle_right is empty ? 'col-sm-12',
           ]
         %}
         {%
-          set footer_middle_center_classes = [
+          set footer_center_classes = [
+            'footer-center',
             page.footer_middle_left and page.footer_middle_right ? 'col-sm-4',
             (page.footer_middle_left is empty and page.footer_middle_right) or (page.footer_middle_left and page.footer_middle_right is empty) ? 'col-sm-6',
             page.footer_middle_left is empty and page.footer_middle_right is empty ? 'col-sm-12',
           ]
         %}
         {%
-          set footer_middle_right_classes = [
+          set footer_right_classes = [
+            'footer-right',
             page.footer_middle_left and page.footer_middle_center ? 'col-sm-4',
             (page.footer_middle_left is empty and page.footer_middle_center) or (page.footer_middle_left and page.footer_middle_center is empty) ? 'col-sm-6',
             page.footer_middle_left is empty and page.footer_middle_center is empty ? 'col-sm-12',
           ]
         %}
         {% if page.footer_middle_left %}
-          <div{{ create_attribute().addClass(footer_middle_left_classes) }} id="footer-middle-left">
+          <div{{ create_attribute().addClass(footer_left_classes) }}>
             {{ page.footer_middle_left }}
-          </div> <!-- /#footer-middle-left -->
+          </div> <!-- /.footer-middle.footer-left -->
         {% endif %}
         {% if page.footer_middle_center %}
-          <div{{ create_attribute().addClass(footer_middle_center_classes) }} id="footer-middle-center">
+          <div{{ create_attribute().addClass(footer_center_classes) }}>
             {{ page.footer_middle_center }}
-          </div> <!-- /#footer-middle-center -->
+          </div> <!-- /.footer-middle.footer-center -->
         {% endif %}
         {% if page.footer_middle_right %}
-          <div{{ create_attribute().addClass(footer_middle_right_classes) }} id="footer-middle-right">
+          <div{{ create_attribute().addClass(footer_right_classes) }}>
             {{ page.footer_middle_right }}
-          </div> <!-- /#footer-middle-right -->
+          </div> <!-- /.footer-middle.footer-right -->
         {% endif %}
+      </div> <!-- /.footer-middle.row -->
 
+      <div class="footer-bottom row" role="none">
         {# Footer Bottom #}
         {% if page.footer_bottom %}
           <div class="col-sm-12" id="footer-bottom">
             {{ page.footer_bottom }}
           </div> <!-- /#footer-bottom -->
         {% endif %}
-        </div> <!-- /.row -->
-      <!--</div>--> <!-- /.container -->
-    </footer>
+      </div> <!-- /footer-bottom.row -->
+    </footer> <!-- /.footer.container
   {% endblock %}
 {% endif %}
 {# {{ kint() }} #}

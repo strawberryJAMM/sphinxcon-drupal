@@ -49,8 +49,8 @@
   <!-- /.container --> 
 </header>
 <main class="main-container container js-quickedit-main-content" role="main">
-  <div class="row">
-    <div id="top-bar" class="top-bar col-sm-12" role="heading">
+  <div class="top-bar row" role="heading">
+    <div class="col-sm-12">
       <div class="region region-header">
         <nav class="tabs" role="navigation" aria-label="Tabs">
           <h2 class="sr-only">Primary tabs</h2>
@@ -63,10 +63,10 @@
         </nav>
       </div>
     </div>
-    <!-- /.top-bar --> 
+    <!-- /.col-* --> 
   </div>
-  <!-- /.row -->
-  <div class="row">
+  <!-- /top-bar.row -->
+  <div class="main-content-wrapper row" role="none">
     <aside class="sidebar col-sm-3" role="complementary">
       <div class="region region-sidebar">
         <div class="search-block-form contextual-region block block-search block-search-form-block" data-drupal-selector="search-block-form" id="block-sphinxcon-search" role="search">
@@ -85,12 +85,7 @@
         <p>Some Sidebar info. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non est ut dolor pharetra molestie. Praesent at sodales mi. Duis non euismod lectus, eu sagittis ante. Proin feugiat dui ac sapien euismod pellentesque. Nunc nulla mi, tincidunt in venenatis ac, rutrum vitae lectus. Quisque tempus odio ut mollis mattis. Integer laoreet nulla at odio hendrerit pharetra. Etiam interdum odio ultrices, mattis leo eu, imperdiet magna. Curabitur tristique vitae nibh sit amet suscipit. Etiam erat nisl, semper sed feugiat a, lacinia sed libero.</p>
       </div>
     </aside>
-    <section class="content col-sm-9">
-      <div class="highlighted">
-        <div class="region region-highlighted">
-          <div class="block-region">Highlighted. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dignissim tristique purus.</div>
-        </div>
-      </div>
+    <section class="main-content col-sm-9">
       <div class="alert alert-info messages info region region-help">
         <span class="icon glyphicon glyphicon-question-sign" aria-hidden="true"></span>
         <div class="block-region">Help with something on this page</div>
@@ -106,45 +101,49 @@
           <p>Morbi suscipit faucibus tortor, a suscipit turpis mattis ac. Maecenas sagittis dignissim leo, a vestibulum nisl consectetur nec. Duis sodales egestas risus, pellentesque posuere ante ultrices sed. Aliquam consequat, mauris sed tincidunt ornare, nunc ipsum imperdiet metus, sed pretium nisl augue nec odio. Quisque sit amet urna eu tortor imperdiet scelerisque. Cras mi odio, sodales vitae tincidunt in, tincidunt at erat. Nulla dictum tortor sed felis suscipit, sed fermentum sem blandit. Duis mattis nulla non nulla auctor bibendum. Morbi commodo, sem vitae dapibus tristique, leo risus laoreet enim, ut tristique sapien dolor vel arcu. Morbi tellus dui, mollis vitae magna sit amet, aliquam eleifend justo. Nunc finibus eleifend dignissim. Sed et ipsum vel lectus ornare malesuada.</p>
         </div>
       </div>
-    </section>    
+    </section>
+    <!-- /.main-content.col-* -->    
   </div>
-  <!-- /.row --> 
+  <!-- /.main-content-wrapper.row --> 
 </main>
 <footer class="footer container" role="contentinfo">
-  <div class="row">
-    <div class="col-sm-12" id="footer-top">
+  <div class="footer-top row" role="none">
+    <div class="col-sm-12">
       <div class="region region-footer-top">
         <div class="block-region">Top Footer</div>
       </div>
     </div>
-    <!-- /#footer-top -->
-    <div class="col-sm-4" id="footer-middle-left">
+  </div>
+  <!-- /.footer-top.row -->
+  <div class="footer-middle row" role="none">
+    <div class="col-sm-4 footer-left">
       <div class="region region-footer-middle-left">
         <div class="block-region">Left Middle Footer</div>
       </div>
     </div>
-    <!-- /#footer-middle-left -->
-    <div class="col-sm-4" id="footer-middle-center">
+    <!-- /.footer-left -->
+    <div class="col-sm-4 footer-center">
       <div class="region region-footer-middle-center">
         <div class="block-region">Center Middle Footer</div>
       </div>
     </div>
-    <!-- /#footer-middle-center -->
-    <div class="col-sm-4" id="footer-middle-right">
+    <!-- /.footer-center -->
+    <div class="col-sm-4 footer-right">
       <div class="region region-footer-middle-right">
         <div class="block-region">Right Middle Footer</div>
       </div>
     </div>
-    <!-- /#footer-middle-right -->
-    <div class="col-sm-12" id="footer-bottom">
+    <!-- /.footer-right -->
+  </div>
+  <!-- /.footer-middle.row -->
+  <div class="footer-bottom row" role="none">
+    <div class="col-sm-12">
       <div class="region region-footer-bottom">
         <div class="block-region">Bottom Footer</div>
       </div>
     </div>
-    <!-- /#footer-bottom --> 
   </div>
-  <!-- /.row --> 
-  <!--</div>--> <!-- /.container --> 
+  <!-- /.footer-bottom.row --> 
 </footer>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 

@@ -7,21 +7,3 @@
 
  */
 
-// Set the height of HTML and BODY tags to 100% to allow for full screen background
-html,
-body {
-  height: 100%;
-}
-
-// Set up main and footer elements so footer is always at bottom of (or below) the visible view screen
-main {
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
-  margin: 0 auto -($footer-height + $grid-gutter-width);
-}
-footer,
-.footer {
-  height: $footer-height;
-  margin-top: -$footer-height;
-}

@@ -68,12 +68,18 @@ $white:                #fff;
 $brand-primary:        $sphinxcon-orange;
 $brand-secondary:      $sphinxcon-green;
 
+//## Highlight regio colours
+$highlighted-text:     $sphinxcon-dkbrown;
+$highlighted-bg:       lighten($sphinxcon-green, 35%);
+$highlighted-border:   darken(adjust-hue($highlighted-bg, -10), 5%);
+
+
 
 //== Scaffolding
 //
 //## Overridden settings for some of the most global styles.
 //** Background color for `<body>`.
-$body-bg:               $sphinxcon-mdbrown;
+$body-bg:               $sphinxcon-dkbrown;
 //** Global text color on `<body>`.
 $text-color:            $white;
 
@@ -132,7 +138,7 @@ $navbar-collapse-min-width:        200px;
 //
 // Navbar default colors
 $navbar-default-color:             $sphinxcon-orange;
-$navbar-default-bg:                $sphinxcon-mdbrown;
+$navbar-default-bg:                $sphinxcon-dkbrown;
 $navbar-default-border:            $sphinxcon-redorange; 
 
 // Navbar links
@@ -179,5 +185,5 @@ $navbar-inverse-toggle-border-color:        transparent;
 //
 // ## Set specific menu heights based on screen size
 // These will also be used for body top and bottom padding when navbar is fixed
-$footer-height:              200px;
+$footer-height:              150px;
 $footer-border-width:        2px;
