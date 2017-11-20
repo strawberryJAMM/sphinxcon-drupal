@@ -53,7 +53,7 @@ $logo-image-width-md:        $logo-image-height-md * $logo-image-w-over-h-aspect
 
 //
 //## SphinxCon Theme Specific Colours
-$sphinxcon-brown:      #1d0702;
+$sphinxcon-dkbrown:    #1d0702;
 $sphinxcon-mdbrown:    #3C2621;
 $sphinxcon-ltbrown:    #8c3c26; 
 $sphinxcon-redorange:  #a7280c; //#cc2802; 
@@ -65,8 +65,8 @@ $white:                #fff;
 //== Colors
 //
 //## Sphinxcon brand colors 
-$brand-primary:        $sphinxcon-green;
-$brand-secondary:      $sphinxcon-orange;
+$brand-primary:        $sphinxcon-orange;
+$brand-secondary:      $sphinxcon-green;
 
 
 //== Scaffolding
@@ -100,6 +100,8 @@ $headings-color:          $brand-secondary;
 $font-size-base:          14px;
 $font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
 $font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
+
+$font-size-featured:      floor(($font-size-base * 1.43)) !default; // ~20px
 
 
 //== Navbar
@@ -152,12 +154,12 @@ $navbar-default-toggle-border-color:       transparent;
 
 //=== Inverted navbar
 // Reset inverted navbar basics
-$navbar-inverse-color:                      $sphinxcon-brown;
+$navbar-inverse-color:                      $sphinxcon-dkbrown;
 $navbar-inverse-bg:                         $sphinxcon-ltbrown;
 $navbar-inverse-border:                     $sphinxcon-orange; 
 
 // Inverted navbar links
-$navbar-inverse-link-color:                 $sphinxcon-brown;
+$navbar-inverse-link-color:                 $sphinxcon-dkbrown;
 $navbar-inverse-link-hover-color:           $navbar-inverse-border;
 $navbar-inverse-link-hover-bg:              transparent;
 $navbar-inverse-link-active-color:          $sphinxcon-redorange;

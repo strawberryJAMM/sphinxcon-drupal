@@ -124,4 +124,55 @@
   margin-bottom: -$footer-border-width; 
 }
 
+//== Define the "featured" region styles
+.featured {
+  border-radius: 12px;
+  border: 1px rgba(white,0.25) outset;
+  background-color: rgba($sphinxcon_dkbrown,0.75);
 
+  //## blurred background
+  // hack that only works b/c the background in .bg-picketwood is fixed.
+  .bg-blurred {
+    @extend .bg-picketwood;
+    border-radius: 10px;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    filter: blur(10px) opacity(90%);
+  }
+  
+  h2 {
+    font-size: $font-size-featured;
+    margin-top: 0;
+    text-shadow: 1px 1px 2px $sphinxcon-dkbrown;
+  }
+  
+  img {
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 1px 1px 4px 0px $sphinxcon-dkbrown;
+  }
+  
+  p {
+    font-family: $trmn-headings-font-family-narrow;
+    font-size: $font-size-featured;
+    margin-top: 10px;
+    text-shadow: 1px 1px 2px $sphinxcon-dkbrown;
+  }
+}
+
+//== style for date and location information at top of home page
+h2.date-location {
+  
+  @extend .text-center;
+  
+  font-family: $trmn-organization-font-family;
+  line-height: 1.25;
+  margin: initial;
+  
+  // Make the text white with a dark stroke
+  color: white;
+  -webkit-text-stroke: 2px $sphinxcon-dkbrown;  // unofficial webkit "text-stroke" property, supported by most modern browsers
+}

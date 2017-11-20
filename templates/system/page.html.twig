@@ -114,6 +114,7 @@
       <div class="row">
       {% block featured %}
         <section id="featured" class="featured col-sm-12" role="complementary">
+          <div class="bg-blurred" role="none"></div>
           {{ page.featured }}
         </section>
       {% endblock %}
@@ -137,29 +138,31 @@
         {% endblock %}
       {% endif %}
       
-      {# Content #}
-      <section{{ content_attributes.addClass(content_classes) }}>
+      {# Content Section #}
+      {% block content-section %}
+        <section{{ content_attributes.addClass(content_classes) }}>
 
-        {# Highlighted #}
-        {% if page.highlighted %}
-          {% block highlighted %}
-            <div class="highlighted">{{ page.highlighted }}</div>
+          {# Highlighted #}
+          {% if page.highlighted %}
+            {% block highlighted %}
+              <div class="highlighted">{{ page.highlighted }}</div>
+            {% endblock %}
+          {% endif %}
+
+          {# Help #}
+          {% if page.help %}
+            {% block help %}
+              {{ page.help }}
+            {% endblock %}
+          {% endif %}
+
+          {# Content #}
+          {% block content %}
+            <a id="main-content"></a>
+            {{ page.content }}
           {% endblock %}
-        {% endif %}
-
-        {# Help #}
-        {% if page.help %}
-          {% block help %}
-            {{ page.help }}
-          {% endblock %}
-        {% endif %}
-
-        {# Content #}
-        {% block content %}
-          <a id="main-content"></a>
-          {{ page.content }}
-        {% endblock %}
-      </section>
+        </section>
+      {% endblock %}
 
     </div> <!-- /.row -->
   </main>

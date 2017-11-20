@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- The above 2 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<title>SphinxCon 2018 Front Page Design</title>
+<title>SphinxCon 2018 Default Page Design</title>
 
 <!-- STYLES (includes bootstrap) -->
 <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
@@ -36,9 +36,9 @@
         <nav role="navigation" aria-labelledby="block-sphinxcon-main-menu-label" id="block-sphinxcon-main-menu" class="contextual-region">
           <h2 class="sr-only" id="block-sphinxcon-main-menu-label">Main navigation</h2>
           <ul class="menu nav navbar-nav navbar-center">
-            <li class="active"> <a href="#" data-drupal-link-system-path="<front>" class="is-active">Home</a> </li>
+            <li> <a href="#" data-drupal-link-system-path="<front>">Home</a> </li>
             <li> <a href="#" data-drupal-link-system-path="node/4">Guests</a> </li>
-            <li> <a href="#" data-drupal-link-system-path="node/5">Program</a> </li>
+            <li class="active"> <a href="#" data-drupal-link-system-path="node/5" class="is-active">Program</a> </li>
             <li> <a href="#" data-drupal-link-system-path="node/6">Venue</a> </li>
           </ul>
         </nav>
@@ -52,62 +52,40 @@
   <div class="row">
     <div id="top-bar" class="top-bar col-sm-12" role="heading">
       <div class="region region-header">
-        <section id="block-dateandlocationinfo" class="block block-block-content block-block-contentfd2bb62f-fb14-4eae-b7cb-dbbf1277dfdc clearfix">
-          <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item">
-            <h2 class="date-location"><span class="sr-only">SphinxCon 2018<br></span>November 2-4, 2018<br>Atlanta, GA</h2>
-          </div>
-        </section>          
+        <nav class="tabs" role="navigation" aria-label="Tabs">
+          <h2 class="sr-only">Primary tabs</h2>
+          <ul class="tabs--primary nav nav-tabs">
+            <li class="active"><a href="#" data-drupal-link-system-path="node/5" class="is-active">View<span class="sr-only">(active tab)</span></a></li>
+            <li><a href="#" data-drupal-link-system-path="node/5/edit">Edit</a></li>
+            <li><a href="#" data-drupal-link-system-path="node/5/delete">Delete</a></li>
+            <li><a href="#" data-drupal-link-system-path="devel/node/5">Devel</a></li>
+          </ul>
+        </nav>
       </div>
     </div>
     <!-- /.top-bar --> 
   </div>
   <!-- /.row -->
   <div class="row">
-    <section id="featured" class="featured col-sm-12" role="complementary">
-      <div class="bg-blurred" role="none">
-      </div>
-      <div class="region region-featured">
-        <section id="block-featured" class="block block-block-content clearfix">
-          <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item">  
-            <div class="row">
-              <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="text-center">
-                  <h2>Guest of Honor</h2>
-                  <a href="#"><img src="http://via.placeholder.com/200x300" class="img-responsive"></a>
-                  <p><a href="#">N. E. Boddy</a></p>
-                </div>
-              </div>
-              <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="text-center">
-                  <h2>Special Guest</h2>
-                  <a href="#"><img src="http://via.placeholder.com/200x300" class="img-responsive"></a>
-                  <p><a href="#">John Smythe</a></p>
-                </div>
-              </div>
-              <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="text-center">
-                  <h2>Special Guest</h2>
-                  <a href="#"><img src="http://via.placeholder.com/200x300" class="img-responsive"></a>
-                  <p><a href="#">Jane Dhoe</a></p>
-                </div>
-              </div>
-              <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="text-center">
-                  <h2>Featured Guest</h2>
-                  <a href="#"><img src="http://via.placeholder.com/200x300" class="img-responsive"></a>
-                  <p><a href="#">V. I. Pearson</a></p>
-                </div>
-              </div>
-          </div>
+    <aside class="sidebar col-sm-3" role="complementary">
+      <div class="region region-sidebar">
+        <div class="search-block-form contextual-region block block-search block-search-form-block" data-drupal-selector="search-block-form" id="block-sphinxcon-search" role="search">
+        <h2 class="sr-only">Search</h2>
+        <form action="#" method="get" id="search-block-form" accept-charset="UTF-8" data-drupal-form-fields="edit-keys">
+        <div class="form-item js-form-item form-type-search js-form-type-search form-item-keys js-form-item-keys form-no-label form-group">
+        <label for="edit-keys" class="control-label sr-only">Search</label>
+        <div class="input-group"><input title="" data-drupal-selector="edit-keys" class="form-search form-control" placeholder="Search" type="search" id="edit-keys" name="keys" value="" size="15" maxlength="128" data-toggle="tooltip" data-original-title="Enter the terms you wish to search for."><span class="input-group-btn"><button type="submit" value="Search" class="button js-form-submit form-submit btn-primary btn icon-only" name=""><span class="sr-only">Search</span><span class="icon glyphicon glyphicon-search" aria-hidden="true"></span></button></span></div>
         </div>
-        </section>
+        <div class="form-actions form-group js-form-wrapper form-wrapper" data-drupal-selector="edit-actions" id="edit-actions"></div>
+        </form>
+        </div>        
       </div>
-    </section>
-    <!-- /.featured --> 
-  </div>
-  <!-- /.row -->
-  <div class="row">
-    <section class="content col-sm-12">
+      <div class="block-region">
+        <h2>Block Title</h2>
+        <p>Some Sidebar info. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non est ut dolor pharetra molestie. Praesent at sodales mi. Duis non euismod lectus, eu sagittis ante. Proin feugiat dui ac sapien euismod pellentesque. Nunc nulla mi, tincidunt in venenatis ac, rutrum vitae lectus. Quisque tempus odio ut mollis mattis. Integer laoreet nulla at odio hendrerit pharetra. Etiam interdum odio ultrices, mattis leo eu, imperdiet magna. Curabitur tristique vitae nibh sit amet suscipit. Etiam erat nisl, semper sed feugiat a, lacinia sed libero.</p>
+      </div>
+    </aside>
+    <section class="content col-sm-9">
       <div class="highlighted">
         <div class="region region-highlighted">
           <div class="block-region">Highlighted. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dignissim tristique purus.</div>
