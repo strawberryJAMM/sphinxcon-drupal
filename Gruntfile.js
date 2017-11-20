@@ -48,7 +48,7 @@ module.exports = function(grunt) {
       },
       dev: {
         tasks: ["watch:sass_dev", "watch:js"],
-      }
+      },
     },
     
     // Compile SASS files to CSS
@@ -160,7 +160,7 @@ module.exports = function(grunt) {
         options: {                 
           format: 'tar.gz',
           prefix: '<%= pkg.name %>/',
-          output: '<%= pkg.name %>_drupal-<%= drupal.version %>-<%= pkg.version %>) %>.tar.gz', 
+          output: '<%= pkg.name %>_drupal-<%= drupal.version %>-<%= pkg.version %>.tar.gz', 
           'worktree-attributes': true,
           extra: 6,
           'tree-ish': '@',
