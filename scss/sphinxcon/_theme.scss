@@ -206,7 +206,7 @@ h2.date-location {
 // background behind both sidebar and content
 .main-content-wrapper {
   background: rgba($sphinxcon-dkbrown,0.8);
-  border: 1px outset rgba($sphinxcon-dkbrown,0.8);
+  border: 2px outset $sphinxcon-dkbrown;
   border-radius: $border-radius-large;
 }
 
@@ -217,10 +217,14 @@ h2.date-location {
   @extend .text-center;
 
   padding: $grid-gutter-width/2;
+  border: 1px solid transparent;
   border-radius: $border-radius-base;
 
   font-size: $font-size-large;
   font-family: $trmn-sections-font-family;
+  // the "sections" font family does not have italic or bold variations, so we block them out.
+  font-style: normal !important;
+  font-weight: normal !important;
 
   @include alert-variant($highlighted-bg, $highlighted-border, $highlighted-text);
   
@@ -231,6 +235,7 @@ h2.date-location {
 .footer {
   background-color: $body-bg;
   border: $footer-border-width solid $sphinxcon-redorange;
+  border-bottom: 0 solid transparent;
   @include border-top-radius($border-radius-large);
  
   // Not sure why this is needed, since the bottom border width is 0px 

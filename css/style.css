@@ -8195,7 +8195,7 @@ footer.footer {
 .featured,
 .sidebar,
 .main-content-wrapper {
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
 
 .featured,
@@ -8557,15 +8557,18 @@ h2.date-location {
 
 .main-content-wrapper {
   background: rgba(29, 7, 2, 0.8);
-  border: 1px outset rgba(29, 7, 2, 0.8);
+  border: 2px outset #1d0702;
   border-radius: 6px;
 }
 
 .highlighted {
   padding: 15px;
+  border: 1px solid transparent;
   border-radius: 4px;
   font-size: 18px;
   font-family: "Incised 901 BT Compact", Impact, "Verdana Bold", Verdana, Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-style: normal !important;
+  font-weight: normal !important;
   background-color: #daedcb;
   border-color: #d4e6b8;
   color: #1d0702;
@@ -8580,6 +8583,7 @@ h2.date-location {
 .footer {
   background-color: #1d0702;
   border: 2px solid #a7280c;
+  border-bottom: 0 solid transparent;
   border-top-right-radius: 6px;
   border-top-left-radius: 6px;
   margin-bottom: -2px;
