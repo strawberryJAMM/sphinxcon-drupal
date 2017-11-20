@@ -1,20 +1,26 @@
 // Grunt JavaScript Document
 module.exports = function(grunt) {
+
   
   // Configure grunt tasks
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    
+
+    // Define drupal version the theme is designed for
+    drupal: {
+      version: '8.x',
+    },
+
     // Watch the stylesheets created from the project SASS files so PostCSS processing is automatic
     watch: {
-      'sass-dist':{
+      sass_dist:{
         files: ['scss/**/*.scss', 'bootstrap/assets/stylesheets/**/*.scss'],
         tasks: ['sass:dist', 'postcss:dist'],
         options: {
           event: ['added','changed'],
         },
       },
-      'sass-dev':{
+      sass_dev:{
         files: ['scss/**/*.scss', 'bootstrap/assets/stylesheets/**/*.scss', '!scss/font-awesome/**/*.scss'],
         tasks: ['sass:dev', 'postcss:dev'],
         options: {
@@ -38,10 +44,10 @@ module.exports = function(grunt) {
         logConcurrentOutput: true,
       },
       dist: {
-        tasks: ["watch:sass-dist", "watch:js"],
+        tasks: ["watch:sass_dist", "watch:js"],
       },
       dev: {
-        tasks: ["watch:sass-dev", "watch:js"],
+        tasks: ["watch:sass_dev", "watch:js"],
       }
     },
     
@@ -64,7 +70,7 @@ module.exports = function(grunt) {
           'css/style.css' : 'scss/style.scss',
         },
       },
-      'font-awesome': {
+      fontawesome: {
         options: {                 
           style: 'compressed',
         },
@@ -78,7 +84,7 @@ module.exports = function(grunt) {
     uglify:{
       options: {
         // insert a banner at the top of the file
-        banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
+        banner: '/*! <%= pkg.name %>_drupal-<%= drupal.version %>-<%= pkg.version %> - ' +
                 '<%= grunt.template.today("yyyy-mm-dd") %> */\n',
         
         output: {
@@ -134,7 +140,7 @@ module.exports = function(grunt) {
           },
         ],
       },
-      'font-awesome': {
+      fontawesome: {
         files: [
           {
             expand: true,      // enable dynamic expansion
@@ -153,21 +159,17 @@ module.exports = function(grunt) {
       archive: {
         options: {                 
           format: 'tar.gz',
-          prefix: 'sphinxcon/',
-          output: 'sphinxcon_drupal-<%= pkg.version %>.tar.gz',
+          prefix: '<%= pkg.name %>/',
+          output: '<%= pkg.name %>_drupal-<%= drupal.version %>-<%= pkg.version %>) %>.tar.gz', 
           'worktree-attributes': true,
           extra: 6,
           'tree-ish': '@',
-        },
-        files: {
-          'css/style.css' : 'scss/style.scss',
         },
       },
     },
      
   });
 
-  
   // Load the plugins that provide the specified tasks
   
   // "watch" task.
@@ -191,8 +193,8 @@ module.exports = function(grunt) {
   // register tasks
   grunt.registerTask('default', ['concurrent:dev']);
   grunt.registerTask('dist', ['concurrent:dist']);
-  grunt.registerTask('post-dist', ['uglify:target', 'postcss:dist']);
-  grunt.registerTask('post-dev', ['uglify:target', 'postcss:dev']);
-  grunt.registerTask('font-awesome', ['sass:font-awesome', 'postcss:font-awesome']);
+  grunt.registerTask('post_dist', ['uglify:target', 'postcss:dist']);
+  grunt.registerTask('post_dev', ['uglify:target', 'postcss:dev']);
+  grunt.registerTask('fontawesome', ['sass:fontawesome', 'postcss:fontawesome']);
   grunt.registerTask('archive', ['git-archive'])
 };
