@@ -1,5 +1,6 @@
 {
   "name": "sphinxcon",
+  "version": "0.3.1"
   "description": "TRMN 2018 SphinxCon Drupal Theme",
   "main": "index.html",
   "scripts": {
