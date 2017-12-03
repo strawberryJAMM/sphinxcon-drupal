@@ -93,7 +93,7 @@
       {% block item %}
         <span{{ item.attributes.addClass('field--item') }}>
           {% block link_open %}
-            <a href="{{ item.content|e('html_attr') }}" {% if label_hidden %}aria-label="{{ label|e('html_attr') }}"{% endif %}>
+            <a href="{{ item.content|e('html_attr') }}" {% if label_hidden %}aria-label="{{ label|e('html_attr') }}"{% endif %} target="_blank">
           {% endblock link_open %}
           {% block icon %}
             {%
