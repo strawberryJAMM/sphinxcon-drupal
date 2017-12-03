@@ -10,13 +10,6 @@
  * ./THEMENAME/bootstrap/assets/stylesheets/bootstrap/_variables.scss
  */
 
-//== Theme Specific Variables
-//
-//## Adjustments for Drupal Toolbar positioning
-$toolbar-fixed-default-height: 39px;
-$toolbar-fixed-hrz-open-height: 79px;
-
-
 //
 //## Set the proper directory for the Bootstrap Glyphicon font.
 $icon-font-path: '../bootstrap/assets/fonts/bootstrap/';
@@ -64,14 +57,40 @@ $white:                #fff;
 
 //== Colors
 //
+//## Gray and brand colors for use across Bootstrap.
+
+$gray-base:             #000;
+$gray-darker:           lighten($gray-base, 13.5%); // #222
+$gray-dark:             lighten($gray-base, 20%);   // #333
+$gray:                  lighten($gray-base, 33.5%); // #555
+$gray-light:            lighten($gray-base, 46.7%); // #777
+$gray-lighter:          lighten($gray-base, 66.7%); // #aaa
+$gray-lightest:         lighten($gray-base, 93.5%); // #eee
+
+$brand-success:         #5cb85c;
+$brand-info:            #5bc0de;
+$brand-warning:         #f0ad4e;
+$brand-danger:          #d9534f;
+
+//
 //## Sphinxcon brand colors 
 $brand-primary:        $sphinxcon-orange;
 $brand-secondary:      $sphinxcon-green;
 
-//## Highlight regio colours
+//## Highlight region colours
 $highlighted-text:     $sphinxcon-dkbrown;
 $highlighted-bg:       lighten($sphinxcon-green, 35%);
 $highlighted-border:   darken(adjust-hue($highlighted-bg, -10), 5%);
+
+
+//== various theme specific Variables
+//
+//## Adjustments for Drupal Toolbar positioning
+$toolbar-fixed-default-height: 39px;
+$toolbar-fixed-hrz-open-height: 79px;
+
+//## Content Type fields
+$guest-img-border-style: 2px outset $sphinxcon-green;
 
 
 
@@ -101,21 +120,54 @@ $headings-font-weight:    900;
 $headings-color:          $brand-secondary;
 
 //
-// ## Base, Small and Large font-sizes
-// Same as default bootstrap values but included so variables are available for use lower down
-$font-size-base:          14px;
-$font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
-$font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
+// ## Standard text sizes
+// Increase base text size to 16px (bootstrap default base size is 14px)
+$font-size-base:          16px;
+$font-size-large:         floor(($font-size-base * 1.25));   // ~20px
+$font-size-small:         floor(($font-size-base * 0.875));  // ~14px
 
-$font-size-featured:      floor(($font-size-base * 1.43)) !default; // ~20px
+$font-size-h1:            floor(($font-size-base * 2.375));  // ~38px
+$font-size-h2:            floor(($font-size-base * 2.0));    // ~32px
+$font-size-h3:            floor(($font-size-base * 1.625));  // ~26px
+$font-size-h4:            floor(($font-size-base * 1.25));   // ~20px
+$font-size-h5:            $font-size-base;
+$font-size-h6:            floor(($font-size-base * 0.875));  // ~14px
+
+$font-size-featured:      floor(($font-size-base * 1.25));   // ~20px
+
+//** Unit-less `line-height` for use in components like buttons.
+$line-height-base:        1.375; // 22/16
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$line-height-computed:    floor(($font-size-base * $line-height-base)); // ~22px
+
+
+//== Components
+//
+//## Define common padding and border radius sizes and more. Values based on 16px text and 1.375 line-height (~22px to start).
+
+$padding-base-vertical:     7px;
+$padding-base-horizontal:   14px;
+
+$padding-large-vertical:    9px;
+$padding-large-horizontal:  18px;
+
+$padding-small-vertical:    6px;
+$padding-small-horizontal:  12px;
+
+$padding-xs-vertical:       1px;
+$padding-xs-horizontal:     5px;
+
+$line-height-large:         1.2;          //24/20
+$line-height-small:         1.428571429;  // 20/14 
+
 
 
 //== Navbar
 //
 // ## Navigation font size and line heights
-$nav-font-size-base:         $font-size-large; // ~18px
-$nav-line-height-base:       1.388888889; // 25/18 
-$nav-line-height-computed:   floor(($nav-font-size-base * $nav-line-height-base)); // ~25px
+$nav-font-size-base:         floor(($font-size-base * 1.125)); // ~18px
+$nav-line-height-base:       1.333333333; // 24/18 
+$nav-line-height-computed:   ceil(($nav-font-size-base * $nav-line-height-base)); // ~24px
 
 //
 // ## Navbar height related values
@@ -131,6 +183,7 @@ $navbar-height:              $logo-image-height;
 $navbar-height-sm:           $logo-image-height-sm + $navbar-collapse-height;
 $navbar-height-md:           $logo-image-height-md + $navbar-collapse-height;
 $navbar-border-width:        2px;
+
 //
 // ## Set a minimum width for collapsed menus 
 $navbar-collapse-min-width:        200px;
@@ -187,3 +240,21 @@ $navbar-inverse-toggle-border-color:        transparent;
 // These will also be used for body top and bottom padding when navbar is fixed
 $footer-height:              150px;
 $footer-border-width:        2px;
+
+
+//== Type
+//
+//** Text muted color
+$text-muted:                  $gray-lighter;
+//** Abbreviations and acronyms border color
+$abbr-border-color:           $gray-lighter;
+//** Headings small color
+$headings-small-color:        $gray-lighter;
+//** Blockquote small color
+$blockquote-small-color:      $gray-lighter;
+//** Blockquote border color
+$blockquote-border-color:     $gray-lightest;
+//** Page header border color
+$page-header-border-color:    $gray-lightest;
+//** Horizontal line color.
+$hr-border:                   $gray-lightest;
