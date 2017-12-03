@@ -155,29 +155,43 @@ body {
   border-bottom-color: transparent;
 }
 
-//== Define the "featured" region styles
-.featured {
+//== Update "page-header" (Title) style
+.page-header {
+  border-bottom: 0px;
+  text-transform: uppercase;
+}
+
+//== Define styles for the "title-bar" and "featured" regions
+.featured,
+.title-bar {
   border-radius: 12px;
   border: 1px rgba(white,0.25) outset;
   background-color: rgba($sphinxcon_dkbrown,0.75);
 
-  h2 {
-    font-size: $font-size-featured;
-    margin-top: 0;
+  h1, .h1,
+  h2, .h2,
+  p {
     text-shadow: 1px 1px 2px $sphinxcon-dkbrown;
   }
-  
+
   img {
-    margin-left: auto;
-    margin-right: auto;
     box-shadow: 1px 1px 4px 0px $sphinxcon-dkbrown;
+  }
+}
+.featured {
+  text-align: center;
+  h2, .h2 {
+    font-size: $font-size-featured;
   }
   
   p {
     font-family: $trmn-headings-font-family-narrow;
     font-size: $font-size-featured;
-    margin-top: 10px;
-    text-shadow: 1px 1px 2px $sphinxcon-dkbrown;
+  }
+}
+.title-bar {
+  h2, .h2 {
+    text-transform: uppercase;
   }
 }
 
@@ -186,7 +200,7 @@ body {
 .date-location h2,
 h2.date-location {
   
-  @extend .text-center;
+  text-align: center;
   
   font-family: $trmn-organization-font-family;
   line-height: 1.25;
@@ -201,13 +215,14 @@ h2.date-location {
                -1px -1px 0px $sphinxcon-dkbrown;
 }
 
+
 //== Main Content Styling
 //
 // background behind both sidebar and content
 .main-content-wrapper {
-  background: rgba($sphinxcon-dkbrown,0.8);
-  border: 2px outset $sphinxcon-dkbrown;
   border-radius: $border-radius-large;
+  border: 2px outset $sphinxcon-dkbrown;
+  background-color: rgba($sphinxcon-dkbrown,0.8);
 }
 
 //== Front Page Highlight Styling
@@ -216,7 +231,6 @@ h2.date-location {
   
   @extend .text-center;
 
-  padding: $grid-gutter-width/2;
   border: 1px solid transparent;
   border-radius: $border-radius-base;
 
@@ -230,6 +244,40 @@ h2.date-location {
   
 }
 
+
+//== Content Type Field Styling
+//
+// "photo" and "additional picture" field images
+.field--name-field-photo,
+.field--name-field-additional-image-1,
+.field--name-field-additional-image-2,
+.field--name-field-additional-image-3 {
+  img {
+    border: $guest-img-border-style;
+    border-radius: $border-radius-base;
+  }
+}
+
+//== Photo & Info Region
+//
+.photo-and-info {
+  .info {
+    h2, .h2 {
+      text-transform: uppercase;
+      small, .small {
+        text-transform: none;
+      }
+    }
+    .known-for {
+      font-style: italic;
+    }
+    
+    .socialmedia {
+    }
+  }
+}
+
+
 //== Main Footer styling
 //
 .footer {
@@ -242,5 +290,23 @@ h2.date-location {
   // but without it, a small gap appears  between the bottom of the footer 
   // and the bottom of the page when scrolled as far as possible
   margin-bottom: -$footer-border-width; 
+}
+
+
+// Socialmedia Icons
+.field--socialmedia {
+  .field--item {
+  
+    text-align: center;
+
+    .field--icon {
+      font-size: $font-size-base * 2;
+    }
+
+    .field--label {
+      font-size: inherit;
+      text-transform: uppercase;
+    }
+  }
 }
 

@@ -6,6 +6,27 @@
 
  */
 
+//== Pre-configured Bootstrap Rows and Columns
+//
+// Set up classes for areas of a page that represent a bootstrap ROW
+.top-bar,
+.featured,
+.main-content-wrapper,
+.photo-and-info,
+.biography,
+.footer-top,
+.footer-middle,
+.footer-bottom {
+  @include make-row();
+}
+
+//
+// classes for areas of a page that represent specific bootstrap column sizes
+.title-bar {
+  @include make-xs-column(12);
+}
+
+
 //== Footer at bottom of (or below) the visible view screen
 //
 // Set up main container so footer will be pushed down when there's not enough content to do it naturally
@@ -35,13 +56,63 @@ footer.footer {
   margin-bottom: $grid-gutter-width;
 }
 
-//== Vertical padding inside sections
+//== Vertical padding for  sections
 //
-// Set padding at the top and bottom of the section blocks to match the padding on the outside ediges
+// Set padding at the top and bottom of the section blocks to match the padding on the outside edges
 .featured,
 .main-content-wrapper {
   padding-top:     $grid-gutter-width/2;
   padding-bottom:  $grid-gutter-width/2;
+}
+
+//== Page Header (Title) and Highlight Section Padding
+//
+.title-bar, 
+.highlighted {
+  padding-top: $grid-gutter-width/2;
+  padding-bottom: $grid-gutter-width/2;
+}
+
+//== reset padding on the "page-header" (Title) style
+.page-header {
+  padding-bottom: initial;
+}
+
+//== Featured region 
+//
+// Set margins for text and images inside featured section
+.featured {
+  h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  p {
+    margin-top: 10px;
+    margin-bottom: 0px;
+  }
+}
+
+//== Photo & Info Region
+//
+.photo-and-info {
+  margin-bottom: $grid-gutter-width;
+  
+  .info {
+    margin-top: 15%; 
+    
+    .known-for {
+    }
+    
+    .socialmedia {
+      margin-top: $grid-gutter-width;
+    }
+  }
 }
 
 //== Navbar Layout
@@ -257,3 +328,35 @@ body {
   }
 }
 
+//
+// Search Bar - this overlaps the navbar when expanded
+.search-bar {
+  height: 44px;
+  margin-top: -44px;
+  float: right;
+  width: 200px;
+  
+  .form-group {
+    margin: 3px 0;
+  }
+}
+
+// Socialmedia Icons
+.field--socialmedia {
+  
+  display: inline-block;
+  
+  + .field--socialmedia {
+    margin-left: $grid-gutter-width/2;
+  }
+  
+  .field--item {
+    .field--icon {
+      width: (20em / 16); // This creates a fixed width
+    }
+
+    .field--label {
+      display: block;
+    }
+  }
+}
