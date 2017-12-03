@@ -210,6 +210,14 @@ $navbar-default-toggle-icon-bar-bg:        $navbar-default-link-color;
 $navbar-default-toggle-icon-color:         $navbar-default-toggle-icon-bar-bg;
 $navbar-default-toggle-border-color:       transparent;
 
+// Navbar dropdown menu link colors
+$navbar-default-dropdown-link-color:          $sphinxcon-dkbrown;
+$navbar-default-dropdown-link-hover-color:    $navbar-default-link-color;
+$navbar-default-dropdown-link-hover-bg:       transparent;
+$navbar-default-dropdown-link-active-color:   $navbar-default-link-active-bg;
+$navbar-default-dropdown-link-active-bg:      $navbar-default-link-active-color;
+
+
 
 //=== Inverted navbar
 // Reset inverted navbar basics
@@ -232,6 +240,13 @@ $navbar-inverse-toggle-hover-bg:            transparent;
 $navbar-inverse-toggle-icon-bar-bg:         $navbar-inverse-link-color;
 $navbar-inverse-toggle-icon-color:          $navbar-inverse-toggle-icon-bar-bg;
 $navbar-inverse-toggle-border-color:        transparent;
+
+// Inverted navbar dropdown menu link colors
+$navbar-inverse-dropdown-link-color:          $sphinxcon-dkbrown;
+$navbar-inverse-dropdown-link-hover-color:    $navbar-inverse-link-color;
+$navbar-inverse-dropdown-link-hover-bg:       transparent;
+$navbar-inverse-dropdown-link-active-color:   $navbar-inverse-link-active-bg;
+$navbar-inverse-dropdown-link-active-bg:      $navbar-inverse-link-active-color;
 
 
 //== Footer

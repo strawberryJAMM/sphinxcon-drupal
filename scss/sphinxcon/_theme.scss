@@ -80,6 +80,39 @@ body {
   .navbar-form {
     border-color: $navbar-default-border;
   }
+
+  
+  // Dropdown Menu colours
+  .dropdown-menu {
+    
+    // Links within the dropdown menu
+    > li > a {
+      color: $navbar-default-dropdown-link-color;
+    }
+
+    // Hover/Focus state
+    & > li > a {
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        color: $navbar-default-dropdown-link-hover-color;
+        background-color: $navbar-default-dropdown-link-hover-bg;
+      }
+    }
+
+    // Active state
+    & > .active > a {
+      &,
+      &:hover,
+      &:focus {
+        color: $navbar-default-dropdown-link-active-color;
+        text-decoration: none;
+        outline: 0;
+        background-color: $navbar-default-dropdown-link-active-bg;
+      }
+    }
+  }
+
 }
 
 //

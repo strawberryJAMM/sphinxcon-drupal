@@ -8582,6 +8582,20 @@ body {
 .navbar-default .navbar-form {
   border-color: #a7280c;
 }
+.navbar-default .dropdown-menu > li > a {
+  color: #1d0702;
+}
+.navbar-default .dropdown-menu > li > a:hover, .navbar-default .dropdown-menu > li > a:focus {
+  text-decoration: none;
+  color: #faaf40;
+  background-color: transparent;
+}
+.navbar-default .dropdown-menu > .active > a, .navbar-default .dropdown-menu > .active > a:hover, .navbar-default .dropdown-menu > .active > a:focus {
+  color: #a7280c;
+  text-decoration: none;
+  outline: 0;
+  background-color: #faaf40;
+}
 
 .navbar-inverse .navbar-header,
 .navbar-inverse .navbar-collapse {

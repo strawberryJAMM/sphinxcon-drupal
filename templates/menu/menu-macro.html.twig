@@ -1,0 +1,65 @@
+{#
+/**
+ * @file
+ * Contains the "menu_links" macro which uses recurision to render a menu tree
+ * as nested unordered lists. To use it in a menu theme template include the
+ * following code at the top of the template:
+ *
+ * {% import 'menu-macro.html.twig' as menus %}
+ *
+ *
+ * To call the macro use the following code:
+ *
+ * {{ menus.menu_links(items, 0, attributes, top_menu_classes) }}
+ *
+ * Parameters:
+ * - items: Nested list of menu items provided by the calling template. 
+ * - menu_level: the menu depth of the current recursive iteration, starting at 0
+ * - attributes: attributes that apply to all menus, regardless of levels 
+ * - top_menu_classes: classes that must be applied when menu_level == 0
+ *
+ *
+ * Properties of the "items" variable in the menu.html.twig template:
+ * - items.attributes: HTML attributes for the menu item.
+ * - items.below: The menu item child items.
+ * - items.title: The menu link title.
+ * - items.url: The menu link url, instance of \Drupal\Core\Url
+ * - items.localized_options: Menu link localized options.
+ * - items.is_expanded: TRUE if the link has visible children within the current
+ *   menu tree.
+ * - items.is_collapsed: TRUE if the link has children within the current menu tree
+ *   that are not currently visible.
+ * - items.in_active_trail: TRUE if the link is in the active trail.
+ *
+ * @ingroup templates
+ */
+#}
+
+{% macro menu_links(items, menu_level, attributes, top_menu_classes) %}
+  {% import _self as menus %}
+  {% if items %}
+    {% if menu_level == 0 %}
+      {% set attributes = attributes.addClass(top_menu_classes) %}
+    {% endif %}
+    <ul{{ attributes }}>
+    {% for item in items %}
+      {%
+        set item_classes = [
+          item.in_active_trail ? 'active',
+          item.below ? 'dropdown',
+        ]
+      %}
+      <li{{ item.attributes.addClass(item_classes) }}>
+        {% if item.below %}
+          {% set label_id = item.attributes.id ~ '-label' %}
+          <a href="{{ item.url }}" id="{{ label_id }}">{{ item.title }}</a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="caret"></span></a>
+          {{ menus.menu_links(item.below, menu_level + 1, attributes.addClass('dropdown-menu').setAttribute('aria-labelledby', label_id)) }}
+        {% else %}
+          {{ link(item.title, item.url) }}
+        {% endif %}
+      </li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}
