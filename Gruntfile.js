@@ -11,10 +11,23 @@ module.exports = function(grunt) {
       version: '8.x',
     },
 
-    // Watch the stylesheets created from the project SASS files so PostCSS processing is automatic
+    // Concurrent Watch Tasks
+    concurrent: {
+      options: {
+        logConcurrentOutput: true,
+      },
+      dist: {
+        tasks: ['watch:sass_dist', 'watch:js_main'],
+      },
+      dev: {
+        tasks: ['watch:sass_dev', 'watch:js_main'],
+      },
+    },
+    
+    // Watch stylesheets and script files for changes so post processing is automatic
     watch: {
       sass_dist:{
-        files: ['scss/**/*.scss', 'bootstrap/assets/stylesheets/**/*.scss'],
+        files: ['scss/**/*.scss', 'bootstrap/assets/stylesheets/**/*.scss', '!scss/font-awesome/**/*.scss'],
         tasks: ['sass:dist', 'postcss:dist'],
         options: {
           event: ['added','changed'],
@@ -25,29 +38,14 @@ module.exports = function(grunt) {
         tasks: ['sass:dev', 'postcss:dev'],
         options: {
           event: ['added','changed'],
-          spawn: false,
-          interrupt: true,
         },
       },
-      js:{
-        files: ['js/*.js','!js/main.min.js'],
+      js_main:{
+        files: ['js/*.js','!js/*.min.js'],
         tasks: ['uglify'],
         options: {
           event: ['added','changed'],
         },
-      },
-    },
-    
-    // Concurrent Watch Tasks
-    concurrent: {
-      options: {
-        logConcurrentOutput: true,
-      },
-      dist: {
-        tasks: ["watch:sass_dist", "watch:js"],
-      },
-      dev: {
-        tasks: ["watch:sass_dev", "watch:js"],
       },
     },
     
@@ -59,7 +57,6 @@ module.exports = function(grunt) {
         },
         files: {
           'css/style.css' : 'scss/style.scss',
-          'css/font-awesome.css' : 'scss/font-awesome/font-awesome.scss',
         },
       },
       dev: {
@@ -94,9 +91,15 @@ module.exports = function(grunt) {
         sourceMap: true,          // Generate source map file
       },
       
-      target:{
+      main:{
         files: {
-          'js/main.min.js' : ['js/*.js','!js/main.min.js']
+          'js/main.min.js' : ['js/*.js','!js/*.min.js'],
+        },
+      },
+
+      bootstrap:{
+        files: {
+          'js/bootstrap.min.js' : ['bootstrap/assets/javascripts/bootstrap/**/*.js'],
         },
       },
     },
@@ -191,10 +194,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-git-archive');
   
   // register tasks
-  grunt.registerTask('default', ['concurrent:dev']);
-  grunt.registerTask('dist', ['concurrent:dist']);
-  grunt.registerTask('post_dist', ['uglify:target', 'postcss:dist']);
-  grunt.registerTask('post_dev', ['uglify:target', 'postcss:dev']);
-  grunt.registerTask('fontawesome', ['sass:fontawesome', 'postcss:fontawesome']);
-  grunt.registerTask('archive', ['git-archive'])
+  grunt.registerTask('default',       ['dev']);
+  grunt.registerTask('dev',           ['concurrent:dev']);
+  grunt.registerTask('dist',          ['concurrent:dist']);
+  grunt.registerTask('post_dist',     ['uglify:main', 'uglify:bootstrap', 'postcss:dist']);
+  grunt.registerTask('post_dev',      ['uglify:main', 'postcss:dev']);
+  grunt.registerTask('sass_fa',       ['sass:fontawesome', 'postcss:fontawesome']);
+  grunt.registerTask('js_bootstrap',  ['uglify:bootstrap']);
+  grunt.registerTask('archive',       ['git-archive']);
 };
