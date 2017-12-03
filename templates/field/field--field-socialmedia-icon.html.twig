@@ -1,0 +1,118 @@
+{#
+/**
+ * @file
+ * Theme template for socialmedia related link fields to display an icon and optional
+ * label with a link to a website, twitter account, facebook page, etc.
+ *
+ * This template is never used directly but, instead, is inherited by the templates
+ * for each supported social media field.
+ *
+ * To use, put the following code at the top of the socialmedia link field template:
+ *
+ * {% extends "field--field-socialmedia-icon.html.twig" %}
+ *
+ *
+ * Field:
+ * This template assumes it is working with a LINK field that has been configured for 
+ * a single item and to output the URL as text only. Inheriting templates can change 
+ * this by modifying the "link_open" and "link_close" blocks appropriately.
+ *
+ *
+ * Icon Font:
+ * Bootstrap comes with the glyphicons icon font but, unfortunately, it does not 
+ * include standard social media icons so this template assumes that the Fontawesome 
+ * module has been installed (https://www.drupal.org/project/fontawesome).
+ *
+ * For an inheriting template to use another icon font that is installed, it must 
+ * override one or both of the "icon_base_class" and "icon_tag" variables. The 
+ * easiest way to do that, is to override the "icon" block, setting these variables
+ * appropriately followed by the parent block 
+ *
+ * E.g. To switch to Glyphicons, include the following clode in the inheriting template: 
+ *
+ * {% block icon %} 
+ *   {% set icon_tag = 'span' %}
+ *   {% set icon_base_class = 'glyphicon' %}
+     {{ parent() }}
+ * {% endblock icon %}
+ *
+ *
+ * Icon:
+ * This template uses the fontawesome 'question' icon by default. An inheriting template 
+ * should set the value of the "icon_name" variable to the name of the icon to use.The 
+ * easiest way to do that, is to override the "icon" block, setting this variable
+ * appropriately followed by the parent block 
+ *
+ * E.g. to use a twitter icon, include the following code in the inheriting template:
+ *
+ * {% block icon %} 
+ *   {% set icon_name = 'twitter' %}
+     {{ parent() }}
+ * {% endblock icon %}
+ *
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - label_hidden: Whether to show the field label or not.
+ * - title_attributes: HTML attributes for the title.
+ * - label: The label for the field.
+ * - multiple: TRUE if a field can contain multiple items.
+ * - items: List of all the field items. Each item contains:
+ *   - attributes: List of HTML attributes for each item.
+ *   - content: The field item's content.
+ * - entity_type: The entity type to which the field belongs.
+ * - field_name: The name of the field.
+ * - field_type: The type of the field.
+ * - label_display: The display settings for the label.
+ *
+ * @ingroup templates
+ *
+ * @see template_preprocess_field()
+ */
+#}
+{%
+  set field_classes = [
+    'field',
+    'field--socialmedia',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+  ]
+%}
+{%
+  set title_classes = [
+    'field--label',
+    label_display == 'visually_hidden' ? 'sr-only',
+  ]
+%}
+{% set icon_tag = 'i' %}
+{% set icon_base_class = 'fa' %}
+{% set icon_name = 'question' %}
+{% block field %}
+  <div{{ attributes.addClass(field_classes) }}>
+    {% for item in items %}
+      {% block item %}
+        <span{{ item.attributes.addClass('field--item') }}>
+          {% block link_open %}
+            <a href="{{ item.content|e('html_attr') }}" {% if label_hidden %}aria-label="{{ label|e('html_attr') }}"{% endif %}>
+          {% endblock link_open %}
+          {% block icon %}
+            {%
+              set icon_classes = [
+                'field--icon',
+                icon_base_class,
+                icon_base_class ~ '-' ~ icon_name,
+              ]
+            %}
+            <{{- icon_tag -}}{{ create_attribute().addClass(icon_classes).setAttribute('aria-hidden', 'true') }}></{{- icon_tag -}}>
+          {% endblock icon %}
+          {% if not label_hidden %}
+            <span{{ title_attributes.addClass(title_classes) }}>{{ label|e }}</span>
+          {% endif %}
+          {% block link_close %}
+            </a>
+          {% endblock link_close %}
+        </span>
+      {% endblock item %}
+    {% endfor %}
+  </div>
+{% endblock field %}
