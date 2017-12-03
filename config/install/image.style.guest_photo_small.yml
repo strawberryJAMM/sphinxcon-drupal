@@ -1,0 +1,14 @@
+uuid: 285a3566-4298-4f90-b0ca-6cdbd560899f
+langcode: en
+status: true
+dependencies: {  }
+name: guest_photo_small
+label: 'Guest Photo Small (200×300)'
+effects:
+  a5d37fe4-7852-417c-afb9-c1a03101252e:
+    uuid: a5d37fe4-7852-417c-afb9-c1a03101252e
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 200
+      height: 300
