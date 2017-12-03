@@ -27,7 +27,7 @@ ol, ul {
 
 // Page header.
 .page-header {
-  margin-top: 0;
+  margin: 0;
 }
 
 // Footer.
@@ -66,4 +66,12 @@ p:last-child,
   &:first-child {
     margin-top: 0;
   }
+}
+
+.search-kint-results {
+  background-color: ghostwhite;
+}
+.search-kint-results,
+.search-kint {
+  color: initial;
 }
