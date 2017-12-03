@@ -88,9 +88,18 @@
           {{ page.navigation_collapsible }}
         </div> <!-- /.navbar-collapse -->
       {% endif %}
+      
+      {# Search #}
+        <div id="search-bar" class="search-bar">
+      {% if page.search_bar %}
+          {{ page.search_bar }}
+      {% endif %}
+        </div> <!-- /.search-bar -->
+      
       {% if not navbar_attributes.hasClass(container) %}
         </div> <!-- /.container -->
       {% endif %}
+      
     </header>
   {% endblock %}
 {% endif %}
@@ -100,26 +109,27 @@
   <main class="main-container {{ container }} js-quickedit-main-content" role="main">
     {# Header (breadcrumbs, status, page title, tabs, admin actions) #}
     {% if page.header %}
-      <div class="row top-bar" role="heading">
+      <div class="top-bar" role="heading">
       {% block header %}
         {{ page.header }}
       {% endblock %}
-      </div> <!-- /.row.top-bar -->
+      </div> <!-- /.top-bar -->
     {% endif %}
 
     {# Featured #}
     {% if page.featured %}
-      <section class="row featured" role="complementary">
+      <section class="featured" role="complementary">
       {% block featured %}
         <div class="col-sm-12">
           <div class="bg-blurred" role="none"></div>
           {{ page.featured }}
         </div>
       {% endblock %}
-      </section> <!-- /.row.featured -->
+      </section> <!-- /.featured -->
     {% endif %}
       
-    <div class="main-content-wrapper row" role="none">
+    <div class="main-content-wrapper" role="none">
+    
       {%
         set content_classes = [
           'main-content',
@@ -155,29 +165,31 @@
           {% endif %}
 
           {# Content #}
+          {{ kint() }}
           {% block content %}
             <a id="main-content"></a>
             {{ page.content }}
           {% endblock %}
+          
         </section>
       {% endblock %}
-    </div> <!-- /.main-content-wrapper.row -->
+    </div> <!-- /.main-content-wrapper -->
   </main>
 {% endblock %}
 
 {% if page.footer_top or page.footer_middle_left or page.footer_middle_center or page.footer_middle_right or page.footer_bottom %}
   {% block footer %}
     <footer class="footer {{ container }}" role="contentinfo">
-      <div class="footer-top row" role="none">
+      <div class="footer-top" role="none">
         {# Footer Top #}
         {% if page.footer_top %}
           <div class="col-sm-12">
             {{ page.footer_top }}
           </div>
         {% endif %}
-      </div> <!-- /.footer-top.row --?
+      </div> <!-- /.footer-top --?
 
-      <div class="footer-middle row" role="none">
+      <div class="footer-middle" role="none">
         {# Footer Middle #}
         {%
           set footer_left_classes = [
@@ -218,17 +230,16 @@
             {{ page.footer_middle_right }}
           </div> <!-- /.footer-middle.footer-right -->
         {% endif %}
-      </div> <!-- /.footer-middle.row -->
+      </div> <!-- /.footer-middle -->
 
-      <div class="footer-bottom row" role="none">
+      <div class="footer-bottom" role="none">
         {# Footer Bottom #}
         {% if page.footer_bottom %}
           <div class="col-sm-12" id="footer-bottom">
             {{ page.footer_bottom }}
           </div> <!-- /#footer-bottom -->
         {% endif %}
-      </div> <!-- /footer-bottom.row -->
+      </div> <!-- /footer-bottom -->
     </footer> <!-- /.footer.container
   {% endblock %}
 {% endif %}
-{# {{ kint() }} #}
