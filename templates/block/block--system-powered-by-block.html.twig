@@ -1,0 +1,15 @@
+{#
+/**
+ * @file
+ * Theme override for system blocks.
+ *
+ * @ingroup templates
+ */
+#}
+{% extends "block--bare.html.twig" %}
+
+{% block content %}
+  <div class="powered-by-drupal">
+    {{ content }}
+  </div>
+{% endblock %}

@@ -92,4 +92,29 @@
       {{ content.body }}
     </div>
   </div>
+  {% 
+    set has_pictures = 
+        (content.field_additional_image_1 is not empty) and 
+        (content.field_additional_image_2 is not empty) and
+        (content.field_additional_image_3 is not empty)
+  %}
+  {% if has_pictures %}
+  <div class="pictures">
+    {% if content.field_additional_image_1 %}
+    <div class="col-xs-4">
+      {{ content.field_additional_image_1 }}
+    </div>
+    {% endif %}
+    {% if content.field_additional_image_2 %}
+    <div class="col-xs-4">
+      {{ content.field_additional_image_2 }}
+    </div>
+    {% endif %}
+    {% if content.field_additional_image_3 %}
+    <div class="col-xs-4">
+      {{ content.field_additional_image_3 }}
+    </div>
+    {% endif %}
+  </div>
+  {% endif %}
 {% endblock %}

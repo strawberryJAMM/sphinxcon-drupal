@@ -253,7 +253,7 @@ $navbar-inverse-dropdown-link-active-bg:      $navbar-inverse-link-active-color;
 //
 // ## Set specific menu heights based on screen size
 // These will also be used for body top and bottom padding when navbar is fixed
-$footer-height:              150px;
+$footer-height:              200px;
 $footer-border-width:        2px;
 
 
@@ -273,3 +273,11 @@ $blockquote-border-color:     $gray-lightest;
 $page-header-border-color:    $gray-lightest;
 //** Horizontal line color.
 $hr-border:                   $gray-lightest;
+
+
+//== Forms
+//
+//** Text color for textual input addons
+$input-group-addon-color:        $sphinxcon-dkbrown;
+//** Background color for textual input addons
+$input-group-addon-bg:           $sphinxcon-orange;

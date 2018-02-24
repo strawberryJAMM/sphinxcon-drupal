@@ -86,15 +86,16 @@
       {% if page.navigation_collapsible %}
         <div id="navbar-collapse" class="navbar-collapse collapse">
           {{ page.navigation_collapsible }}
+          
+        {# Search #}
+          <div id="search-bar" class="search-bar">
+        {% if page.search_bar %}
+            {{ page.search_bar }}
+        {% endif %}
+          </div> <!-- /.search-bar -->
+
         </div> <!-- /.navbar-collapse -->
       {% endif %}
-      
-      {# Search #}
-        <div id="search-bar" class="search-bar">
-      {% if page.search_bar %}
-          {{ page.search_bar }}
-      {% endif %}
-        </div> <!-- /.search-bar -->
       
       {% if not navbar_attributes.hasClass(container) %}
         </div> <!-- /.container -->
@@ -108,9 +109,14 @@
 {% block main %}
   <main class="main-container {{ container }} js-quickedit-main-content" role="main">
     {# Header (breadcrumbs, status, page title, tabs, admin actions) #}
-    {% if page.header %}
+    {% if page.header or is_front %}
       <div class="top-bar" role="heading">
       {% block header %}
+        {% if is_front %}
+          <h2 class="date-location"><span class="sr-only">SphinxCon {{ sphinxcon_year }}<br /></span>
+            {{ sphinxcon_dates }}<br />
+            {{ sphinxcon_location }}</h2>
+        {% endif %}
         {{ page.header }}
       {% endblock %}
       </div> <!-- /.top-bar -->
@@ -153,7 +159,9 @@
           {# Highlighted #}
           {% if page.highlighted %}
             {% block highlighted %}
-              <div class="highlighted">{{ page.highlighted }}</div>
+              <div class="highlighted">
+                {{ page.highlighted }}
+              </div>
             {% endblock %}
           {% endif %}
 
@@ -165,7 +173,7 @@
           {% endif %}
 
           {# Content #}
-          {{ kint() }}
+          {# {{ kint() }} #}
           {% block content %}
             <a id="main-content"></a>
             {{ page.content }}
@@ -187,7 +195,7 @@
             {{ page.footer_top }}
           </div>
         {% endif %}
-      </div> <!-- /.footer-top --?
+      </div> <!-- /.footer-top -->
 
       <div class="footer-middle" role="none">
         {# Footer Middle #}

@@ -23,4 +23,10 @@
       </a>
     </div>
   {% endif %}
+  {% if site_name %}
+    <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">{{ site_name }}</a>
+  {% endif %}
+  {% if site_slogan %}
+    <p>{{ site_slogan }}</p>
+  {% endif %}
 {% endblock %}

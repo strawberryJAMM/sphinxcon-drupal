@@ -98,7 +98,7 @@ footer.footer {
   }
 }
 
-//== Photo & Info Region
+//== Guest Photo & Info Region
 //
 .photo-and-info {
   margin-bottom: $grid-gutter-width;
@@ -112,6 +112,16 @@ footer.footer {
     .socialmedia {
       margin-top: $grid-gutter-width;
     }
+  }
+}
+
+//== Guest additional Pictures region
+//
+.pictures {
+  margin-top: $grid-gutter-width;
+  
+  img {
+    margin: 0 auto;
   }
 }
 
@@ -329,15 +339,35 @@ body {
 }
 
 //
-// Search Bar - this overlaps the navbar when expanded
+// Search Bar 
+
 .search-bar {
   height: 44px;
-  margin-top: -44px;
-  float: right;
-  width: 200px;
+  width: 175px;
   
-  .form-group {
-    margin: 3px 0;
+  .input-group .form-control.form-search + .input-group-addon {
+    width: 45px;
+  }
+
+  // behaviour on larger screens (uses unique breakpoint)
+  @media #{$grid-breakpoint} {
+    margin-top: -44px;
+    float: right;
+
+    .form-group {
+      float: right;
+      margin: 3px 0;
+    }
+
+    // input box is collapsed until it has focus
+    .input-group .form-search {
+      width: 30px;
+      float: right;
+      
+      &:focus {
+        width: 130px;
+      }
+    }
   }
 }
 

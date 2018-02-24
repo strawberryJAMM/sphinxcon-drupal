@@ -65,6 +65,7 @@
  *   in different view modes.
  */
 #}
+{% block node %}
 {%
   set classes = [
     node.bundle|clean_class,
@@ -106,3 +107,4 @@
   </div>
 
 </article>
+{% endblock %}
