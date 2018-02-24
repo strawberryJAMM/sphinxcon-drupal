@@ -199,7 +199,11 @@ module.exports = function(grunt) {
   grunt.registerTask('dist',          ['concurrent:dist']);
   grunt.registerTask('post_dist',     ['uglify:main', 'uglify:bootstrap', 'postcss:dist']);
   grunt.registerTask('post_dev',      ['uglify:main', 'postcss:dev']);
+  grunt.registerTask('sass_dist',     ['sass:dist', 'postcss:dist']);
+  grunt.registerTask('sass_dev',      ['sass:dev', 'postcss:dev']);
   grunt.registerTask('sass_fa',       ['sass:fontawesome', 'postcss:fontawesome']);
+  grunt.registerTask('js_dist',       ['uglify:main', 'uglify:bootstrap']);
+  grunt.registerTask('js_dev',        ['uglify:main']);
   grunt.registerTask('js_bootstrap',  ['uglify:bootstrap']);
   grunt.registerTask('archive',       ['git-archive']);
 };
