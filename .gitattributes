@@ -4,7 +4,7 @@
 .sass-cache/ export-ignore
 _notes/ export-ignore
 /node_modules/ export-ignore
-templates/bootstrap/ export-ignore
-templates/bootstrap/** export-ignore
-font-awesome/ export-ignore
-font-awesome.* export-ignore
+sphinxcon/templates/bootstrap/ export-ignore
+sphinxcon/templates/bootstrap/** export-ignore
+sphinxcon/font-awesome/ export-ignore
+sphinxcon/font-awesome.* export-ignore

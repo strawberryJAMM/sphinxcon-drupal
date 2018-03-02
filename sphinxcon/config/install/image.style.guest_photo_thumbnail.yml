@@ -1,0 +1,14 @@
+uuid: f362f10a-3888-433a-9e34-d1cc34493179
+langcode: en
+status: true
+dependencies: {  }
+name: guest_photo_thumbnail
+label: 'Guest Photo Thumbnail (100×150)'
+effects:
+  80115b66-2a30-4ab5-b06d-e68119fd4f8f:
+    uuid: 80115b66-2a30-4ab5-b06d-e68119fd4f8f
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 100
+      height: 150

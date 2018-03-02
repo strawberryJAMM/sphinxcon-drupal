@@ -27,21 +27,21 @@ module.exports = function(grunt) {
     // Watch stylesheets and script files for changes so post processing is automatic
     watch: {
       sass_dist:{
-        files: ['scss/**/*.scss', 'bootstrap/assets/stylesheets/**/*.scss', '!scss/font-awesome/**/*.scss'],
+        files: ['sphinxcon/scss/**/*.scss', 'sphinxcon/bootstrap/assets/stylesheets/**/*.scss', '!sphinxcon/scss/font-awesome/**/*.scss'],
         tasks: ['sass:dist', 'postcss:dist'],
         options: {
           event: ['added','changed'],
         },
       },
       sass_dev:{
-        files: ['scss/**/*.scss', 'bootstrap/assets/stylesheets/**/*.scss', '!scss/font-awesome/**/*.scss'],
+        files: ['sphinxcon/scss/**/*.scss', 'sphinxcon/bootstrap/assets/stylesheets/**/*.scss', '!sphinxcon/scss/font-awesome/**/*.scss'],
         tasks: ['sass:dev', 'postcss:dev'],
         options: {
           event: ['added','changed'],
         },
       },
       js_main:{
-        files: ['js/*.js','!js/*.min.js'],
+        files: ['sphinxcon/js/*.js','!sphinxcon/js/*.min.js'],
         tasks: ['uglify'],
         options: {
           event: ['added','changed'],
@@ -56,7 +56,7 @@ module.exports = function(grunt) {
           style: 'compressed',
         },
         files: {
-          'css/style.css' : 'scss/style.scss',
+          'sphinxcon/css/style.css' : 'sphinxcon/scss/style.scss',
         },
       },
       dev: {
@@ -64,7 +64,7 @@ module.exports = function(grunt) {
           style: 'expanded',
         },
         files: {
-          'css/style.css' : 'scss/style.scss',
+          'sphinxcon/css/style.css' : 'sphinxcon/scss/style.scss',
         },
       },
       fontawesome: {
@@ -72,7 +72,7 @@ module.exports = function(grunt) {
           style: 'compressed',
         },
         files: {
-          'css/font-awesome.css' : 'scss/font-awesome/font-awesome.scss',
+          'sphinxcon/css/font-awesome.css' : 'sphinxcon/scss/font-awesome/font-awesome.scss',
         },
       },
     },
@@ -93,13 +93,13 @@ module.exports = function(grunt) {
       
       main:{
         files: {
-          'js/main.min.js' : ['js/*.js','!js/*.min.js'],
+          'sphinxcon/js/main.min.js' : ['sphinxcon/js/*.js','!sphinxcon/js/*.min.js'],
         },
       },
 
       bootstrap:{
         files: {
-          'js/bootstrap.min.js' : ['bootstrap/assets/javascripts/bootstrap/**/*.js'],
+          'sphinxcon/js/bootstrap.min.js' : ['sphinxcon/bootstrap/assets/javascripts/bootstrap/**/*.js'],
         },
       },
     },
@@ -108,8 +108,8 @@ module.exports = function(grunt) {
     postcss: {
       options: {
         map: {
-          inline: false,        // save all sourcemaps as separate files...
-          annotation: 'css/'    // ... in this directory
+          inline: false,                  // save all sourcemaps as separate files...
+          annotation: 'sphinxcon/css/'    // ... in this directory
         },
         processors: [
           require('postcss-cssnext')(),       // transform modern CSS so it works in all supported browsers
@@ -120,12 +120,12 @@ module.exports = function(grunt) {
         files: [
           {
             expand: true,      // enable dynamic expansion
-            cwd: 'css/',       // Src matches are relative to this path
+            cwd: 'sphinxcon/css/',       // Src matches are relative to this path
             src: [
               '*.css',         // All .css files...
               '!*.min.css'     // ... except .min.css files
             ],                 // Pattern to match for source files
-            dest: 'css/',      // Destination path prefix
+            dest: 'sphinxcon/css/',      // Destination path prefix
             ext: '.min.css',   // Destination file paths will have this extension
             extDot: 'first',   // Extensions in filenames begin after the first dot
           },
@@ -135,9 +135,9 @@ module.exports = function(grunt) {
         files: [
           {
             expand: true,      // enable dynamic expansion
-            cwd: 'css/',       // Src matches are relative to this path
+            cwd: 'sphinxcon/css/',       // Src matches are relative to this path
             src: 'style.css',  // style.css file
-            dest: 'css/',      // Destination path prefix
+            dest: 'sphinxcon/css/',      // Destination path prefix
             ext: '.min.css',   // Destination file paths will have this extension
             extDot: 'first',   // Extensions in filenames begin after the first dot
           },
@@ -147,9 +147,9 @@ module.exports = function(grunt) {
         files: [
           {
             expand: true,      // enable dynamic expansion
-            cwd: 'css/',       // Src matches are relative to this path
+            cwd: 'sphinxcon/css/',       // Src matches are relative to this path
             src: 'font-awesome.css', // font-awesome.css file
-            dest: 'css/',      // Destination path prefix
+            dest: 'sphinxcon/css/',      // Destination path prefix
             ext: '.min.css',   // Destination file paths will have this extension
             extDot: 'first',   // Extensions in filenames begin after the first dot
           },

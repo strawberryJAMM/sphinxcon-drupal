@@ -1,0 +1,104 @@
+{#
+/**
+ * @file
+ * Theme override of the socialmedia icon template
+ *
+ * This template is never used directly but, instead, is inherited by the templates
+ * for each supported social media field.
+ *
+ * To use, put the following code at the top of the socialmedia link field template:
+ *
+ * {% extends "field--field-socialmedia-icon.html.twig" %}
+ *
+ *
+ * Field:
+ * This template assumes it is working with a LINK field that has been configured for 
+ * a single item and to output the URL as text only. Inheriting templates can change 
+ * this by modifying the "link_open" and "link_close" blocks appropriately.
+ *
+ *
+ * Icon Font:
+ * Bootstrap comes with the glyphicons icon font but, unfortunately, it does not 
+ * include standard social media icons so this template assumes that the 8.x-2.x version  
+ * Fontawesome module, which uses Fontawesome 5.0, has been installed 
+ * (https://www.drupal.org/project/fontawesome) with it's settings configured to use 
+ * the <span> tag.
+ *
+ * For an inheriting template to change the tag or use another icon font that is installed, 
+ * it must override one or more of the "icon_tag","icon_font_id" and "icon_name_prefix"  
+ * variables. The easiest way to do that, is to override the "icon" block, setting these 
+ * variables appropriately followed by the parent block 
+ *
+ * E.g. To use the <i> tag instead of <span>, include the following clode in the inheriting
+ * template: 
+ *
+ * {% block icon %} 
+ *   {% set icon_tag = 'span' %}
+ *   {{ parent() }}
+ * {% endblock icon %}
+ *
+ * E.g. To switch to Glyphicons instead of Fontawesome, include the following code in the 
+ * inheriting template: 
+ *
+ * {% block icon %} 
+ *   {% set icon_font_id = 'glyphicon' %}
+ *   {% set icon_name_prefix = 'glyphicon' %}
+ *   {{ parent() }}
+ * {% endblock icon %}
+ *
+ *
+ * Icon:
+ * This template uses the fontawesome 'twitter' brand icon by default. An inheriting  
+ * template should set the value of the "icon_name" variable to the name of the icon to use. 
+ * The easiest way to do that, is to override the "icon" block, setting this variable
+ * appropriately followed by the parent block 
+ *
+ * E.g. to use the standard facebook icon, include the following code in the inheriting template:
+ *
+ * {% block icon %} 
+ *   {% set icon_name = 'facebook' %}
+ *   {{ parent() }}
+ * {% endblock icon %}
+ *
+ * This template also assumes that a Fontawesome 5.0 "brand" icon is  being used, which 
+ * require the "fab" font ID. For an inheriting template to use a non-brand icon the 
+ * font ID must be overriden (with "fas", "far" or "fal", depending on the icon).
+ *
+ * E.g. To switch to the regular weight "at" symbol, include the following clode in the
+ * inheriting template: 
+ *
+ * {% block icon %} 
+ *   {% set icon_font_id = 'far' %}
+ *   {% set icon_name = 'at' %}
+ *   {{ parent() }}
+ * {% endblock icon %}
+ *
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - label_hidden: Whether to show the field label or not.
+ * - title_attributes: HTML attributes for the title.
+ * - label: The label for the field.
+ * - multiple: TRUE if a field can contain multiple items.
+ * - items: List of all the field items. Each item contains:
+ *   - attributes: List of HTML attributes for each item.
+ *   - content: The field item's content.
+ * - entity_type: The entity type to which the field belongs.
+ * - field_name: The name of the field.
+ * - field_type: The type of the field.
+ * - label_display: The display settings for the label.
+ *
+ * @ingroup templates
+ *
+ * @see template_preprocess_field()
+ */
+#}
+{% extends "field--field-socialmedia-icon.html.twig" %}
+
+{% block link_open %}
+  <a href="https://twitter.com/{{ item.content|e('html_attr') }}" {% if label_hidden %}aria-label="{{ label|e('html_attr') }}"{% endif %}>
+{% endblock link_open %}
+
+{% block icon %} 
+  {{ parent() }}
+{% endblock icon %}

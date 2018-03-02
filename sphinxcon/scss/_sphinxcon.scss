@@ -1,0 +1,19 @@
+// Sphinxcon Theme-Specific Styles
+// Organized according to SMACSS methodology
+
+
+// Variables to help simplify responsive breakpoints 
+$mobile:          "screen and (max-width: #{$screen-xs-max})";
+$tablet:          "screen and (min-width: #{$screen-sm-min})";
+$normal:          "screen and (min-width: #{$screen-md-min})";
+$wide:            "screen and (min-width: #{$screen-lg-min})";
+$grid-breakpoint: "screen and (min-width: #{$grid-float-breakpoint})";
+
+
+// Custom Mixins
+@import 'sphinxcon/mixins';
+
+// Styles
+@import 'sphinxcon/base';
+@import 'sphinxcon/layout';
+@import 'sphinxcon/theme';

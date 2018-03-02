@@ -4,7 +4,7 @@
 .sass-cache/
 _notes/
 /node_modules/
-templates/bootstrap/
-templates/bootstrap/**
-font-awesome/
-font-awesome.*
+sphinxcon/templates/bootstrap/
+sphinxcon/templates/bootstrap/**
+sphinxcon/font-awesome/
+sphinxcon/font-awesome.*

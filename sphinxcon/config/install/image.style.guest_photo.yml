@@ -1,0 +1,14 @@
+uuid: d4389a00-811d-4932-917c-ec08883162ac
+langcode: en
+status: true
+dependencies: {  }
+name: guest_photo
+label: 'Guest Photo (400×600)'
+effects:
+  ae26d738-a138-45ea-89d5-d240b38d5a02:
+    uuid: ae26d738-a138-45ea-89d5-d240b38d5a02
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 400
+      height: 600

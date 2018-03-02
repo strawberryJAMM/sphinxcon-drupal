@@ -1,0 +1,283 @@
+/**
+ * Default Variables.
+ *
+ * Modify this file to provide default Bootstrap Framework variables. The
+ * Bootstrap Framework will not override any variables defined here because it
+ * uses the `!default` flag which will only set their default if not already
+ * defined here.
+ *
+ * You can copy existing variables directly from the following file:
+ * ./THEMENAME/bootstrap/assets/stylesheets/bootstrap/_variables.scss
+ */
+
+//
+//## Set the proper directory for the Bootstrap Glyphicon font.
+$icon-font-path: '../bootstrap/assets/fonts/bootstrap/';
+
+//
+//## Set directories and names for TRMN standard web fonts.
+$trmn-base-font-path:            '../fonts/decalotype/';
+$trmn-base-font-name:            'Decalotype';
+
+$trmn-headings-font-path:        '../fonts/incised_901/';
+$trmn-headings-font-name:        'Incised 901 BT';
+$trmn-headings-font-boldnarrow:  'Incised 901 BT Bold Condensed';
+
+$trmn-sections-font-path:        $trmn-headings-font-path;
+$trmn-sections-font-name:        'Incised 901 BT Compact'; 
+
+$trmn-organization-font-path:    $trmn-headings-font-path;
+$trmn-organization-font-name:    'Incised 901 BT Nord';
+
+//
+//## Base Header Logo width and height
+$logo-image-base-width:          810px;
+$logo-image-base-height:         92px;
+$logo-image-w-over-h-aspect-ratio:    $logo-image-base-width / $logo-image-base-height;
+
+//
+//## Fixed Header Logo heights and calculated widths
+$logo-image-height:          50px;
+$logo-image-width:           $logo-image-height * $logo-image-w-over-h-aspect-ratio;
+$logo-image-height-sm:       85px;
+$logo-image-width-sm:        $logo-image-height-sm * $logo-image-w-over-h-aspect-ratio;
+$logo-image-height-md:       110px;
+$logo-image-width-md:        $logo-image-height-md * $logo-image-w-over-h-aspect-ratio;
+
+//
+//## SphinxCon Theme Specific Colours
+$sphinxcon-dkbrown:    #1d0702;
+$sphinxcon-mdbrown:    #3C2621;
+$sphinxcon-ltbrown:    #8c3c26; 
+$sphinxcon-redorange:  #a7280c; //#cc2802; 
+$sphinxcon-orange:     #faaf40;
+$sphinxcon-green:      #7bbe47;
+$white:                #fff;
+
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+
+$gray-base:             #000;
+$gray-darker:           lighten($gray-base, 13.5%); // #222
+$gray-dark:             lighten($gray-base, 20%);   // #333
+$gray:                  lighten($gray-base, 33.5%); // #555
+$gray-light:            lighten($gray-base, 46.7%); // #777
+$gray-lighter:          lighten($gray-base, 66.7%); // #aaa
+$gray-lightest:         lighten($gray-base, 93.5%); // #eee
+
+$brand-success:         #5cb85c;
+$brand-info:            #5bc0de;
+$brand-warning:         #f0ad4e;
+$brand-danger:          #d9534f;
+
+//
+//## Sphinxcon brand colors 
+$brand-primary:        $sphinxcon-orange;
+$brand-secondary:      $sphinxcon-green;
+
+//## Highlight region colours
+$highlighted-text:     $sphinxcon-dkbrown;
+$highlighted-bg:       lighten($sphinxcon-green, 35%);
+$highlighted-border:   darken(adjust-hue($highlighted-bg, -10), 5%);
+
+
+//== various theme specific Variables
+//
+//## Adjustments for Drupal Toolbar positioning
+$toolbar-fixed-default-height: 39px;
+$toolbar-fixed-hrz-open-height: 79px;
+
+//## Content Type fields
+$guest-img-border-style: 2px outset $sphinxcon-green;
+
+
+
+//== Scaffolding
+//
+//## Overridden settings for some of the most global styles.
+//** Background color for `<body>`.
+$body-bg:               $sphinxcon-dkbrown;
+//** Global text color on `<body>`.
+$text-color:            $white;
+
+
+//== Typography
+//
+//## body text, headings, and more.
+$trmn-base-font-family:            "#{$trmn-base-font-name}", Arial, "Helvetica Neue", Helvetica, sans-serif;
+$trmn-headings-font-family:        "#{$trmn-headings-font-name}", Verdana, Arial, "Helvetica Neue", Helvetica, sans-serif;
+$trmn-headings-font-family-narrow: "#{$trmn-headings-font-boldnarrow}", Haettenschweiler, "Arial Narrow Bold", "Verdana Bold", Verdana, Arial, "Helvetica Neue", Helvetica, sans-serif;
+$trmn-sections-font-family:        "#{$trmn-sections-font-name}", Impact, "Verdana Bold", Verdana, Arial, "Helvetica Neue", Helvetica, sans-serif;
+$trmn-organization-font-family:    "#{$trmn-organization-font-name}", "Arial Black", Impact, "Verdana Bold", Verdana, sans-serif;
+
+// override the base and headings font details.
+$font-family-base:        $trmn-base-font-family;
+
+$headings-font-family:    $trmn-headings-font-family;
+$headings-font-weight:    900;
+$headings-color:          $brand-secondary;
+
+//
+// ## Standard text sizes
+// Increase base text size to 16px (bootstrap default base size is 14px)
+$font-size-base:          16px;
+$font-size-large:         floor(($font-size-base * 1.25));   // ~20px
+$font-size-small:         floor(($font-size-base * 0.875));  // ~14px
+
+$font-size-h1:            floor(($font-size-base * 2.375));  // ~38px
+$font-size-h2:            floor(($font-size-base * 2.0));    // ~32px
+$font-size-h3:            floor(($font-size-base * 1.625));  // ~26px
+$font-size-h4:            floor(($font-size-base * 1.25));   // ~20px
+$font-size-h5:            $font-size-base;
+$font-size-h6:            floor(($font-size-base * 0.875));  // ~14px
+
+$font-size-featured:      floor(($font-size-base * 1.25));   // ~20px
+
+//** Unit-less `line-height` for use in components like buttons.
+$line-height-base:        1.375; // 22/16
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$line-height-computed:    floor(($font-size-base * $line-height-base)); // ~22px
+
+
+//== Components
+//
+//## Define common padding and border radius sizes and more. Values based on 16px text and 1.375 line-height (~22px to start).
+
+$padding-base-vertical:     7px;
+$padding-base-horizontal:   14px;
+
+$padding-large-vertical:    9px;
+$padding-large-horizontal:  18px;
+
+$padding-small-vertical:    6px;
+$padding-small-horizontal:  12px;
+
+$padding-xs-vertical:       1px;
+$padding-xs-horizontal:     5px;
+
+$line-height-large:         1.2;          //24/20
+$line-height-small:         1.428571429;  // 20/14 
+
+
+
+//== Navbar
+//
+// ## Navigation font size and line heights
+$nav-font-size-base:         floor(($font-size-base * 1.125)); // ~18px
+$nav-line-height-base:       1.333333333; // 24/18 
+$nav-line-height-computed:   ceil(($nav-font-size-base * $nav-line-height-base)); // ~24px
+
+//
+// ## Navbar height related values
+$navbar-padding-vertical:    10px;
+$navbar-collapse-height:     $nav-line-height-computed + (2 * $navbar-padding-vertical);
+$navbar-margin-bottom:       20px; // gap to show background through
+//$navbar-collapse-max-height: 340px; // for vertical menu
+
+//
+// ## Set specific menu heights based on screen size
+// These will also be used for body top and bottom padding when navbar is fixed
+$navbar-height:              $logo-image-height;
+$navbar-height-sm:           $logo-image-height-sm + $navbar-collapse-height;
+$navbar-height-md:           $logo-image-height-md + $navbar-collapse-height;
+$navbar-border-width:        2px;
+
+//
+// ## Set a minimum width for collapsed menus 
+$navbar-collapse-min-width:        200px;
+
+//
+// Navbar default colors
+$navbar-default-color:             $sphinxcon-orange;
+$navbar-default-bg:                $sphinxcon-dkbrown;
+$navbar-default-border:            $sphinxcon-redorange; 
+
+// Navbar links
+$navbar-default-link-color:                $sphinxcon-orange;
+$navbar-default-link-hover-color:          $navbar-default-border;
+$navbar-default-link-hover-bg:             transparent;
+$navbar-default-link-active-color:         $navbar-default-link-color;
+$navbar-default-link-active-bg:            $navbar-default-link-hover-color; 
+$navbar-default-link-disabled-color:       #76605b;
+$navbar-default-link-disabled-bg:          transparent;
+
+// Navbar toggle
+$navbar-default-toggle-hover-color:        $navbar-default-link-hover-color; 
+$navbar-default-toggle-hover-bg:           transparent;
+$navbar-default-toggle-icon-bar-bg:        $navbar-default-link-color;
+$navbar-default-toggle-icon-color:         $navbar-default-toggle-icon-bar-bg;
+$navbar-default-toggle-border-color:       transparent;
+
+// Navbar dropdown menu link colors
+$navbar-default-dropdown-link-color:          $sphinxcon-dkbrown;
+$navbar-default-dropdown-link-hover-color:    $navbar-default-link-color;
+$navbar-default-dropdown-link-hover-bg:       transparent;
+$navbar-default-dropdown-link-active-color:   $navbar-default-link-active-bg;
+$navbar-default-dropdown-link-active-bg:      $navbar-default-link-active-color;
+
+
+
+//=== Inverted navbar
+// Reset inverted navbar basics
+$navbar-inverse-color:                      $sphinxcon-dkbrown;
+$navbar-inverse-bg:                         $sphinxcon-ltbrown;
+$navbar-inverse-border:                     $sphinxcon-orange; 
+
+// Inverted navbar links
+$navbar-inverse-link-color:                 $sphinxcon-dkbrown;
+$navbar-inverse-link-hover-color:           $navbar-inverse-border;
+$navbar-inverse-link-hover-bg:              transparent;
+$navbar-inverse-link-active-color:          $sphinxcon-redorange;
+$navbar-inverse-link-active-bg:             $navbar-inverse-link-hover-color; 
+$navbar-inverse-link-disabled-color:        #70200a;
+$navbar-inverse-link-disabled-bg:           transparent;
+
+// Inverted navbar toggle
+$navbar-inverse-toggle-hover-color:         $navbar-inverse-link-hover-color;
+$navbar-inverse-toggle-hover-bg:            transparent;
+$navbar-inverse-toggle-icon-bar-bg:         $navbar-inverse-link-color;
+$navbar-inverse-toggle-icon-color:          $navbar-inverse-toggle-icon-bar-bg;
+$navbar-inverse-toggle-border-color:        transparent;
+
+// Inverted navbar dropdown menu link colors
+$navbar-inverse-dropdown-link-color:          $sphinxcon-dkbrown;
+$navbar-inverse-dropdown-link-hover-color:    $navbar-inverse-link-color;
+$navbar-inverse-dropdown-link-hover-bg:       transparent;
+$navbar-inverse-dropdown-link-active-color:   $navbar-inverse-link-active-bg;
+$navbar-inverse-dropdown-link-active-bg:      $navbar-inverse-link-active-color;
+
+
+//== Footer
+//
+// ## Set specific menu heights based on screen size
+// These will also be used for body top and bottom padding when navbar is fixed
+$footer-height:              200px;
+$footer-border-width:        2px;
+
+
+//== Type
+//
+//** Text muted color
+$text-muted:                  $gray-lighter;
+//** Abbreviations and acronyms border color
+$abbr-border-color:           $gray-lighter;
+//** Headings small color
+$headings-small-color:        $gray-lighter;
+//** Blockquote small color
+$blockquote-small-color:      $gray-lighter;
+//** Blockquote border color
+$blockquote-border-color:     $gray-lightest;
+//** Page header border color
+$page-header-border-color:    $gray-lightest;
+//** Horizontal line color.
+$hr-border:                   $gray-lightest;
+
+
+//== Forms
+//
+//** Text color for textual input addons
+$input-group-addon-color:        $sphinxcon-dkbrown;
+//** Background color for textual input addons
+$input-group-addon-bg:           $sphinxcon-orange;
