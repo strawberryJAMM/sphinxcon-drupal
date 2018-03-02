@@ -27,14 +27,14 @@ module.exports = function(grunt) {
     // Watch stylesheets and script files for changes so post processing is automatic
     watch: {
       sass_dist:{
-        files: ['sphinxcon/scss/**/*.scss', 'sphinxcon/bootstrap/assets/stylesheets/**/*.scss', '!sphinxcon/scss/font-awesome/**/*.scss'],
+        files: ['sphinxcon/scss/**/*.scss', 'sphinxcon/bootstrap/assets/stylesheets/**/*.scss'],
         tasks: ['sass:dist', 'postcss:dist'],
         options: {
           event: ['added','changed'],
         },
       },
       sass_dev:{
-        files: ['sphinxcon/scss/**/*.scss', 'sphinxcon/bootstrap/assets/stylesheets/**/*.scss', '!sphinxcon/scss/font-awesome/**/*.scss'],
+        files: ['sphinxcon/scss/**/*.scss', 'sphinxcon/bootstrap/assets/stylesheets/**/*.scss'],
         tasks: ['sass:dev', 'postcss:dev'],
         options: {
           event: ['added','changed'],
@@ -65,14 +65,6 @@ module.exports = function(grunt) {
         },
         files: {
           'sphinxcon/css/style.css' : 'sphinxcon/scss/style.scss',
-        },
-      },
-      fontawesome: {
-        options: {                 
-          style: 'compressed',
-        },
-        files: {
-          'sphinxcon/css/font-awesome.css' : 'sphinxcon/scss/font-awesome/font-awesome.scss',
         },
       },
     },
@@ -143,18 +135,6 @@ module.exports = function(grunt) {
           },
         ],
       },
-      fontawesome: {
-        files: [
-          {
-            expand: true,      // enable dynamic expansion
-            cwd: 'sphinxcon/css/',       // Src matches are relative to this path
-            src: 'font-awesome.css', // font-awesome.css file
-            dest: 'sphinxcon/css/',      // Destination path prefix
-            ext: '.min.css',   // Destination file paths will have this extension
-            extDot: 'first',   // Extensions in filenames begin after the first dot
-          },
-        ],
-      },
     },
 
     // Create archive for theme upload
@@ -201,7 +181,6 @@ module.exports = function(grunt) {
   grunt.registerTask('post_dev',      ['uglify:main', 'postcss:dev']);
   grunt.registerTask('sass_dist',     ['sass:dist', 'postcss:dist']);
   grunt.registerTask('sass_dev',      ['sass:dev', 'postcss:dev']);
-  grunt.registerTask('sass_fa',       ['sass:fontawesome', 'postcss:fontawesome']);
   grunt.registerTask('js_dist',       ['uglify:main', 'uglify:bootstrap']);
   grunt.registerTask('js_dev',        ['uglify:main']);
   grunt.registerTask('js_bootstrap',  ['uglify:bootstrap']);
