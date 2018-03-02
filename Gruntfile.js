@@ -146,7 +146,7 @@ module.exports = function(grunt) {
           output: '<%= pkg.name %>_drupal-<%= drupal.version %>-<%= pkg.version %>.tar.gz', 
           'worktree-attributes': true,
           extra: 6,
-          'tree-ish': 'master/sphinxcon',
+          'tree-ish': 'master:sphinxcon/',
         },
       },
     },
