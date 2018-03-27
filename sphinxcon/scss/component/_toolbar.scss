@@ -7,19 +7,33 @@ $toolbar-width: 240px;
 body.toolbar-fixed {
 
   // Fix z-index.
-  .toolbar-oriented .toolbar-bar {
-    z-index: ($zindex-navbar-fixed + 1);
+  .toolbar {
+    position: absolute;
+    top: 6px;
+    
+    .toolbar-bar {
+      z-index: ($zindex-navbar-fixed + 1);
+    }
   }
 
   .navbar-fixed-top {
-    top: 39px;
+    top: $toolbar-fixed-default-height; // 39px;
   }
 
   // Horizontal.
-  &.toolbar-horizontal.toolbar-tray-open .navbar-fixed-top {
-    top: 79px;
+  @media #{$tablet} {
+    &.toolbar-loading.toolbar-horizontal.toolbar-tray-open {
+      
+       .navbar-fixed-top {
+        top: $toolbar-fixed-hrz-open-height; // 79px;      
+      }
+      
+      .toolbar .toolbar-bar .home-toolbar-tab + .toolbar-tab .toolbar-tray {
+          display: block;
+      }  
+    }
   }
-
+  
   // Vertical Open.
   &.toolbar-vertical.toolbar-tray-open {
 
