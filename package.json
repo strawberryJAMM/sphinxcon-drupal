@@ -1,6 +1,6 @@
 {
   "name": "sphinxcon",
-  "version": "1.3",
+  "version": "1.4.1",
   "description": "TRMN 2018 SphinxCon Drupal Theme",
   "main": "index.html",
   "scripts": {
@@ -29,7 +29,9 @@
     "> 5% in US"
   ],
   "dependencies": {
-    "grunt": "^1.0.1"
+    "grunt": "^1.0.2",
+    "grunt-contrib-uglify": "^3.3.0",
+    "postcss-cssnext": "^3.1.0"
   },
   "devDependencies": {
     "cssnano-preset-default": "^4.0.0-rc.2",
@@ -37,10 +39,8 @@
     "grunt-concurrent": "^2.3.1",
     "grunt-contrib-compass": "^1.1.1",
     "grunt-contrib-sass": "^1.0.0",
-    "grunt-contrib-uglify": "^3.1.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-git-archive": "0.0.3",
-    "grunt-postcss": "^0.9.0",
-    "postcss-cssnext": "^3.0.2"
+    "grunt-postcss": "^0.9.0"
   }
 }
