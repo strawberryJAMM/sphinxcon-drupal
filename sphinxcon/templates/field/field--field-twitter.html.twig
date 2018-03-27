@@ -96,7 +96,7 @@
 {% extends "field--field-socialmedia-icon.html.twig" %}
 
 {% block link_open %}
-  <a href="https://twitter.com/{{ item.content|e('html_attr') }}" {% if label_hidden %}aria-label="{{ label|e('html_attr') }}"{% endif %}>
+  <a href="https://twitter.com/{{ item.content|e('html_attr') }}" {% if label_hidden %}aria-label="{{ label|e('html_attr') }}"{% endif %} target="_blank">
 {% endblock link_open %}
 
 {% block icon %} 
