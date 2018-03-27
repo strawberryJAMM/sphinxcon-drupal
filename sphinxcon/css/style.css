@@ -8051,12 +8051,10 @@ body.navbar-is-fixed-bottom {
 /**
  * Toolbar module styling.
  */
-body.toolbar-fixed .toolbar {
-  position: absolute;
-  top: 6px;
-}
 body.toolbar-fixed .toolbar .toolbar-bar {
-  z-index: 1031;
+  position: fixed;
+  top: 0px;
+  width: 100%;
 }
 body.toolbar-fixed .navbar-fixed-top {
   top: 39px;

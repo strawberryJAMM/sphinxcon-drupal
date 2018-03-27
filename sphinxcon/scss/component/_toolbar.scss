@@ -7,13 +7,10 @@ $toolbar-width: 240px;
 body.toolbar-fixed {
 
   // Fix z-index.
-  .toolbar {
-    position: absolute;
-    top: 6px;
-    
-    .toolbar-bar {
-      z-index: ($zindex-navbar-fixed + 1);
-    }
+  .toolbar .toolbar-bar {
+    position: fixed;
+    top: 0px;
+    width: 100%;
   }
 
   .navbar-fixed-top {
