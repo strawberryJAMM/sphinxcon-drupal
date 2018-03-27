@@ -5,12 +5,13 @@ module.exports = function(grunt) {
   // Configure grunt tasks
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-
+    info: grunt.file.readYAML('sphinxcon/sphinxcon.info.yml'),
+    
     // Define drupal version the theme is designed for
     drupal: {
-      version: '8.x',
+      version: '<%= info.core %>',
     },
-
+                   
     // Concurrent Watch Tasks
     concurrent: {
       options: {
@@ -142,15 +143,13 @@ module.exports = function(grunt) {
       archive: {
         options: {                 
           format: 'tar.gz',
-          prefix: '<%= pkg.name %>/',
-          output: '<%= pkg.name %>_drupal-<%= drupal.version %>-<%= pkg.version %>.tar.gz', 
+          output: '<%= pkg.name %>_drupal-<%= info.version %>.tar.gz', 
           'worktree-attributes': true,
           extra: 6,
           'tree-ish': 'master:sphinxcon/',
         },
       },
     },
-     
   });
 
   // Load the plugins that provide the specified tasks
