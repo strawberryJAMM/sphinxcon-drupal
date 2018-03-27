@@ -143,10 +143,11 @@ module.exports = function(grunt) {
       archive: {
         options: {                 
           format: 'tar.gz',
-          output: '<%= pkg.name %>_drupal-<%= info.version %>.tar.gz', 
+          output: 'archives/<%= pkg.name %>_drupal-<%= info.version %>.tar.gz', 
           'worktree-attributes': true,
           extra: 6,
           'tree-ish': 'master:sphinxcon/',
+          prefix: 'sphinxcon/',
         },
       },
     },

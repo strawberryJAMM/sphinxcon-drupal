@@ -3,6 +3,7 @@
 *.zip
 .sass-cache/
 _notes/
+/archives/
 /node_modules/
 sphinxcon/templates/bootstrap/
 sphinxcon/templates/bootstrap/**
