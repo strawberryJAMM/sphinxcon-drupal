@@ -58,24 +58,31 @@ footer.footer {
 
 //== Vertical padding for  sections
 //
-// Set padding at the top and bottom of the section blocks to match the padding on the outside edges
-.featured,
+// Main Content vertical padding
 .main-content-wrapper {
-  padding-top:     $grid-gutter-width/2;
-  padding-bottom:  $grid-gutter-width/2;
+  padding-top:     $grid-gutter-width;
+  padding-bottom:  $grid-gutter-width*3;
 }
 
-//== Page Header (Title) and Highlight Section Padding
-//
+// Title Bar, Highlight and Featured Section vertical padding
+.featured,
 .title-bar, 
 .highlighted {
   padding-top: $grid-gutter-width/2;
   padding-bottom: $grid-gutter-width/2;
 }
 
-//== reset padding on the "page-header" (Title) style
+// Reset padding on the "page-header" (Title) style
 .page-header {
   padding-bottom: initial;
+}
+
+//== Horizontal Padding for sections
+//
+// Set padding on the left and right so that, visually, it matches the top
+.main-content-wrapper {
+  padding-left: $grid-gutter-width/2;
+  padding-right: $grid-gutter-width/2;
 }
 
 //== Featured region 

@@ -8267,12 +8267,12 @@ footer.footer {
   margin-bottom: 30px;
 }
 
-.featured,
 .main-content-wrapper {
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 30px;
+  padding-bottom: 90px;
 }
 
+.featured,
 .title-bar,
 .highlighted {
   padding-top: 15px;
@@ -8282,6 +8282,11 @@ footer.footer {
 .page-header {
   padding-bottom: 0;
   padding-bottom: initial;
+}
+
+.main-content-wrapper {
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .featured h2 {
