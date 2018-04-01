@@ -7,30 +7,19 @@ $toolbar-width: 240px;
 body.toolbar-fixed {
 
   // Fix z-index.
-  .toolbar .toolbar-bar {
-    position: fixed;
-    top: 0px;
-    width: 100%;
+  .toolbar-oriented .toolbar-bar {
+    z-index: ($zindex-navbar-fixed + 1);
   }
 
   .navbar-fixed-top {
-    top: $toolbar-fixed-default-height; // 39px;
+    top: 39px;
   }
 
   // Horizontal.
-  @media #{$tablet} {
-    &.toolbar-loading.toolbar-horizontal.toolbar-tray-open {
-      
-       .navbar-fixed-top {
-        top: $toolbar-fixed-hrz-open-height; // 79px;      
-      }
-      
-      .toolbar .toolbar-bar .home-toolbar-tab + .toolbar-tab .toolbar-tray {
-          display: block;
-      }  
-    }
+  &.toolbar-horizontal.toolbar-tray-open .navbar-fixed-top {
+    top: 79px;
   }
-  
+
   // Vertical Open.
   &.toolbar-vertical.toolbar-tray-open {
 
@@ -52,4 +41,14 @@ body.toolbar-fixed {
 
   }
 
+}
+
+// Remove flicking.
+body.toolbar-loading {
+
+  margin-top: 0;
+
+  &.toolbar {
+    margin-bottom: ($grid-gutter-width / 2);
+  }
 }

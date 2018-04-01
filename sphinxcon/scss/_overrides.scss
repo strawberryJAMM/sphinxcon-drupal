@@ -15,7 +15,7 @@
 @import "component/tabs";
 @import "component/toolbar";
 
-// jQuery UI style overrides.
+//== jQuery UI style overrides.
 @import "jquery-ui/autocomplete";
 
 ol, ul {
@@ -25,12 +25,12 @@ ol, ul {
   }
 }
 
-// Page header.
+//== Page header.
 .page-header {
   margin: 0;
 }
 
-// Footer.
+//== Footer.
 .footer {
   margin-top: 45px;
   padding-top: 35px;
@@ -38,14 +38,14 @@ ol, ul {
   //border-top: 1px solid #E5E5E5;
 }
 
-// Paragraphs.
+//== Paragraphs.
 p:last-child,
 .form-group:last-child,
 .panel:last-child {
   margin-bottom: 0;
 }
 
-// Help region.
+//== Help region.
 .region-help {
   > .glyphicon {
     font-size: $font-size-large;
@@ -68,6 +68,27 @@ p:last-child,
   }
 }
 
+//== Fixed Toolbar
+body.toolbar-fixed {
+  
+  // Fix z-index.
+  .toolbar-horizontal .toolbar-bar {
+    z-index: ($zindex-navbar-fixed + 1);
+  }
+
+  // Fix position and width
+  .navbar-fixed-top {
+      top: $toolbar-fixed-default-height; // 39px;
+  }
+  
+  // Horizontal.
+  &.toolbar-horizontal.toolbar-tray-open .navbar-fixed-top {
+    top: $toolbar-fixed-hrz-open-height; // 79px;
+  }
+
+}
+
+// kint (theme debugging)
 .search-kint-results {
   background-color: ghostwhite;
 }
