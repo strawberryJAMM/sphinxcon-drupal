@@ -225,6 +225,9 @@ body {
 
     h2, .h2 {
       font-size: $font-size-featured;
+      
+      // clear the default h2 bottom border.
+      border-bottom: 0;
     }
 
     p {
@@ -238,7 +241,6 @@ body {
 //
 .date-location h2,
 h2.date-location {
-  
   text-align: center;
   
   font-family: $trmn-organization-font-family;
@@ -252,6 +254,9 @@ h2.date-location {
                 1px -1px 0px $sphinxcon-dkbrown,
                -1px  1px 0px $sphinxcon-dkbrown,
                -1px -1px 0px $sphinxcon-dkbrown;
+
+  // clear the h2 bottom border.
+  border-bottom: 0;
 }
 
 
@@ -293,6 +298,35 @@ h2.date-location {
 }
 
 
+//== Typography
+//
+// Set H1 to small caps and give it a bottom border
+h1, .h1 {
+  font-variant-caps: small-caps;
+  border-bottom: 3px solid $sphinxcon-orange;
+}
+
+// Give H2 a bottom border
+h2, .h2 {
+  border-bottom: 1px solid $sphinxcon-orange;
+}
+
+
+// Special paragraph types
+p.drop-cap {
+  // Paragraph with a drop cap
+  &::first-letter {
+    color: $sphinxcon-redorange;
+    font-f: $trmn-headings-font-family;
+    float: left;
+    font-size: $font-size-drop-cap;
+    line-height: $line-height-drop-cap;
+    padding: 2px 3px 0;
+    margin-right: 3px;
+    text-shadow: -1.5px -1.5px 1px rgba(255,255,255,0.5);
+  }
+}
+
 //== Content Type Field Styling
 //
 // "photo" and "additional picture" field images
@@ -312,6 +346,10 @@ h2.date-location {
   .info {
     h2, .h2 {
       text-transform: uppercase;
+      
+      // clear the h2 bottom border.
+      border-bottom: 0;
+
       small, .small {
         text-transform: none;
       }

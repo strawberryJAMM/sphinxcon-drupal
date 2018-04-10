@@ -1715,7 +1715,7 @@ h6 .small, .h6 small,
 }
 
 h1, .h1 {
-  font-size: 38px;
+  font-size: 44px;
 }
 
 h2, .h2 {
@@ -8740,6 +8740,7 @@ body {
 }
 .featured article.guest h2, .featured article.guest .h2 {
   font-size: 20px;
+  border-bottom: 0;
 }
 .featured article.guest p {
   font-family: "Incised 901 BT Bold Condensed", Haettenschweiler, "Arial Narrow Bold", "Verdana Bold", Verdana, Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -8756,6 +8757,7 @@ h2.date-location {
   color: white;
   -webkit-text-stroke: 2px #1d0702;
   text-shadow: 1px 1px 0px #1d0702, 1px -1px 0px #1d0702, -1px 1px 0px #1d0702, -1px -1px 0px #1d0702;
+  border-bottom: 0;
 }
 
 .input-group .form-control.form-search,
@@ -8787,6 +8789,28 @@ h2.date-location {
   color: black;
 }
 
+h1, .h1 {
+  -webkit-font-feature-settings: "c2sc";
+          font-feature-settings: "c2sc";
+  font-variant-caps: small-caps;
+  border-bottom: 3px solid #faaf40;
+}
+
+h2, .h2 {
+  border-bottom: 1px solid #faaf40;
+}
+
+p.drop-cap::first-letter {
+  color: #a7280c;
+  font-f: "Incised 901 BT", Verdana, Arial, "Helvetica Neue", Helvetica, sans-serif;
+  float: left;
+  font-size: 50px;
+  line-height: 40px;
+  padding: 2px 3px 0;
+  margin-right: 3px;
+  text-shadow: -1.5px -1.5px 1px rgba(255, 255, 255, .5);
+}
+
 .field--name-field-photo img,
 .field--name-field-additional-image-1 img,
 .field--name-field-additional-image-2 img,
@@ -8797,6 +8821,7 @@ h2.date-location {
 
 .photo-and-info .info h2, .photo-and-info .info .h2 {
   text-transform: uppercase;
+  border-bottom: 0;
 }
 .photo-and-info .info h2 small, .photo-and-info .info h2 .small, .photo-and-info .info .h2 small, .photo-and-info .info .h2 .small {
   text-transform: none;
