@@ -142,32 +142,32 @@ body {
 
   &.navbar-is-fixed-top {
     margin-top: 0;
-    padding-top: $navbar-height + $navbar-border-width + $navbar-margin-bottom;
+    //padding-top: $navbar-height + $navbar-border-width + $navbar-margin-bottom;
     &.toolbar-fixed {
-      padding-top: $navbar-height + $navbar-border-width + $toolbar-fixed-default-height + $navbar-margin-bottom;
+      padding-top: $toolbar-fixed-default-height; // $navbar-height + $navbar-border-width + $toolbar-fixed-default-height + $navbar-margin-bottom;
       &.toolbar-horizontal.toolbar-tray-open {
-        padding-top: $navbar-height + $navbar-border-width + $toolbar-fixed-hrz-open-height + $navbar-margin-bottom;
+        padding-top: $toolbar-fixed-hrz-open-height; // $navbar-height + $navbar-border-width + $toolbar-fixed-hrz-open-height + $navbar-margin-bottom;
       }
     }
     
     @media #{$tablet} {
       margin-top: 0;
-      padding-top: $navbar-height-sm + $navbar-border-width + $navbar-margin-bottom;
+      //padding-top: $navbar-height-sm + $navbar-border-width + $navbar-margin-bottom;
       &.toolbar-fixed {
-        padding-top: $navbar-height-sm + $navbar-border-width + $toolbar-fixed-default-height + $navbar-margin-bottom;
+        padding-top: $toolbar-fixed-default-height; // $navbar-height-sm + $navbar-border-width + $toolbar-fixed-default-height + $navbar-margin-bottom;
         &.toolbar-horizontal.toolbar-tray-open {
-          padding-top: $navbar-height-sm + $navbar-border-width + $toolbar-fixed-hrz-open-height + $navbar-margin-bottom;
+          padding-top: $toolbar-fixed-hrz-open-height; // $navbar-height-sm + $navbar-border-width + $toolbar-fixed-hrz-open-height + $navbar-margin-bottom;
         }
       }
     }
 
     @media #{$normal} {
       margin-top: 0;
-      padding-top: $navbar-height-md + $navbar-border-width + $navbar-margin-bottom;
+      //padding-top: $navbar-height-md + $navbar-border-width + $navbar-margin-bottom;
       &.toolbar-fixed {
-        padding-top: $navbar-height-md + $navbar-border-width + $toolbar-fixed-default-height + $navbar-margin-bottom;
+        padding-top: $toolbar-fixed-default-height; // $navbar-height-md + $navbar-border-width + $toolbar-fixed-default-height + $navbar-margin-bottom;
         &.toolbar-horizontal.toolbar-tray-open {
-          padding-top: $navbar-height-md + $navbar-border-width + $toolbar-fixed-hrz-open-height + $navbar-margin-bottom;
+          padding-top: $toolbar-fixed-hrz-open-height; //$navbar-height-md + $navbar-border-width + $toolbar-fixed-hrz-open-height + $navbar-margin-bottom;
         }
       }
     }

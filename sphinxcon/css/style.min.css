@@ -7578,6 +7578,8 @@ html.js .ajax-new-content:empty {
 [dir="rtl"] .field--label-inline .field--items {
   padding-left: 0.5em;
   padding-right: 0;
+  float: right;
+  /*RTL*/
 }
 
 .field--label-inline .field--label::after {
@@ -7762,18 +7764,18 @@ table .checkbox.form-no-label, table .radio.form-no-label {
 /**
  * Icon styles.
  */
-a.icon-before .glyphicon {
+a.icon-before .glyphicon, a .glyphicon.icon-before {
   margin-right: .25em;
 }
-a.icon-after .glyphicon {
+a.icon-after .glyphicon, a .glyphicon.icon-after {
   margin-left: .25em;
 }
 
-.btn.icon-before .glyphicon {
+.btn.icon-before .glyphicon, .btn .glyphicon.icon-before {
   margin-left: -.25em;
   margin-right: .25em;
 }
-.btn.icon-after .glyphicon {
+.btn.icon-after .glyphicon, .btn .glyphicon.icon-after {
   margin-left: .25em;
   margin-right: -.25em;
 }
@@ -7841,6 +7843,10 @@ body.navbar-is-fixed-bottom {
 /**
  * Node styling.
  */
+.is-unpublished {
+  background-color: #fff4f4;
+}
+
 .node-preview-container {
   margin-top: -15px;
 }
@@ -8054,21 +8060,14 @@ body.navbar-is-fixed-bottom {
 /**
  * Toolbar module styling.
  */
-body.toolbar-fixed .toolbar .toolbar-bar {
-  position: fixed;
-  top: 0px;
-  width: 100%;
+body.toolbar-fixed .toolbar-oriented .toolbar-bar {
+  z-index: 1031;
 }
 body.toolbar-fixed .navbar-fixed-top {
   top: 39px;
 }
-@media screen and (min-width: 768px) {
-  body.toolbar-fixed.toolbar-loading.toolbar-horizontal.toolbar-tray-open .navbar-fixed-top {
-    top: 79px;
-  }
-  body.toolbar-fixed.toolbar-loading.toolbar-horizontal.toolbar-tray-open .toolbar .toolbar-bar .home-toolbar-tab + .toolbar-tab .toolbar-tray {
-    display: block;
-  }
+body.toolbar-fixed.toolbar-horizontal.toolbar-tray-open .navbar-fixed-top {
+  top: 79px;
 }
 body.toolbar-fixed.toolbar-vertical.toolbar-tray-open .navbar-fixed-top {
   left: 240px;
@@ -8081,6 +8080,13 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
 }
 body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tray, body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tray > .toolbar-lining:before {
   width: 240px;
+}
+
+body.toolbar-loading {
+  margin-top: 0;
+}
+body.toolbar-loading.toolbar {
+  margin-bottom: 15px;
 }
 
 /**
@@ -8169,6 +8175,21 @@ p:last-child,
 }
 .help-block:first-child, .control-group .help-inline:first-child {
   margin-top: 0;
+}
+
+body.toolbar-fixed .toolbar-horizontal .toolbar-bar {
+  z-index: 1031;
+}
+body.toolbar-fixed .navbar-fixed-top {
+  top: 39px;
+}
+body.toolbar-fixed.toolbar-horizontal.toolbar-tray-open .navbar-fixed-top {
+  top: 79px;
+}
+
+.navbar-fixed-top {
+  position: -webkit-sticky;
+  position: sticky;
 }
 
 .search-kint-results {
@@ -8324,36 +8345,33 @@ body.navbar-is-static-top {
 }
 body.navbar-is-fixed-top {
   margin-top: 0;
-  padding-top: 72px;
 }
 body.navbar-is-fixed-top.toolbar-fixed {
-  padding-top: 111px;
+  padding-top: 39px;
 }
 body.navbar-is-fixed-top.toolbar-fixed.toolbar-horizontal.toolbar-tray-open {
-  padding-top: 151px;
+  padding-top: 79px;
 }
 @media screen and (min-width: 768px) {
   body.navbar-is-fixed-top {
     margin-top: 0;
-    padding-top: 151px;
   }
   body.navbar-is-fixed-top.toolbar-fixed {
-    padding-top: 190px;
+    padding-top: 39px;
   }
   body.navbar-is-fixed-top.toolbar-fixed.toolbar-horizontal.toolbar-tray-open {
-    padding-top: 230px;
+    padding-top: 79px;
   }
 }
 @media screen and (min-width: 992px) {
   body.navbar-is-fixed-top {
     margin-top: 0;
-    padding-top: 176px;
   }
   body.navbar-is-fixed-top.toolbar-fixed {
-    padding-top: 215px;
+    padding-top: 39px;
   }
   body.navbar-is-fixed-top.toolbar-fixed.toolbar-horizontal.toolbar-tray-open {
-    padding-top: 255px;
+    padding-top: 79px;
   }
 }
 body.navbar-is-fixed-bottom {

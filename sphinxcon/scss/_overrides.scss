@@ -88,7 +88,18 @@ body.toolbar-fixed {
 
 }
 
-// kint (theme debugging)
+//== Fixed Top Navbar
+//
+// Use "sticky" instead of fixed since, as of Drupal 8.5.x, core node 
+// content may be wrapped by a div with the "dialog-off-canvas-main-canvas" 
+// This ensures that everything in the page, including the header, is
+// pushed down when the admin toolbar is visible.
+.navbar-fixed-top {
+  position: sticky;
+}
+
+
+//== kint (theme debugging)
 .search-kint-results {
   background-color: ghostwhite;
 }
