@@ -34,6 +34,27 @@ body {
   }
 }
 
+.bg-axanar {
+  background-image: url(../images/axanarbg.jpg);
+
+  // give it a 100% height so it will fill the screen
+  height: 100%;
+
+  // Attach, Scale and resizey
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  // position so that the top sits right at the bottom of the current navbar.
+  background-position: center $navbar-height;
+  @media #{$tablet} {
+    background-position: center $navbar-height-sm;
+  }
+  @media #{$normal} {
+    background-position: center $navbar-height-md;
+  }
+}
+
 //== Main NAVIGATION
 //
 // ## Font & Text settings
@@ -153,6 +174,17 @@ body {
 // hack that only works b/c the background in .bg-picketwood is fixed.
 .bg-blurred {
   @extend .bg-picketwood;
+  border-radius: 10px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  filter: blur(10px) opacity(90%);
+}
+
+.bg-blurred-axanar {
+  @extend .bg-axanar;
   border-radius: 10px;
   position: absolute;
   height: 100%;
@@ -418,4 +450,8 @@ p.drop-cap {
       text-transform: uppercase;
     }
   }
+}
+
+.block-views-blockaxacon-block-featured, .block-views-blockaxacon-fan-film-guests-block-featured {
+  padding-bottom: 20px;
 }
