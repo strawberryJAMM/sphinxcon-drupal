@@ -72,14 +72,14 @@ other methods (such as node.delete) will result in an exception.
 {% block content %}
     <div class="text-center">
         {{ title_prefix }}
-        <h3{{ title_attributes }}><a href="{{ url }}">{{ label }}</a></h3>
+        <h2{{ title_attributes }}><a href="{{ url }}">{{ label }}</a></h2>
         {{ title_suffix }}
         <a href="{{ url }}">{{ content.field_photo }}</a>
         {% if content.field_project|render|trim is not empty %}
             <span class="lead">{{ content.field_project|render }}</span>
         {% endif %}
         {% if content.field_axacon_titles|render|trim is not empty %}
-            <span class="lead">{{ content.field_axacon_titles|render }}</span>
+            <span class="lead axaon-padding">{{ content.field_axacon_titles|render }}</span>
         {% else %}
             &nbsp;
         {% endif %}

@@ -256,7 +256,7 @@ body {
     border-width: 0;
 
     h2, .h2 {
-      font-size: $font-size-featured;
+      font-size: $font-size-featured-name;
       
       // clear the default h2 bottom border.
       border-bottom: 0;
@@ -265,6 +265,10 @@ body {
     p {
       font-family: $trmn-headings-font-family-narrow;
       font-size: $font-size-featured;
+    }
+
+    .lead {
+      font-size: 20px;
     }
   }
 }
