@@ -121,18 +121,6 @@
       {% endblock %}
       </div> <!-- /.top-bar -->
     {% endif %}
-
-    {# Featured #}
-    {% if page.featured %}
-      <section class="featured" role="complementary">
-      {% block featured %}
-        <div class="col-sm-12">
-          <div class="bg-blurred" role="none"></div>
-          {{ page.featured }}
-        </div>
-      {% endblock %}
-      </section> <!-- /.featured -->
-    {% endif %}
       
     <div class="main-content-wrapper" role="none">
     
@@ -181,7 +169,20 @@
           
         </section>
       {% endblock %}
+
     </div> <!-- /.main-content-wrapper -->
+
+      {# Featured #}
+      {% if page.featured %}
+          <section class="featured" role="complementary">
+              {% block featured %}
+                  <div class="col-sm-12">
+                      <div class="bg-blurred-axanar" role="none"></div>
+                      {{ page.featured }}
+                  </div>
+              {% endblock %}
+          </section> <!-- /.featured -->
+      {% endif %}
   </main>
 {% endblock %}
 

@@ -8200,6 +8200,10 @@ body.toolbar-fixed.toolbar-horizontal.toolbar-tray-open .navbar-fixed-top {
   color: initial;
 }
 
+.view :not(.contextual) {
+  position: relative;
+}
+
 /* base.css
 
   BASE RULES are the defaults, defining how an element on the page should
@@ -8293,7 +8297,8 @@ footer.footer {
 
 .featured,
 .title-bar,
-.highlighted {
+.highlighted,
+.axacon {
   padding-top: 15px;
   padding-bottom: 15px;
 }
@@ -8583,6 +8588,25 @@ body {
   }
 }
 
+.bg-axanar, .bg-blurred-axanar {
+  background-image: url(../images/axanarbg.jpg);
+  height: 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 40px;
+}
+@media screen and (min-width: 768px) {
+  .bg-axanar, .bg-blurred-axanar {
+    background-position: center 129px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .bg-axanar, .bg-blurred-axanar {
+    background-position: center 154px;
+  }
+}
+
 .navbar-header .navbar-nav > li > a,
 .navbar-collapse .navbar-nav > li > a {
   font-family: "Incised 901 BT", Verdana, Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -8664,6 +8688,16 @@ body {
   filter: blur(10px) opacity(90%);
 }
 
+.bg-blurred-axanar {
+  border-radius: 10px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  filter: blur(10px) opacity(90%);
+}
+
 .nav-tabs {
   border-bottom-color: #faaf40;
 }
@@ -8734,7 +8768,10 @@ body {
 }
 .featured article.guest p {
   font-family: "Incised 901 BT Bold Condensed", Haettenschweiler, "Arial Narrow Bold", "Verdana Bold", Verdana, Arial, "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 18px;
+  font-size: 20px;
+}
+.featured article.guest .lead {
+  font-size: 20px;
 }
 
 .date-location h2,
@@ -8850,6 +8887,10 @@ p.drop-cap::first-letter {
 .field--socialmedia .field--item .field--label {
   font-size: inherit;
   text-transform: uppercase;
+}
+
+.block-views-blockaxacon-block-featured, .block-views-blockaxacon-fan-film-guests-block-featured {
+  padding-bottom: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */

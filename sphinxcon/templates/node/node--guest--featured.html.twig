@@ -74,17 +74,22 @@
 
 {# Update the Content block layout #}
 {% block content %}
-  <div class="text-center">
-    <h2>{{ content.field_guest_type }}</h2>
-    <a href="{{ url }}">{{ content.field_photo }}</a>
-    {{ title_prefix }}
-      <p{{ title_attributes }}><a href="{{ url }}">{{ label }}</a></p>
-    {{ title_suffix }}
-  </div>
+    <div class="text-center">
+        <h2>{% if content.field_guest_type_prefix|render|trim is not empty %}{{ content.field_guest_type_prefix|render|striptags }} {% endif %}{{ content.field_guest_type|render|striptags }}</h2>
+        <a href="{{ url }}">{{ content.field_photo }}</a>
+        {{ title_prefix }}
+        <p{{ title_attributes }}><a href="{{ url }}">{{ label }}</a></p>
+        {{ title_suffix }}
+        {% if content.field_axacon_titles|render|trim is not empty %}
+            {{ content.field_axacon_titles }}
+        {% else %}
+            &nbsp;
+        {% endif %}
+    </div>
 {% endblock %}
 
 {% block node %}
-  <div class="col-xs-12 col-sm-6 col-md-3">
-  {{ parent() }}
-  </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        {{ parent() }}
+    </div>
 {% endblock %}

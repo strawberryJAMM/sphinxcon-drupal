@@ -34,6 +34,27 @@ body {
   }
 }
 
+.bg-axanar {
+  background-image: url(../images/axanarbg.jpg);
+
+  // give it a 100% height so it will fill the screen
+  height: 100%;
+
+  // Attach, Scale and resizey
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  // position so that the top sits right at the bottom of the current navbar.
+  background-position: center $navbar-height;
+  @media #{$tablet} {
+    background-position: center $navbar-height-sm;
+  }
+  @media #{$normal} {
+    background-position: center $navbar-height-md;
+  }
+}
+
 //== Main NAVIGATION
 //
 // ## Font & Text settings
@@ -162,6 +183,17 @@ body {
   filter: blur(10px) opacity(90%);
 }
 
+.bg-blurred-axanar {
+  @extend .bg-axanar;
+  border-radius: 10px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  filter: blur(10px) opacity(90%);
+}
+
 //== Define task tabbed navigation styles
 .nav-tabs {
   border-bottom-color: $sphinxcon-orange;
@@ -224,7 +256,7 @@ body {
     border-width: 0;
 
     h2, .h2 {
-      font-size: $font-size-featured;
+      font-size: $font-size-featured-name;
       
       // clear the default h2 bottom border.
       border-bottom: 0;
@@ -233,6 +265,10 @@ body {
     p {
       font-family: $trmn-headings-font-family-narrow;
       font-size: $font-size-featured;
+    }
+
+    .lead {
+      font-size: 20px;
     }
   }
 }
@@ -418,4 +454,8 @@ p.drop-cap {
       text-transform: uppercase;
     }
   }
+}
+
+.block-views-blockaxacon-block-featured, .block-views-blockaxacon-fan-film-guests-block-featured {
+  padding-bottom: 20px;
 }

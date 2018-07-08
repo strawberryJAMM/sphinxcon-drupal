@@ -18,7 +18,11 @@
 #}
 {% if title %}
   <div class="title-bar">
+      {% if title == 'AXACON 2018' %}
+      <div class="bg-blurred-axanar" role="none"></div>
+      {% else %}
       <div class="bg-blurred" role="none"></div>
+      {% endif %}
       <div class="row">
           <div class="col-xs-12">
               <h1{{ title_attributes.addClass('page-header') }}>{{ title }}</h1>
