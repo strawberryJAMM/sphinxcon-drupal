@@ -4806,7 +4806,7 @@ tbody.collapse.in {
 
 .navbar {
   position: relative;
-  min-height: 50px;
+  min-height: 40px;
   margin-bottom: 20px;
   border: 1px solid transparent;
 }
@@ -4943,7 +4943,7 @@ tbody.collapse.in {
   padding: 10px 15px;
   font-size: 20px;
   line-height: 22px;
-  height: 50px;
+  height: 40px;
 }
 .navbar-brand:hover, .navbar-brand:focus {
   text-decoration: none;
@@ -4962,8 +4962,8 @@ tbody.collapse.in {
   float: right;
   margin-right: 15px;
   padding: 9px 10px;
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-top: 3px;
+  margin-bottom: 3px;
   background-color: transparent;
   background-image: none;
   border: 1px solid transparent;
@@ -5038,8 +5038,8 @@ tbody.collapse.in {
   border-bottom: 1px solid transparent;
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
-  margin-top: 6px;
-  margin-bottom: 6px;
+  margin-top: 1px;
+  margin-bottom: 1px;
 }
 @media (min-width: 768px) {
   .navbar-form .form-group {
@@ -5127,21 +5127,21 @@ tbody.collapse.in {
 }
 
 .navbar-btn {
-  margin-top: 6px;
-  margin-bottom: 6px;
+  margin-top: 1px;
+  margin-bottom: 1px;
 }
 .navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn {
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-top: 3px;
+  margin-bottom: 3px;
 }
 .navbar-btn.btn-xs, .btn-group-xs > .navbar-btn.btn {
-  margin-top: 14px;
-  margin-bottom: 14px;
+  margin-top: 9px;
+  margin-bottom: 9px;
 }
 
 .navbar-text {
-  margin-top: 14px;
-  margin-bottom: 14px;
+  margin-top: 9px;
+  margin-bottom: 9px;
 }
 @media (min-width: 768px) {
   .navbar-text {
@@ -7790,10 +7790,10 @@ body.navbar-is-static-top {
   margin-top: 0;
 }
 body.navbar-is-fixed-top {
-  margin-top: 65px;
+  margin-top: 55px;
 }
 body.navbar-is-fixed-bottom {
-  padding-bottom: 65px;
+  padding-bottom: 55px;
 }
 @media screen and (min-width: 768px) {
   body {
@@ -8183,6 +8183,10 @@ body.toolbar-fixed.toolbar-horizontal.toolbar-tray-open .navbar-fixed-top {
   top: 79px;
 }
 
+.view :not(.contextual) {
+  position: relative;
+}
+
 .navbar-fixed-top {
   position: sticky;
 }
@@ -8368,7 +8372,7 @@ body.navbar-is-fixed-top.toolbar-fixed.toolbar-horizontal.toolbar-tray-open {
   }
 }
 body.navbar-is-fixed-bottom {
-  padding-bottom: 52px;
+  padding-bottom: 42px;
 }
 @media screen and (min-width: 768px) {
   body.navbar-is-fixed-bottom {
@@ -8387,7 +8391,7 @@ body.navbar-is-fixed-bottom {
 }
 
 .navbar {
-  height: 52px;
+  height: 42px;
 }
 @media screen and (min-width: 768px) {
   .navbar {
@@ -8461,8 +8465,8 @@ body.navbar-is-fixed-bottom {
 .navbar .navbar-btn.logo > img {
   margin: 0;
   padding: 0;
-  height: 50px;
-  width: 440.2173913043px;
+  height: 40px;
+  width: 352.1739130435px;
 }
 @media screen and (min-width: 768px) {
   .navbar .navbar-btn.logo,
@@ -8493,8 +8497,8 @@ body.navbar-is-fixed-bottom {
   margin-right: 0;
   padding: 0;
   border: 0;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .navbar-toggle .glyphicon,
 .navbar-toggle .fa {
@@ -8566,7 +8570,7 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center 50px;
+  background-position: center 40px;
 }
 @media screen and (min-width: 768px) {
   .bg-picketwood, .bg-blurred {
@@ -8725,12 +8729,12 @@ body {
   border-width: 0;
 }
 .featured article.guest h2, .featured article.guest .h2 {
-  font-size: 20px;
+  font-size: 18px;
   border-bottom: 0;
 }
 .featured article.guest p {
   font-family: "Incised 901 BT Bold Condensed", Haettenschweiler, "Arial Narrow Bold", "Verdana Bold", Verdana, Arial, "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .date-location h2,
