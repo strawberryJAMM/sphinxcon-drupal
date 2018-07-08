@@ -37,7 +37,7 @@ $logo-image-w-over-h-aspect-ratio:    $logo-image-base-width / $logo-image-base-
 
 //
 //## Fixed Header Logo heights and calculated widths
-$logo-image-height:          50px;
+$logo-image-height:          40px;
 $logo-image-width:           $logo-image-height * $logo-image-w-over-h-aspect-ratio;
 $logo-image-height-sm:       85px;
 $logo-image-width-sm:        $logo-image-height-sm * $logo-image-w-over-h-aspect-ratio;
@@ -133,7 +133,7 @@ $font-size-h4:            floor(($font-size-base * 1.25));   // ~20px
 $font-size-h5:            $font-size-base;
 $font-size-h6:            floor(($font-size-base * 0.875));  // ~14px
 
-$font-size-featured:      floor(($font-size-base * 1.25));   // ~20px
+$font-size-featured:      floor(($font-size-base * 1.125));  // ~18px
 $font-size-drop-cap:      floor(($font-size-base * 3.125));  // ~50px
 
 //** Unit-less `line-height` for use in components like buttons.
