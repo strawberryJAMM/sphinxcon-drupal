@@ -88,6 +88,11 @@ body.toolbar-fixed {
 
 }
 
+//== Views
+.view :not(.contextual) {
+  position: relative;
+}
+
 //== Fixed Top Navbar
 //
 // Use "sticky" instead of fixed since, as of Drupal 8.5.x, core node 
