@@ -56,6 +56,12 @@ footer.footer {
   margin-bottom: $grid-gutter-width;
 }
 
+// insert space between highlighted block and header (title)
+.highlighted + .region-header {
+  margin-top: $grid-gutter-width/2;
+}
+
+
 //== Vertical padding for  sections
 //
 // Main Content vertical padding

@@ -69,13 +69,6 @@
   
   <section{{ content_attributes.addClass(content_classes) }}>
 
-    {# Put out original Highlighted Block #}
-    {% if page.highlighted %}
-      {% block highlighted %}
-        {{ parent() }}
-      {% endblock %}
-    {% endif %}
-
     {# Put out original Help Block #}
     {% if page.help %}
       {% block help %}

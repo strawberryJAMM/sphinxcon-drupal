@@ -109,18 +109,26 @@
 {% block main %}
   <main class="main-container {{ container }} js-quickedit-main-content" role="main">
     {# Header (breadcrumbs, status, page title, tabs, admin actions) #}
-    {% if page.header or is_front %}
       <div class="top-bar" role="heading">
-      {% block header %}
-        {% if is_front %}
-          <h2 class="date-location"><span class="sr-only">SphinxCon {{ sphinxcon_year }}<br /></span>
-            {{ sphinxcon_dates }}<br />
-            {{ sphinxcon_location }}</h2>
-        {% endif %}
-        {{ page.header }}
-      {% endblock %}
+          {% block header %}
+              <h2 class="date-location"><span class="sr-only">SphinxCon {{ sphinxcon_year }} Axacon<br /></span>
+                  {{ sphinxcon_dates }}<br />
+                  {{ sphinxcon_location }}</h2>
+
+              {# Highlighted #}
+              {% if page.highlighted %}
+                  {% block highlighted %}
+                      <div class="highlighted">
+                          {{ page.highlighted }}
+                      </div>
+                  {% endblock %}
+              {% endif %}
+
+              {% if page.header %}
+                  {{ page.header }}
+              {% endif %}
+          {% endblock %}
       </div> <!-- /.top-bar -->
-    {% endif %}
 
     {# Featured #}
     {% if page.featured %}
@@ -155,15 +163,6 @@
       {# Content Section #}
       {% block maincontent %}
         <section{{ content_attributes.addClass(content_classes) }}>
-
-          {# Highlighted #}
-          {% if page.highlighted %}
-            {% block highlighted %}
-              <div class="highlighted">
-                {{ page.highlighted }}
-              </div>
-            {% endblock %}
-          {% endif %}
 
           {# Help #}
           {% if page.help %}
