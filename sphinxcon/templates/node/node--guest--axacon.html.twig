@@ -5,9 +5,9 @@
 *
 * Available variables:
 * - node: The node entity with limited access to object properties and methods.
-Only "getter" methods (method names starting with "get", "has", or "is")
-and a few common methods such as "id" and "label" are available. Calling
-other methods (such as node.delete) will result in an exception.
+*   Only "getter" methods (method names starting with "get", "has", or "is")
+*   and a few common methods such as "id" and "label" are available. Calling
+*   other methods (such as node.delete) will result in an exception.
 * - label: The title of the node.
 * - content: All node items. Use {{ content }} to print them all,
 *   or print a subset such as {{ content.field_example }}. Use
@@ -67,25 +67,24 @@ other methods (such as node.delete) will result in an exception.
 #}
 {% extends "node--guest--featured.html.twig" %}
 
-
 {# Update the Content block layout #}
 {% block content %}
-    <div class="text-center">
-        {{ title_prefix }}
-        <h2{{ title_attributes }}><a href="{{ url }}">{{ label }}</a></h2>
-        {{ title_suffix }}
-        <a href="{{ url }}">{{ content.field_photo }}</a>
-        {% if content.field_project|render|trim is not empty %}
-            <span class="lead">{{ content.field_project|render }}</span>
-        {% endif %}
-        {% if content.field_axacon_titles|render|trim is not empty %}
-            <span class="lead axaon-padding">{{ content.field_axacon_titles|render }}</span>
-        {% else %}
-            &nbsp;
-        {% endif %}
-    </div>
+  <div class="text-center">
+    {{ title_prefix }}
+    <h2{{ title_attributes }}><a href="{{ url }}">{{ label }}</a></h2>
+    {{ title_suffix }}
+    <a href="{{ url }}">{{ content.field_photo }}</a>
+    {% if content.field_project|render|trim is not empty %}
+      <span class="lead">{{ content.field_project|render }}</span>
+    {% endif %}
+    {% if content.field_axacon_titles|render|trim is not empty %}
+      <span class="lead axaon-padding">{{ content.field_axacon_titles|render }}</span>
+    {% else %}
+      &nbsp;
+    {% endif %}
+  </div>
 {% endblock %}
 
 {% block node %}
-{{ parent() }}
+  {{ parent() }}
 {% endblock %}
