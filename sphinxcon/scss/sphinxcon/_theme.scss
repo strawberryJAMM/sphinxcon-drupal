@@ -285,14 +285,33 @@ h2.date-location {
   
   // Make the text white with a dark stroke
   color: white;
-  -webkit-text-stroke: 2px $sphinxcon-dkbrown;  // unofficial webkit "text-stroke" property, supported by most modern browsers
-  text-shadow:  1px  1px 0px $sphinxcon-dkbrown, // "hack" using text shadow for IE 10 & 11
-                1px -1px 0px $sphinxcon-dkbrown,
-               -1px  1px 0px $sphinxcon-dkbrown,
-               -1px -1px 0px $sphinxcon-dkbrown;
 
-  // clear the h2 bottom border.
-  border-bottom: 0;
+  // font sizing and outer stroke
+  font-size: floor(($font-size-h2 * 0.40625));    // ~13px
+
+  @media screen and (min-width: 640px)  {
+    font-size: floor(($font-size-h2 * 0.5625));    // ~18px
+  }
+
+  @media screen and (min-width: $screen-sm-min)  {
+    font-size: floor(($font-size-h2 * 0.6875));    // ~22px
+  }
+
+  @media screen and (min-width: 1024px)  {
+    font-size: floor(($font-size-h2 * 0.875));    // ~28px
+
+    // Add dark stroke at larger font sizes
+    -webkit-text-stroke: 2px $sphinxcon-dkbrown;  // unofficial webkit "text-stroke" property, supported by most modern browsers
+    text-shadow:  1px  1px 0px $sphinxcon-dkbrown, // "hack" using text shadow for IE 10 & 11
+    1px -1px 0px $sphinxcon-dkbrown,
+    -1px  1px 0px $sphinxcon-dkbrown,
+    -1px -1px 0px $sphinxcon-dkbrown;
+  }
+
+  @media screen and (min-width: $screen-lg-min)  {
+    font-size: $font-size-h2;    // ~32px
+  }
+
 }
 
 
@@ -323,14 +342,26 @@ h2.date-location {
   border: 1px solid transparent;
   border-radius: $border-radius-base;
 
-  font-size: floor(($font-size-base * 1.125));   // ~18px
+  font-size: floor(($font-size-base * 0.63)); // ~10px
+
+  @media screen and (min-width: 640px){
+    font-size: floor(($font-size-base * 0.81)); // ~13px
+  }
+
+  @media screen and (min-width: $screen-sm-min){
+    font-size: $font-size-base; // ~16px
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: floor(($font-size-base * 1.125));   // ~18px
+  }
+
   font-family: $trmn-sections-font-family;
   // the "sections" font family does not have italic or bold variations, so we block them out.
   font-style: normal !important;
   font-weight: normal !important;
 
   @include alert-variant($highlighted-bg, $highlighted-border, $highlighted-text);
-  
 }
 
 

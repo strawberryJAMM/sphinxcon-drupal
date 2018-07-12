@@ -4,7 +4,7 @@
 
 // Variables to help simplify responsive breakpoints 
 $mobile:          "screen and (max-width: #{$screen-xs-max})";
-$tablet:          "screen and (min-width: #{$screen-sm-min})";
+$tablet:          "screen and (min-width: 1024px)";
 $normal:          "screen and (min-width: #{$screen-md-min})";
 $wide:            "screen and (min-width: #{$screen-lg-min})";
 $grid-breakpoint: "screen and (min-width: #{$grid-float-breakpoint})";

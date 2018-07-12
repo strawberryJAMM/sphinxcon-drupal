@@ -286,3 +286,6 @@ $hr-border:                   $gray-lightest;
 $input-group-addon-color:        $sphinxcon-dkbrown;
 //** Background color for textual input addons
 $input-group-addon-bg:           $sphinxcon-orange;
+
+$grid-float-breakpoint:     1024px !default;
+//** Point at which the navbar begins collapsing.
