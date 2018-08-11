@@ -15,5 +15,6 @@
 {% set classes = [
   theme.settings.image_shape ? theme.settings.image_shape,
   (theme.settings.image_responsive or make_image_responsive) ? 'img-responsive',
+  'guest-photo',
 ] %}
 <img{{ attributes.addClass(classes) }} />

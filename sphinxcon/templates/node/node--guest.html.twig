@@ -67,6 +67,19 @@
 #}
 {% extends "node.html.twig" %}
 
+  {% block title %}
+      {% if not page %}
+          <a name="{{ label|render|striptags|lower|replace({' ': '-'})|trim }}" rel="bookmark"></a>
+      {% endif %}
+      {{ title_prefix }}
+      {% if not page %}
+          <h2{{ title_attributes }}>
+              {{ label }}
+          </h2>
+      {% endif %}
+      {{ title_suffix }}
+  {% endblock %}
+
 {# Update the Content block layout #}
 {% block content %}
     {# photo and info block for mobile phones (< 768 wide)#}
@@ -76,7 +89,16 @@
                 <small>{% if content.field_guest_type_prefix|render|trim is not empty %}{{ content.field_guest_type_prefix|render|striptags }} {% endif %}{{ content.field_guest_type|render|striptags }}</small>
             </div>
             <div class="h2">{{ label }}</div>
+            {% if content.field_guest_for|render|striptags|trim == 'Axacon' %}
+                {% if content.field_project|render|trim is not empty %}
+                    <span class="lead text-center">{{ content.field_project|render }}</span>
+                {% endif %}
+                {% if content.field_axacon_titles|render|trim is not empty %}
+                    <span class="lead axaon-padding text-center">{{ content.field_axacon_titles|render }}</span>&nbsp;
+                {% endif %}
+            {% else %}
             <div class="known-for">{{ content.field_known_for }}</div>
+            {% endif %}
             <div class="socialmedia">
                 {{ content.field_website }}
                 {{ content.field_twitter }}
@@ -87,10 +109,7 @@
         </div>
         <div class="col-xs-6 photo">
             {% set make_img_responsive = true %}
-            {{ content.field_photo }}
-            {% if content.field_axacon_titles|render|trim is not empty %}
-                {{ content.field_axacon_titles }}
-            {% endif %}
+            <a href="{{ url }}" rel="bookmark">{{ content.field_photo }}</a>
         </div>
     </div>
     <div class="biography">

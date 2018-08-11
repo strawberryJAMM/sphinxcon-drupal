@@ -1,0 +1,18 @@
+{% extends "node.html.twig" %}
+
+  {% block title %}
+      {{ title_prefix }}
+      {% if not page %}
+          <h2{{ title_attributes }}>
+              {{ label }}
+          </h2>
+      {% endif %}
+      {{ title_suffix }}
+  {% endblock %}
+
+{% block content %}
+    <div class="lead">{{ content.field_panel_description }}</div>
+    <h5>Moderators/Panelists</h5>
+    <div>{{ content.field_moderators }}</div>
+
+{% endblock %}

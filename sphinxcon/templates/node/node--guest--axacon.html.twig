@@ -78,9 +78,7 @@
       <span class="lead">{{ content.field_project|render }}</span>
     {% endif %}
     {% if content.field_axacon_titles|render|trim is not empty %}
-      <span class="lead axaon-padding">{{ content.field_axacon_titles|render }}</span>
-    {% else %}
-      &nbsp;
+      <span class="lead axaon-padding">{{ content.field_axacon_titles|render }}</span>&nbsp;
     {% endif %}
   </div>
 {% endblock %}
