@@ -8200,10 +8200,6 @@ body.toolbar-fixed.toolbar-horizontal.toolbar-tray-open .navbar-fixed-top {
   color: initial;
 }
 
-.view :not(.contextual) {
-  position: relative;
-}
-
 /* base.css
 
   BASE RULES are the defaults, defining how an element on the page should
@@ -8573,8 +8569,8 @@ body {
   height: 100%;
 }
 
-.bg-picketwood {
-  background-image: url(../images/SequioaRedwoodTreeBark.jpg);
+.bg-sphinxcon, .bg-blurred {
+  background-image: url(../images/background.png);
   height: 100%;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -8582,31 +8578,12 @@ body {
   background-position: center 40px;
 }
 @media screen and (min-width: 1024px) {
-  .bg-picketwood {
+  .bg-sphinxcon, .bg-blurred {
     background-position: center 129px;
   }
 }
 @media screen and (min-width: 992px) {
-  .bg-picketwood {
-    background-position: center 154px;
-  }
-}
-
-.bg-ships, .bg-blurred {
-  background-image: url(../images/Honorverse-ship-attack.png);
-  height: 100%;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center 40px;
-}
-@media screen and (min-width: 1024px) {
-  .bg-ships, .bg-blurred {
-    background-position: center 129px;
-  }
-}
-@media screen and (min-width: 992px) {
-  .bg-ships, .bg-blurred {
+  .bg-sphinxcon, .bg-blurred {
     background-position: center 154px;
   }
 }
