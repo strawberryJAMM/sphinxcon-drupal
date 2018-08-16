@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="7c7f16a6-6ccc-4699-a32d-9867cde74953" name="sphinx-con.org" url="http://sphinx-con.org">
+        <fileTransfer host="sphinx-con.org" port="22" privateKey="$USER_HOME$/.ssh/id_personal" rootFolder="/home/forge/tmclconventions.com/sites/sphinx-con.org/themes" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="db89b9b3-6c18-4983-9422-b9d892795e7f" name="dev.sphinx-con.org" url="http://dev.sphinx-con.org">
+        <fileTransfer host="sphinx-con.org" port="22" privateKey="$USER_HOME$/.ssh/id_personal" rootFolder="/home/forge/tmclconventions.com/sites/dev.sphinx-con.org/themes" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

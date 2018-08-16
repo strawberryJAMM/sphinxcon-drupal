@@ -65,3 +65,19 @@ function sphinxcon_preprocess_page(&$variables) {
   $variables['sphinxcon_dates'] = theme_get_setting('sphinxcon_dates');
   $variables['sphinxcon_location'] = theme_get_setting('sphinxcon_location');
 }
+
+function sphinxcon_preprocess_html(&$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  $variables['background_class'] = 'bg-sphinxcon';
+  $variables['blurred_class'] = 'bg-blurred';
+
+  if ($node instanceof \Drupal\node\NodeInterface) {
+    if (!empty($node->field_guest_for) && $node->field_guest_for->getValue()[0]['value'] === 'A') {
+      $variables['background_class'] = 'bg-axanar';
+    }
+
+    if (!empty($node->path) && $node->path->getValue()[0]['alias'] === '/axacon') {
+      $variables['blurred_class'] = 'bg-blurred-axanar';
+    }
+  }
+}
